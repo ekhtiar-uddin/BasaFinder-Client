@@ -54,7 +54,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative h-screen  ">
+    <div className="relative h-[85vh]  ">
       <Image
         src="/landing-hero.jpg"
         alt="Rentmode Rental Platform Hero Section"

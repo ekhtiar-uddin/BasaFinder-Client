@@ -1,9 +1,9 @@
-import NavbarDashboard from "@/components/shared/NavbarDashboard";
+import Navbar from "@/components/shared/Navbar";
 
 const CommonLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <NavbarDashboard />
+      <Navbar />
 
       <main className="min-h-screen">{children}</main>
     </div>

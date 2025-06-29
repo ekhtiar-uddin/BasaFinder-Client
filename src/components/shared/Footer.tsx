@@ -1,60 +1,108 @@
-import Logo from "@/app/assets/svgs/Logo";
-import { Facebook, Instagram, X } from "lucide-react";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-
 const Footer = () => {
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/shop", label: "Shop" },
-    { href: "/products", label: "App Products" },
-    { href: "/about", label: "About Us" },
-    { href: "/testimonial", label: "Testimonial" },
-    { href: "/blogs", label: "Blogs" },
-    { href: "/contact", label: "Contact Us" },
-  ];
-
-  const socialLinks = [
-    { href: "#", icon: Facebook },
-    { href: "#", icon: Instagram },
-    { href: "#", icon: X },
-  ];
   return (
-    <footer className="bg-white border-t border-gray-200 py-24">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <div className="flex flex-col items-center mb-6">
-          <div className="flex items-center space-x-2">
-            <h1 className="text-2xl font-black flex items-center">
-              <Logo />
-              Next Mart
-            </h1>
-          </div>
-          <p className="text-gray-600 mt-3 w-1/2">
-            Save big this Black Friday with unbeatable deals on tech, home
-            essentials, fashion, and more! Limited stock.
-          </p>
-        </div>
-
-        <hr />
-        <ul className="flex justify-center space-x-6 text-sm text-gray-800 font-medium my-4">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href} className="hover:text-purple-600">
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex justify-center space-x-4">
-          {socialLinks.map(({ href, icon: Icon }, index) => (
-            <Link
-              href={href}
-              key={index}
-              className="text-gray-600 hover:text-purple-600"
-            >
-              <Icon className="w-5 h-5" />
+    <footer className="border-t border-gray-200 py-20">
+      <div className="customWidth">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="">
+            <Link href="/" className="text-xl font-bold" scroll={false}>
+              RENTmode
             </Link>
-          ))}
+
+            <div className="flex space-x-4 mt-8">
+              <Link
+                href="https://www.facebook.com"
+                aria-label="Facebook"
+                className="text-secondary-600 hover:text-secondary-600/60"
+              >
+                <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
+              </Link>
+
+              <Link
+                href="https://www.instagram.com"
+                aria-label="Instagram"
+                className="text-secondary-600 hover:text-secondary-600/60"
+              >
+                <FontAwesomeIcon icon={faInstagram} className="h-6 w-6" />
+              </Link>
+
+              <Link
+                href="https://www.twitter.com"
+                aria-label="Twitter"
+                className="text-secondary-600 hover:text-secondary-600/60"
+              >
+                <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" />
+              </Link>
+
+              <Link
+                href="https://www.linkedin.com"
+                aria-label="LinkedIn"
+                className="text-secondary-600 hover:text-secondary-600/60"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6" />
+              </Link>
+
+              <Link
+                href="https://www.youtube.com"
+                aria-label="YouTube"
+                className="text-secondary-600 hover:text-secondary-600/60"
+              >
+                <FontAwesomeIcon icon={faYoutube} className="h-6 w-6" />
+              </Link>
+            </div>
+          </div>
+          <div className="flex flex-col ">
+            <nav className="">
+              <ul className="flex font-semibold justify-center space-x-6">
+                <li>
+                  <Link href="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact Us</Link>
+                </li>
+                <li>
+                  <Link href="/faq">FAQ</Link>
+                </li>
+                <li>
+                  <Link href="/terms">Terms</Link>
+                </li>
+                <li>
+                  <Link href="/privacy">Privacy</Link>
+                </li>
+              </ul>
+            </nav>
+            <div className="mt-8 text-center text-sm text-gray-500 flex justify-center space-x-4">
+              <span>© RENTmode. All rights reserved.</span>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/terms">Terms of Service</Link>
+              <Link href="/cookies">Cookie Policy</Link>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="font-bold mb-3">GET INVOLVED</h2>
+            <div>
+              <input
+                className="outline-none bg-white py-2.5 pl-3 border-secondary-600 w-full border rounded"
+                placeholder="Enter email adress"
+                type="email"
+                name=""
+                id=""
+              />
+
+              <button className=" hover:bg-secondary-600 bg-secondary-500 w-full py-2.5 font-semibold transition-all text-white font-Inter duration-300  rounded mt-3">
+                SUBSCRIBE{" "}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -24,11 +24,11 @@ const PropertyDetails = ({ propertyId }: { propertyId: string }) => {
   // if (isError || !property) {
   //   return <>Property not Found</>;
   // }
-  const Icon =
-    AmenityIcons[property?.amenities as unknown as AmenityEnum] || HelpCircle;
-  const IconTwo =
-    HighlightIcons[property?.highlights as unknown as HighlightEnum] ||
-    HelpCircle;
+  // const Icon =
+  //   AmenityIcons[property?.amenities as unknown as AmenityEnum] || HelpCircle;
+  // const IconTwo =
+  //   HighlightIcons[property?.highlights as unknown as HighlightEnum] ||
+  //   HelpCircle;
 
   return (
     <div className="mb-6">
@@ -132,6 +132,10 @@ const PropertyDetails = ({ propertyId }: { propertyId: string }) => {
             </p>
           </TabsContent>
         </Tabs>
+      </div>
+
+      <div>
+        <h1>Hello</h1>
       </div>
     </div>
   );

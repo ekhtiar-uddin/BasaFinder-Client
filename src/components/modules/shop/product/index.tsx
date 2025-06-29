@@ -186,7 +186,7 @@ const ManageProducts = ({
         <div className="flex items-center gap-2">
           <DiscountModal
             selectedIds={selectedIds}
-            setSelectedIds={setSelectedIds}
+            // setSelectedIds={setSelectedIds}
           />
         </div>
       </div>

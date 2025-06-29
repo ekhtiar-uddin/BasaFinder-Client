@@ -28,17 +28,17 @@ const FeaturesSection = () => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className="py-24 px-6 sm:px-8 lg:px-12 xl:px-16 bg-white"
+      className="py-24 customWidth bg-white"
     >
-      <div className="max-w-4xl xl:max-w-6xl mx-auto">
+      <div className="">
         <motion.h2
           variants={itemVariants}
           className="text-3xl font-bold text-center mb-12 w-full sm:w-2/3 mx-auto"
         >
           Quickly find the home you want using our effective search filters!
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
-          {[0, 1, 2].map((index) => (
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-12 xl:gap-10">
+          {[0, 1, 2, 3].map((index) => (
             <motion.div key={index} variants={itemVariants}>
               <FeatureCard
                 imageSrc={`/landing-search${3 - index}.png`}
@@ -47,6 +47,7 @@ const FeaturesSection = () => {
                     "Reliable and Authenticated Homes",
                     "Easily Explore Verified Rentals Today",
                     "Make Your Rental Hunt Easy and Smarter",
+                    "Make Your Rental Hunt Easy and Smarter",
                   ][index]
                 }
                 description={
@@ -54,10 +55,11 @@ const FeaturesSection = () => {
                     "Explore top rental choices backed by real reviews and ratings.",
                     "Read real reviews and ratings to better understand your rental choices.",
                     "Browse verified rental listings you can trust for a smooth, stress-free process.",
+                    "Browse verified rental listings you can trust for a smooth, stress-free process.",
                   ][index]
                 }
-                linkText={["Explore", "Search", "Discover"][index]}
-                linkHref={["/search", "/search", "/search"][index]}
+                linkText={["Explore", "Search", "Discover", "general"][index]}
+                linkHref={["/search", "/search", "/search", "general"][index]}
               />
             </motion.div>
           ))}

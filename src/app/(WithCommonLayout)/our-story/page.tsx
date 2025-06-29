@@ -4,7 +4,7 @@ import Image from "next/image";
 const AboutPage = () => {
   return (
     <>
-      <div className="h-[60px]"></div>
+      {/* <div className="h-[60px]"></div> */}
       <ImagePreviews images={["/story-2.avif", "/story-1.avif"]} />
 
       <section className=" mb-8">

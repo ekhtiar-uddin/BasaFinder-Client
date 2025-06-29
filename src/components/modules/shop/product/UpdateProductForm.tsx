@@ -22,6 +22,8 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
     resolver: zodResolver(propertySchema),
     defaultValues: {
       ...product,
+      amenities: [],
+      highlights: [],
     },
   });
   const {
@@ -36,11 +38,24 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
 
     const formData = new FormData();
 
+    const formattedAmenities = data?.amenities
+      .join(",")
+      .split(",")
+      .map((a) => a.trim())
+      .join(",");
+    const formattedhighlights = data?.highlights
+      .join(",")
+      .split(",")
+      .map((a) => a.trim())
+      .join(",");
+
     const modifiedData = {
       ...data,
       landlord: user?.userId,
       price: parseFloat(data.price.toString()),
       beds: parseFloat(data.beds.toString()),
+      amenities: formattedAmenities,
+      highlights: formattedhighlights,
     };
 
     formData.append("data", JSON.stringify(modifiedData));
@@ -189,7 +204,8 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
                 <CustomFormField
                   name="amenities"
                   label="Amenities"
-                  type="select"
+                  type="multiple-select"
+                  multiple={true}
                   options={Object.keys(AmenityEnum).map((amenity) => ({
                     value: amenity,
                     label: amenity,
@@ -198,7 +214,8 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
                 <CustomFormField
                   name="highlights"
                   label="Highlights"
-                  type="select"
+                  type="multiple-select"
+                  multiple={true}
                   options={Object.keys(HighlightEnum).map((highlight) => ({
                     value: highlight,
                     label: highlight,

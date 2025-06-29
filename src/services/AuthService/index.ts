@@ -85,7 +85,7 @@ export const getCurrentUser = async () => {
     // decodedData.photo = data?.photo;
     decodedData.name = data?.name;
     // console.log("here", decodedData);
-    console.log("ksdjf", decodedData);
+    // console.log("ksdjf", decodedData);
     return decodedData;
   } else {
     return null;

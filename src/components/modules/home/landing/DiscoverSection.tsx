@@ -27,7 +27,7 @@ const DiscoverSection = () => {
       variants={containerVariants}
       className="py-12 bg-white "
     >
-      <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+      <div className="customWidth">
         <motion.div variants={itemVariants} className="my-12 text-center">
           <h2 className="text-3xl font-semibold leading-tight text-gray-800">
             Identify

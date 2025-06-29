@@ -22,12 +22,17 @@ import { loginSchema } from "./loginValidation";
 
 export default function LoginForm() {
   const dispatch = useAppDispatch();
+
+  const credentials = {
+    email: "",
+    password: "",
+  };
+
+  // const [defaultCredentials, setDefaultCredentials] =
+  //   useState(defaultLoginInfo);
   const form = useForm({
     resolver: zodResolver(loginSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
+    defaultValues: credentials,
   });
 
   // const [reCaptchaStatus, setReCaptchaStatus] = useState(false);
@@ -75,6 +80,20 @@ export default function LoginForm() {
     }
   };
 
+  const handleCredential = (userType) => {
+    credentials.password = "12345678";
+    if (userType === "admin") {
+      credentials.email = "admin@gmail.com";
+      form.reset(credentials);
+    } else if (userType === "landlord") {
+      credentials.email = "ektiaruddinniloy859@gmail.com";
+      form.reset(credentials);
+    } else if (userType === "tenant") {
+      credentials.email = "tenant@gmail.com";
+      form.reset(credentials);
+    }
+  };
+
   return (
     <div className="border-2 border-gray-300 rounded-[8px] flex-grow max-w-md w-full p-5">
       <div className="flex items-center space-x-4">
@@ -86,6 +105,33 @@ export default function LoginForm() {
           <p className="font-extralight text-sm text-gray-600">Welcome back!</p>
         </div>
       </div>
+
+      <div className="">
+        <h1 className="mt-5 text-xl font-bold text-primary ">
+          Demo Credentials:
+        </h1>
+        <div className="flex justify-between mt-3">
+          <button
+            onClick={() => handleCredential("tenant")}
+            className="credentialBtn"
+          >
+            Tenant
+          </button>
+          <button
+            onClick={() => handleCredential("landlord")}
+            className="credentialBtn"
+          >
+            Landlord
+          </button>
+          <button
+            onClick={() => handleCredential("admin")}
+            className="credentialBtn"
+          >
+            Admin
+          </button>
+        </div>
+      </div>
+
       <Form {...form}>
         <form className="space-y-3" onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
@@ -93,7 +139,7 @@ export default function LoginForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="mt-8">Email</FormLabel>
+                <FormLabel className="mt-6">Email</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Enter your email address"

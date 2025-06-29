@@ -7,41 +7,36 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import { addFlashSale } from "@/services/FlashSale";
-import { Dispatch, SetStateAction } from "react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { toast } from "sonner";
-
 type TModalProps = {
   selectedIds: string[];
-  setSelectedIds: Dispatch<SetStateAction<string[] | []>>;
+  // setSelectedIds: Dispatch<SetStateAction<string[] | []>>;
 };
 
-const DiscountModal = ({ selectedIds, setSelectedIds }: TModalProps) => {
-  const form = useForm();
+const DiscountModal = ({ selectedIds }: TModalProps) => {
+  // const form = useForm();
 
-  const {
-    formState: { isSubmitting },
-  } = form || {};
+  // const {
+  //   formState: { isSubmitting },
+  // } = form || {};
 
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    const modifiedData = {
-      products: [...selectedIds],
-      discountPercentage: parseFloat(data?.discountPercentage),
-    };
+  // const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+  //   const modifiedData = {
+  //     products: [...selectedIds],
+  //     discountPercentage: parseFloat(data?.discountPercentage),
+  //   };
 
-    try {
-      const res = await addFlashSale(modifiedData);
-      if (res.success) {
-        toast.success(res.message);
-        setSelectedIds([]);
-      } else {
-        toast.error(res.message);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //   try {
+  //     const res = await addFlashSale(modifiedData);
+  //     if (res.success) {
+  //       toast.success(res.message);
+  //       setSelectedIds([]);
+  //     } else {
+  //       toast.error(res.message);
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   return (
     <Dialog>

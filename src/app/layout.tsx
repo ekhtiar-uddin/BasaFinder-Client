@@ -1,6 +1,6 @@
 import Providers from "@/providers/Providers";
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
+import { Raleway } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -13,7 +13,7 @@ import "./globals.css";
 //   variable: "--font-geist-mono",
 //   subsets: ["latin"],
 // });
-const robotoMono = Roboto_Mono({
+const roboto = Raleway({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-arp="">
-      <body className={` ${robotoMono.className} antialiased`}>
+      <body className={` ${roboto.className} antialiased`}>
         <Providers>
           <Toaster richColors position="top-center" />
 
