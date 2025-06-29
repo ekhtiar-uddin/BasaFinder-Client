@@ -31,7 +31,7 @@ const PropertyDetails = ({ propertyId }: { propertyId: string }) => {
   //   HelpCircle;
 
   return (
-    <div className="mb-6">
+    <div className="mb-6 bg-red-500">
       {/* Amenities */}
 
       <div>
@@ -132,10 +132,6 @@ const PropertyDetails = ({ propertyId }: { propertyId: string }) => {
             </p>
           </TabsContent>
         </Tabs>
-      </div>
-
-      <div>
-        <h1>Hello</h1>
       </div>
     </div>
   );

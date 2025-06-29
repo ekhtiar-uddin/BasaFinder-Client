@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \"re-designed navbar with better ui and added demo user credentials in login page \" && git push"
+    "commit": "git add . && git commit -m \"added suggested products in details page and show skeleton for details page \" && git push"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
