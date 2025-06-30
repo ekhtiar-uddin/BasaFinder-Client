@@ -1,5 +1,17 @@
-import { Building, House, Rows3, Settings, User } from "lucide-react";
+import {
+  Building,
+  House,
+  Rows3,
+  Settings,
+  SquareKanban,
+  User,
+} from "lucide-react";
 export const landlordPaths = [
+  {
+    title: "Overview",
+    url: "/landlord/overview",
+    icon: SquareKanban,
+  },
   {
     title: "My Profile",
     url: "/landlord/profile",

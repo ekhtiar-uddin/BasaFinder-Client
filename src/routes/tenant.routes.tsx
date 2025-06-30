@@ -1,5 +1,17 @@
-import { Dock, House, HouseIcon, Settings, User } from "lucide-react";
+import {
+  Dock,
+  House,
+  HouseIcon,
+  Settings,
+  SquareKanban,
+  User,
+} from "lucide-react";
 export const tenantsPaths = [
+  {
+    title: "Overview",
+    url: "/tenant/overview",
+    icon: SquareKanban,
+  },
   {
     title: "My Profile",
     url: "/tenant/profile",

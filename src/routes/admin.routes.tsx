@@ -1,5 +1,17 @@
-import { House, Landmark, Settings, User, Users } from "lucide-react";
+import {
+  House,
+  Landmark,
+  Settings,
+  SquareKanban,
+  User,
+  Users,
+} from "lucide-react";
 export const adminPaths = [
+  {
+    title: "Overview",
+    url: "/admin/overview",
+    icon: SquareKanban,
+  },
   {
     title: "My Profile",
     url: "/admin/profile",
