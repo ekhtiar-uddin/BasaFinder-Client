@@ -167,6 +167,9 @@
   .smallDesc {
     @apply text-sm text-primary-600 text-center;
   }
+  .b1 {
+    @apply border border-gray-300;
+  }
 }
 .parent:hover + .siblings {
   display: block;

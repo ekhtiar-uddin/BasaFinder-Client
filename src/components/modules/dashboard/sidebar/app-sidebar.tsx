@@ -39,7 +39,6 @@ export function AppSidebar() {
     fetchData();
   }, []);
 
-  console.log("ttoto", user);
   const userRole = {
     ADMIN: "admin",
     LANDLORD: "landlord",

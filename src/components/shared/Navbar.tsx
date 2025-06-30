@@ -45,6 +45,7 @@ const Navbar = () => {
   const handleSignOut = async () => {
     await logout();
     window.location.href = "/";
+
     dispatch(setUser({ user: null, token: null }));
   };
 
@@ -251,10 +252,10 @@ const Navbar = () => {
                       onClick={() =>
                         router.push(
                           userInfo?.role?.toLowerCase() === "admin"
-                            ? "/admin/users"
+                            ? "/admin/profile"
                             : userInfo?.role?.toLowerCase() === "landlord"
-                            ? "/landlord/list/rental"
-                            : "/tenant/applications",
+                            ? "/landlord/profile"
+                            : "/tenant/profile",
                           { scroll: false }
                         )
                       }

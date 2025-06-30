@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \"added frequently asked section , pricing section and contact form \" && git push"
+    "commit": "git add . && git commit -m \"design profile for admin,landlord and tenants \" && git push"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
