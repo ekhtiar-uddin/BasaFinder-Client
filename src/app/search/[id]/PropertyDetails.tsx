@@ -31,7 +31,7 @@ const PropertyDetails = ({ propertyId }: { propertyId: string }) => {
   //   HelpCircle;
 
   return (
-    <div className="mb-6 bg-red-500">
+    <div className="mb-6">
       {/* Amenities */}
 
       <div>

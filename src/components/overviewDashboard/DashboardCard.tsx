@@ -1,4 +1,6 @@
-const DashboardCard = ({ icon: Icon, title, subtitle, value }) => {
+const DashboardCard = ({ icon: Icon, subtitle, value }) => {
+  // title was in params;
+
   return (
     <div className="border border-d2 rounded-lg w-[293px] h-[150px] flex items-center gap-[24px] justify-center">
       <div>

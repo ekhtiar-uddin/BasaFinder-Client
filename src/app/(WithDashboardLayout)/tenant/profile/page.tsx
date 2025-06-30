@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const page = () => {
+const TenantPage = () => {
   const user = useAppSelector(selectCurrentUser);
 
   return (
@@ -155,4 +155,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default TenantPage;

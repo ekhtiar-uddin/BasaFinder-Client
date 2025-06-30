@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { selectCurrentUser } from "@/redux/features/authSlice";
 import { useAppSelector } from "@/redux/hook";
@@ -14,7 +15,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const page = () => {
+const AdminPage = () => {
   const user = useAppSelector(selectCurrentUser);
 
   return (
@@ -155,4 +156,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AdminPage;
