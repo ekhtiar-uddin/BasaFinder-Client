@@ -18,7 +18,7 @@ const SingleListing = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { user: authUser } = useUser();
   const { data: property, isLoading } = useSingleProduct(propertyId as string);
-  const { data: properties } = useAllProduct();
+  const { data: properties } = useAllProduct(undefined, undefined, undefined);
 
   return (
     <>

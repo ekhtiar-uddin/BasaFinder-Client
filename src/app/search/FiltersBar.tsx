@@ -150,7 +150,7 @@ const FiltersBarPage = () => {
         <Button
           variant="outline"
           className={cn(
-            "gap-2 rounded-xl border-primary-400 hover:bg-primary-500 hover:text-primary-100",
+            "gap-2 rounded-sm border-primary-400 hover:bg-primary-500 hover:text-primary-100",
             isFiltersFullOpen && "bg-primary-700 text-primary-100"
           )}
           onClick={() => dispatch(toggleFiltersFullOpen())}
@@ -185,7 +185,7 @@ const FiltersBarPage = () => {
               handleFilterChange("priceRange", value, true)
             }
           >
-            <SelectTrigger className="w-22 rounded-xl border-primary-400">
+            <SelectTrigger className="w-22 rounded-sm border-primary-400">
               <SelectValue>
                 {formatPriceValue(filters?.priceRange[0], true)}
               </SelectValue>
@@ -207,7 +207,7 @@ const FiltersBarPage = () => {
               handleFilterChange("priceRange", value, false)
             }
           >
-            <SelectTrigger className="w-22 rounded-xl border-primary-400">
+            <SelectTrigger className="w-22 rounded-sm border-primary-400">
               <SelectValue>
                 {formatPriceValue(filters?.priceRange[1], false)}
               </SelectValue>
@@ -230,7 +230,7 @@ const FiltersBarPage = () => {
             value={filters?.beds}
             onValueChange={(value) => handleFilterChange("beds", value, null)}
           >
-            <SelectTrigger className="w-26 rounded-xl border-primary-400">
+            <SelectTrigger className="w-26 rounded-sm border-primary-400">
               <SelectValue placeholder="Beds" />
             </SelectTrigger>
             <SelectContent className="bg-white">
@@ -247,7 +247,7 @@ const FiltersBarPage = () => {
             value={filters?.baths}
             onValueChange={(value) => handleFilterChange("baths", value, null)}
           >
-            <SelectTrigger className="w-26 rounded-xl border-primary-400">
+            <SelectTrigger className="w-26 rounded-sm border-primary-400">
               <SelectValue placeholder="Baths" />
             </SelectTrigger>
             <SelectContent className="bg-white">
@@ -268,7 +268,7 @@ const FiltersBarPage = () => {
             handleFilterChange("propertyType", value, null)
           }
         >
-          <SelectTrigger className="w-32 rounded-xl border-primary-400">
+          <SelectTrigger className="w-32 rounded-sm border-primary-400">
             <SelectValue placeholder="Home Type" />
           </SelectTrigger>
           <SelectContent className="bg-white">
@@ -287,7 +287,7 @@ const FiltersBarPage = () => {
         <Button
           variant="outline"
           className={cn(
-            "gap-2 rounded-xl border-primary-400 hover:bg-primary-500 hover:text-primary-100"
+            "gap-2 rounded-sm border-primary-400 hover:bg-primary-500 hover:text-primary-100"
           )}
           onClick={handleGoHome}
         >
@@ -298,7 +298,7 @@ const FiltersBarPage = () => {
 
       {/* View Mode */}
       <div className="flex justify-between items-center gap-4 p-2">
-        <div className="flex border rounded-xl">
+        <div className="flex border rounded-sm">
           <Button
             variant="ghost"
             className={cn(

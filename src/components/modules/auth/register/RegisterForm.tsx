@@ -73,7 +73,7 @@ export default function RegisterForm() {
   // };
 
   return (
-    <div className="border-2 border-gray-300 rounded-[8px] flex-grow max-w-md w-full p-5">
+    <div className="bg-white shadow-xl rounded-[8px] flex-grow max-w-md w-full p-5">
       <div className="flex items-center space-x-4 ">
         <h1 className="text-5xl  font-light  border-b-4 border-r-4 border-r-secondary-500 pr-2">
           R
@@ -216,7 +216,7 @@ export default function RegisterForm() {
           <Button
             disabled={!!passwordConfirm && password !== passwordConfirm}
             type="submit"
-            className="mt-5 w-full bg-primary  rounded-[8px] hover:bg-primary/80 cursor-pointer"
+            className="mt-5 w-full bg-secondary-500 hover:bg-secondary-600  rounded-[8px]  cursor-pointer"
           >
             {isSubmitting ? "Registering...." : "Register"}
           </Button>

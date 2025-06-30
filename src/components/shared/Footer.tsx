@@ -91,14 +91,14 @@ const Footer = () => {
             <h2 className="font-bold mb-3">GET INVOLVED</h2>
             <div>
               <input
-                className="outline-none bg-white py-2.5 pl-3 border-secondary-600 w-full border rounded"
+                className="block border w-full rounded border-gray-300 px-4 py-3 placeholder-gray-400 shadow-lg focus:border-indigo-500 focus:ring-indigo-500"
                 placeholder="Enter email adress"
                 type="email"
                 name=""
                 id=""
               />
 
-              <button className=" hover:bg-secondary-600 bg-secondary-500 w-full py-2.5 font-semibold transition-all text-white font-Inter duration-300  rounded mt-3">
+              <button className="cursor-pointer hover:bg-secondary-600 bg-secondary-500 w-full py-2.5 font-semibold transition-all text-white font-Inter duration-300  rounded mt-3">
                 SUBSCRIBE{" "}
               </button>
             </div>

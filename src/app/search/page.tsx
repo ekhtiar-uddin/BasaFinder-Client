@@ -14,6 +14,8 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
   const query = await searchParams;
 
+  console.log("real query", query);
+
   // console.log("here", query);
 
   const { data: properties } = await getAllProducts(
@@ -34,7 +36,7 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
         <FiltersFullPage />
         <Map properties={properties} />
         <div className="basis-4/12 overflow-y-auto">
-          <Listings properties={properties} />
+          <Listings />
         </div>
       </div>
     </div>

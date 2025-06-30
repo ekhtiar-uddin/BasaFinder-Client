@@ -95,7 +95,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="border-2 border-gray-300 rounded-[8px] flex-grow max-w-md w-full p-5">
+    <div className="shadow-xl bg-white  rounded-[8px] flex-grow max-w-md w-full p-5">
       <div className="flex items-center space-x-4">
         <h1 className="text-5xl  font-light  border-b-4 border-r-4 border-r-secondary-500 pr-2">
           R
@@ -107,10 +107,10 @@ export default function LoginForm() {
       </div>
 
       <div className="">
-        <h1 className="mt-5 text-xl font-bold text-primary ">
+        <h1 className="mt-5 text-xl font-bold text-secondary-600 ">
           Demo Credentials:
         </h1>
-        <div className="flex justify-between mt-3">
+        <div className="flex justify-center gap-3 mt-3">
           <button
             onClick={() => handleCredential("tenant")}
             className="credentialBtn"
@@ -181,8 +181,9 @@ export default function LoginForm() {
 
           <Button
             // disabled={reCaptchaStatus ? false : true}
+            // bg-[#2058e7]d
             type="submit"
-            className="mt-5 w-full bg-[#2058e7]d bg-[#006ce4]  rounded-[8px] hover:bg-[#4e7bee] cursor-pointer"
+            className="mt-5 w-full  bg-secondary-500  rounded-[8px]  hover:bg-secondary-600 cursor-pointer"
           >
             {isSubmitting ? "Logging...." : "Login"}
           </Button>

@@ -10,11 +10,21 @@
 import CardCompact from "@/components/ui/CardCompact";
 import CardTwo from "@/components/ui/CardTwo";
 import { useUser } from "@/context/UserContext";
-import { useAppSelector } from "@/redux/hook";
-import { IProduct } from "@/types";
+import { useAllProduct, useAppSelector } from "@/redux/hook";
+import { useSearchParams } from "next/navigation";
+import CardCompactSkeleton from "./CardCompactSkeleton";
 
-const Listings = ({ properties }: { properties: IProduct[] }) => {
+const Listings = () => {
   const { user: authUser } = useUser();
+  const searchParams = useSearchParams();
+  const query = Object.fromEntries(searchParams.entries());
+
+  // console.log("here sdfsdf", query);
+  const { data: properties, isLoading } = useAllProduct(
+    undefined,
+    undefined,
+    query
+  );
 
   const viewMode = useAppSelector((state) => state.global.viewMode);
   const currentLocation = useAppSelector(
@@ -40,7 +50,13 @@ const Listings = ({ properties }: { properties: IProduct[] }) => {
   //     }
   // };
 
-  // if (isLoading) return <>Loading...</>;
+  if (isLoading)
+    return (
+      <>
+        {" "}
+        <CardCompactSkeleton />{" "}
+      </>
+    );
   // if (isError || !properties) return <div>Failed to fetch properties</div>;
 
   // console.log("ksdjfsdjffds", properties);
@@ -55,8 +71,8 @@ const Listings = ({ properties }: { properties: IProduct[] }) => {
       <div className="flex">
         <div className="p-4 w-full">
           {properties?.map((property) =>
-            viewMode === "grid" ? (
-              <CardTwo
+            viewMode === "list" ? (
+              <CardCompact
                 key={property._id}
                 property={property}
                 // onFavoriteToggle={() => handleFavoriteToggle(property._id)}
@@ -64,7 +80,7 @@ const Listings = ({ properties }: { properties: IProduct[] }) => {
                 propertyLink={`/search/${property._id}`}
               />
             ) : (
-              <CardCompact
+              <CardTwo
                 key={property._id}
                 property={property}
                 // onFavoriteToggle={() => handleFavoriteToggle(property._id)}

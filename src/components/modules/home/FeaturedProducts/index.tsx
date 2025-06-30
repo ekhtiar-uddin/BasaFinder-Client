@@ -1,10 +1,17 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import CardTwo from "@/components/ui/CardTwo";
-import { getAllProducts } from "@/services/Product";
+import { useAllProduct } from "@/redux/hook";
 import { IProduct } from "@/types";
 import Link from "next/link";
-const FeaturedProducts = async () => {
-  const { data: products } = await getAllProducts();
+import FeaturedPropertiesSkeleton from "./FeaturedPropertiesSkeleton";
+const FeaturedProducts = () => {
+  const { data: properties, isLoading } = useAllProduct(
+    undefined,
+    undefined,
+    undefined
+  );
 
   return (
     <div className=" bg-opacity-50 py-20 customWidth">
@@ -18,23 +25,37 @@ const FeaturedProducts = async () => {
           </Link>
         </div>
 
-        <div className="flex">
-          <div className=" bg-red-500 w-full">
-            <div className="grid lg:grid-cols-4 gap-5">
-              {products?.slice(0, 8).map((property: IProduct) => (
-                <CardTwo
-                  key={property._id}
-                  property={property}
-                  propertyLink={`/search/${property._id}`}
-                />
+        <div className="">
+          {isLoading ? (
+            <div className="min-h-screen grid lg:grid-cols-4 gap-5">
+              {Array.from({ length: 8 }).map((item, index) => (
+                <FeaturedPropertiesSkeleton key={index} />
               ))}
             </div>
-
-            <div className="w-[190px] rounded py-3.5 flex justify-center items-center  bg-secondary-400 mx-auto mt-10">
-              <Link href="/search" className=" hover:text-white  ">
-                More Properties
-              </Link>
+          ) : (
+            <div className=" w-full ">
+              <div className="grid lg:grid-cols-4 gap-5">
+                {properties?.slice(0, 8).map((property: IProduct) => (
+                  <CardTwo
+                    key={property._id}
+                    property={property}
+                    propertyLink={`/search/${property._id}`}
+                  />
+                ))}
+              </div>
             </div>
+          )}
+
+          <div
+            className={`${
+              isLoading
+                ? "hidden"
+                : "w-[190px] rounded py-3.5 flex justify-center items-center bg-secondary-400 mx-auto mt-10"
+            }`}
+          >
+            <Link href="/search" className="hover:text-white">
+              More Properties
+            </Link>
           </div>
         </div>
 

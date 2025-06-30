@@ -28,12 +28,12 @@ const CardTwo = ({
         </div>
         <div className="absolute bottom-4 left-4 flex gap-2">
           {property.isPetsAllowed && (
-            <span className="bg-[#ebf0f5] text-primary text-xs font-semibold px-2 py-1 rounded-full">
+            <span className="bg-[#ebf0f5] text-primary-800 text-xs font-semibold px-2 py-1 rounded-full">
               Pets Allowed
             </span>
           )}
           {property.isParkingIncluded && (
-            <span className="bg-[#ebf0f5] text-primary text-xs font-semibold px-2 py-1 rounded-full">
+            <span className="bg-[#ebf0f5] text-primary-800 text-xs font-semibold px-2 py-1 rounded-full">
               Parking Included
             </span>
           )}
@@ -45,12 +45,12 @@ const CardTwo = ({
       </div>
       <div className="p-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold mb-1">{property.name}</h2>
+          <h2 className=" font-bold mb-1 ">{property.name}</h2>
 
           <Link href={propertyLink} className="" scroll={false}>
             <button
               className="cursor-pointer
-           rounded bg-primary hover:bg-primary/80 text-white px-5 py-2"
+           rounded text-sm bg-secondary-500 hover:bg-secondary-600 text-white px-5 py-2"
             >
               Details
             </button>

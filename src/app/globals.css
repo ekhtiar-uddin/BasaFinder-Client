@@ -73,7 +73,7 @@
   /* --ring: hsl(262.1, 83.3%, 57.8%);  old one */
   /* --ring: hsl(221.2 83.2% 53.3%); old  */
 
-  --ring: hsl(213, 100%, 45%);
+  --ring: hsl(0, 0%, 14%);
 
   --radius: 1rem;
   --chart-1: hsl(12, 76%, 61%);
@@ -155,11 +155,17 @@
     @apply font-medium text-primary-700 hover:text-secondary-600 cursor-pointer;
   }
   .credentialBtn {
-    @apply bg-primary text-white px-8 rounded-full py-2 font-bold cursor-pointer hover:border-primary hover:bg-white hover:text-primary  border-2 transition-all duration-100  border-transparent;
+    @apply bg-primary-700 text-white px-8 rounded-full py-2 font-bold cursor-pointer hover:border-primary-700 hover:bg-white hover:text-primary-700  text-sm border transition-all duration-100  border-transparent;
   }
 
   .customWidth {
     @apply w-[80%] mx-auto;
+  }
+  .addFlexItems {
+    @apply flex items-center;
+  }
+  .smallDesc {
+    @apply text-sm text-primary-600 text-center;
   }
 }
 .parent:hover + .siblings {

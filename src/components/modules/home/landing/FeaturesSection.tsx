@@ -28,7 +28,7 @@ const FeaturesSection = () => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className="py-24 customWidth bg-white"
+      className="py-12 customWidth bg-white"
     >
       <div className="">
         <motion.h2

@@ -13,6 +13,8 @@ export const getAllProducts = async (
 
   // console.log("from ", query?.priceRange);
 
+  console.log("also", query);
+
   if (query?.priceRange) {
     const [min, max] = (query?.priceRange as string).split(",");
     params.append("minPrice", min);

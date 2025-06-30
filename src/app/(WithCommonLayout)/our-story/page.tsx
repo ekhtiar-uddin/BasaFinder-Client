@@ -12,7 +12,7 @@ const AboutPage = () => {
           Our Misson
         </h2>
 
-        <p className="w-3/4 mx-auto text-d1 mb-4">
+        <p className="customWidth text-d1 mb-4">
           At RentMode, our mission is to redefine the rental experience by
           making it simpler, safer, and more tailored to your unique needs.
           Whether you are searching for your first apartment, relocating to a
@@ -39,21 +39,29 @@ const AboutPage = () => {
         </p>
       </section>
 
-      <section className="my-24 flex lg:flex-col flex-col items-center justify-center gap-10">
-        <div className="flex lg:flex-row flex-col gap-5">
+      <section className="customWidth my-20 flex lg:flex-col flex-col items-center justify-between gap-10">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <Image
             src="https://www.houselogic.com/wp-content/uploads/2016/08/tax-deductions-rental-home-standard_1f79136f45639b6e63f8a93b18c9fdcc.jpg"
+            width={200}
             alt=""
-            width={500}
             height={500}
-            className="rounded"
+            className="w-full h-auto rounded"
+          />
+
+          <Image
+            src="https://www.houselogic.com/wp-content/uploads/2016/08/tax-deductions-rental-home-standard_1f79136f45639b6e63f8a93b18c9fdcc.jpg"
+            width={500}
+            alt=""
+            height={500}
+            className="w-full h-auto rounded"
           />
           <Image
             src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt=""
             width={500}
+            alt=""
             height={500}
-            className="rounded"
+            className="w-full h-auto rounded"
           />
         </div>
         <div>
@@ -78,14 +86,12 @@ const AboutPage = () => {
       </section>
 
       <section className=" ">
-        <h2 className="  text-center text-[45px] mt-16 font-semibold">
-          Contact Us
-        </h2>
+        <h2 className="  text-center text-[45px]  font-semibold">Contact Us</h2>
 
         <p className="text-center text-d1 mb-10">
           If you have any questions, feel free to get in touch with us:
         </p>
-        <ul className="flex  lg:flex-row flex-col py-3 text-center  justify-center items-center gap-5 bg-primary text-white text-2xl lg:h-[100px] ">
+        <ul className="flex  lg:flex-row flex-col py-3 text-center  justify-center items-center gap-5 bg-primary-700 text-white text-2xl lg:h-[100px] ">
           <li>
             Email: <a href="mailto:info@rentMode.com">info@rentMode.com</a>
           </li>

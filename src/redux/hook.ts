@@ -48,7 +48,7 @@ export const useSingleProduct = (productId: string) => {
   };
 };
 
-export const useAllProduct = () => {
+export const useAllProduct = (page, limit, query) => {
   const [data, setData] = useState<IProduct[]>([]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -58,7 +58,9 @@ export const useAllProduct = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const res = await getAllProducts();
+        console.log("from useAllProduct", query);
+        const res = await getAllProducts(page, limit, query);
+        console.log("from res sdkjf", res);
         setData(res.data);
       } catch (err: any) {
         setIsError(err);
@@ -66,7 +68,7 @@ export const useAllProduct = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [JSON.stringify(query)]);
 
   // const reFetch = async () => {
   //   setIsLoading(true);

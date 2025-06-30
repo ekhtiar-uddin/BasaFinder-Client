@@ -1,11 +1,17 @@
 "use client";
-import { useWindowScroll } from "react-use";
 
 import { NAVBAR_HEIGHT } from "@/lib/constants";
 import { selectCurrentUser, setUser } from "@/redux/features/authSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { logout } from "@/services/AuthService";
-import { Bell, ChevronDown, MessageCircle } from "lucide-react";
+import {
+  Bell,
+  ChevronDown,
+  Mail,
+  MessageCircle,
+  Phone,
+  SearchCheck,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -29,7 +35,7 @@ const Navbar = () => {
   // console.log("here userinfo", userInfo);
   const router = useRouter();
   const pathname = usePathname();
-  const { y } = useWindowScroll();
+
   const [scrollY, setScrollY] = useState(0);
   const isDashboardPage =
     pathname.includes("/landlord") ||
@@ -51,21 +57,36 @@ const Navbar = () => {
   // console.log("userInfo", userInfo?.role);
 
   return (
-    <div className="w-full  ">
+    <div className="w-full  text-sm">
       <div className=" shadow-xl bg-secondary-500 text-white">
         <div
-          className=" customWidth "
+          className=" customWidth flex justify-center items-center w-full"
           style={{ height: `${NAVBAR_HEIGHT}px ` }}
         >
-          <div className="flex justify-center items-center w-full pt-3 px-8 ">
+          <div className="flex justify-between customWidth">
             {!isDashboardPage && (
-              <div className="md:flex items-center gap-5  hidden ">
-                <p className=" text-primary-200 hidden lg:block">
-                  {/* Discover your perfect rental apartment with our advanced search
-                   */}
-                  Find your ideal rental home with our powerful search tools
-                </p>
-              </div>
+              <>
+                <div className="md:flex gap-5  items-center   hidden ">
+                  <p className="font-semibold lg:flex items-center gap-1  hidden ">
+                    <Phone className="w-[16px]" />{" "}
+                    <span>+9 (681) 843-4596</span>
+                  </p>
+                  <p className="font-semibold lg:flex items-center gap-1 hidden ">
+                    <Mail className="w-[16px]" /> <span>info@rentmode.com</span>
+                  </p>
+                </div>
+                <div className="md:flex items-center   hidden ">
+                  <p className="font-semibold hidden lg:flex gap-1 items-center">
+                    {/* Discover your perfect rental apartment with our advanced search
+                     */}
+                    <SearchCheck className="w-[20px]" />{" "}
+                    <span>
+                      Find your ideal rental home quickly and easily with our
+                      powerful search tools.
+                    </span>
+                  </p>
+                </div>
+              </>
             )}
           </div>
         </div>
@@ -86,7 +107,7 @@ const Navbar = () => {
             )}
 
             <Link href="/" className="cursor-pointer" scroll={false}>
-              <div className="bg-red-500 flex items-center gap-3">
+              <div className=" flex items-center gap-3">
                 {/* <Image
                   src="/logo.svg"
                   alt="Rentmode Logo"
@@ -138,14 +159,14 @@ const Navbar = () => {
                     Properties
                   </button>
                 </Link>
-                <Link href="/blog" className="md:mr-0 sm:mr-5">
+                <Link href="/pricing" className="md:mr-0 sm:mr-5">
                   {" "}
                   <button
                     className={`${
-                      pathname === "/blog" ? "navBtnActive" : "navBtn"
+                      pathname === "/pricing" ? "navBtnActive" : "navBtn"
                     }`}
                   >
-                    Blog
+                    Pricing
                   </button>
                 </Link>
                 <Link href="/contact-us" className="md:mr-0 sm:mr-5">
