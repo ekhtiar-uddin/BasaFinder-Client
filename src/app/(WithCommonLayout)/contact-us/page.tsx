@@ -107,7 +107,7 @@ const Contact = () => {
                       type="text"
                       placeholder="Full Name"
                       autoComplete="name"
-                      className="block w-full rounded-md border-gray-300 px-4 py-3 placeholder-gray-400 shadow-lg focus:border-indigo-500 focus:ring-indigo-500"
+                      className="block w-full rounded-sm border-gray-300 px-4 py-3 placeholder-gray-400 shadow-lg focus:border-indigo-500 focus:ring-indigo-500"
                       {...register("name", {
                         required: true,
                         maxLength: 100,
@@ -132,7 +132,7 @@ const Contact = () => {
                       type="email"
                       placeholder="Email"
                       autoComplete="email"
-                      className="block w-full rounded-md border-gray-300 px-4 py-3 placeholder-gray-400 shadow-lg focus:border-indigo-500 focus:ring-indigo-500"
+                      className="block w-full rounded-sm border-gray-300 px-4 py-3 placeholder-gray-400 shadow-lg focus:border-indigo-500 focus:ring-indigo-500"
                       {...register("email", {
                         required: true,
                         pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -156,7 +156,7 @@ const Contact = () => {
                       name="message"
                       rows={4}
                       placeholder="Your Message"
-                      className="block w-full rounded-md border-zinc-800 px-4 py-3 placeholder-gray-400 shadow-lg focus:border-indigo-500 focus:ring-indigo-500"
+                      className="block w-full rounded-sm border-zinc-800 px-4 py-3 placeholder-gray-400 shadow-lg focus:border-indigo-500 focus:ring-indigo-500"
                       defaultValue={""}
                       {...register("message", {
                         required: true,
@@ -167,7 +167,7 @@ const Contact = () => {
                   <div>
                     <button
                       type="submit"
-                      className="cursor-pointer inline-flex w-full justify-center rounded-md border border-transparent bg-secondary-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      className="cursor-pointer inline-flex w-full justify-center rounded-sm border border-transparent bg-secondary-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                       Submit
                     </button>

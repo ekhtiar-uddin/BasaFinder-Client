@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \"ensure responsive for all devices in home page and details page \" && git push",
+    "commit": "git add . && git commit -m \"ensure responsive for all devices in pricing page and contact page \" && git push",
     "clear-storage": "echo 'Run localStorage.clear() in your browser console to reset Redux state'"
   },
   "dependencies": {

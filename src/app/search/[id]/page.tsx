@@ -14,7 +14,6 @@ import ImagePreviews from "./ImagePreviews";
 import PropertyDetails from "./PropertyDetails";
 import PropertyLocation from "./PropertyLocation";
 import PropertyOverview from "./PropertyOverview";
-import SuggestedForSmallDevice from "./SuggestedForSmallDevice";
 
 const SingleListing = () => {
   const propertyId = useParams().id as string;
@@ -36,14 +35,14 @@ const SingleListing = () => {
           {/* <ImagePreviews
         images={["/singlelisting-2.jpg", "/singlelisting-3.jpg"]}
       /> */}
-          <div className="customWidth flex flex-col md:flex-row justify-center gap-10  mt-16 mb-8">
-            <div className="order-2 md:order-1 w-4/6">
+          <div className="customWidth flex flex-col md:flex-row justify-center gap-10  mt-16 mb-8 ">
+            <div className="order-2 md:order-1 lg:w-4/6 w-full ">
               <PropertyOverview propertyId={propertyId} />
               <PropertyDetails propertyId={propertyId} />
               <PropertyLocation propertyId={propertyId} />
             </div>
 
-            <div className="order-1 md:order-2 lg:w-2/6 2xs:w-full">
+            <div className="order-1 lg:block hidden md:order-2 w-2/6">
               <ContactWidget onOpenModal={() => setIsModalOpen(true)} />
 
               <div className=" w-full mt-10 h-[120vh] overflow-auto">
@@ -77,8 +76,38 @@ const SingleListing = () => {
             </div>
           </div>
 
-          <SuggestedForSmallDevice />
+          <div className="flex md:flex-row flex-col gap-5 lg:hidden customWidth  ">
+            <ContactWidget onOpenModal={() => setIsModalOpen(true)} />
 
+            <div className=" w-full  h-[120vh] overflow-auto">
+              {" "}
+              <h1 className="lg:mb-0 3xs:mb-3 font-bold text-2xl ">
+                Some Suggested Properties
+              </h1>
+              <div className="p-4 w-full 2xl:grid hidden  grid-cols-1">
+                {properties?.slice(2, 8)?.map((property) => (
+                  <CardCompact
+                    key={property._id}
+                    property={property}
+                    // onFavoriteToggle={() => handleFavoriteToggle(property._id)}
+                    showFavoriteButton={!!authUser}
+                    propertyLink={`/search/${property._id}`}
+                  />
+                ))}
+              </div>
+              <div className="p-1 2xl:hidden 2xs:w-full 2xs:grid grid-cols-1">
+                {properties?.slice(2, 8)?.map((property) => (
+                  <CardTwo
+                    key={property._id}
+                    property={property}
+                    // onFavoriteToggle={() => handleFavoriteToggle(property._id)}
+                    showFavoriteButton={!!authUser}
+                    propertyLink={`/search/${property._id}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
           {authUser && (
             <ApplicationModal
               isOpen={isModalOpen}

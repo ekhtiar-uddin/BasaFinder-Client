@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 const page = () => {
   return (
-    <div className="bg-white h-[140vh]">
+    <div className="bg-white  pb-20 ">
       <div className="bg-secondary-400 h-[35vh] flex items-center justify-center">
         <div className="space-y-5">
           <h1 className="text-6xl font-bold text-center">Plans & Pricing</h1>
@@ -17,17 +17,17 @@ const page = () => {
         </div>
       </div>
 
-      <section>
-        <h1 className="text-center  font-semibold my-10">Yearly Plans</h1>
+      <section className="bg-white">
+        <h1 className=" text-center  font-semibold my-10">Yearly Plans</h1>
 
-        <div className="grid  grid-cols-4 gap-5 w-[52%] mx-auto">
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-5 lg:w-[950px] md:w-[730px] mx-auto customWidth">
           {pricingPlans?.map((plan, index) => (
             <div
               key={index}
               className={`pb-10 transform  transition-all duration-150 shadow-xl p-4 border-t-4  rounded-sm ${
                 plan?.id === "pro"
-                  ? "h-[105%] [&_*]:text-white -translate-y-3 hover:-translate-y-5 bg-[#0e2a30] border-secondary-600"
-                  : "hover:-translate-y-1 border-black"
+                  ? "h-[105%] [&_*]:text-white -translate-y-3 md:hover:-translate-y-5 bg-[#0e2a30] border-secondary-600"
+                  : "md:hover:-translate-y-1 border-black"
               }`}
             >
               <div className="">
@@ -56,9 +56,9 @@ const page = () => {
                 <button
                   className={`${
                     plan?.id === "pro" ? "bg-secondary-600" : ""
-                  } my-3 border border-secondary-600 hover:bg-secondary-600  transition-all duration-100 px-3 py-1 text-sm font-semibold rounded-[5px] hover:text-white cursor-pointer`}
+                  } my-3 border border-secondary-600 hover:bg-secondary-600  transition-all duration-100 px-3 py-1 text-sm font-semibold rounded-[5px]  hover:text-white cursor-pointer`}
                 >
-                  Start 14-day free trial
+                  Start 14-day trial
                 </button>
 
                 <p className="font-bold text-sm my-6">{plan?.includesTitle}</p>

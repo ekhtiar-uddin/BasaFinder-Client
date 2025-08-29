@@ -72,7 +72,7 @@ xl =  → 1280px
   --accent-foreground: hsl(220.9, 39.3%, 11%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(210, 20%, 98%);
-  --border: hsl(214.3 31.8% 91.4%);
+  --border: hsl(240, 4%, 89%);
   --input: hsl(214.3 31.8% 88%);
 
   --ring: hsl(0, 0%, 14%);
@@ -103,6 +103,7 @@ xl =  → 1280px
   .navBtn {
     @apply transition-all duration-100 cursor-pointer hover:text-secondary-600 pb-4 mb-2 mt-3 hover:border-b-[3px] border-secondary-600;
   }
+
   .navBtnActive {
     @apply transition-all duration-100 cursor-pointer text-secondary-600 pb-4 mb-2 mt-3 border-b-[3px] border-secondary-600;
   }
@@ -124,7 +125,7 @@ xl =  → 1280px
   }
 
   .customWidth {
-    @apply 2xl:w-[1490px] xl:w-[1190px] lg:w-[970px] md:w-[650px] sm:w-[512px] w-[350px]   mx-auto;
+    @apply 2xl:w-[1490px] xl:w-[1190px] lg:w-[970px] md:w-[704px] sm:w-[570px] w-[350px] xs:w-[448px] 2xs:w-[350] 3xs:w-[300px]  mx-auto;
   }
   .addFlexItems {
     @apply flex items-center;
