@@ -20,7 +20,7 @@ import {
 } from "@/redux/features/globalSlice";
 import { useAppSelector } from "@/redux/hook";
 import { debounce } from "lodash";
-import { Filter, Grid, Home, List, Search } from "lucide-react";
+import { Filter, Grid, List, Search } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -143,14 +143,15 @@ const FiltersBarPage = () => {
   // console.log("here", filters);
 
   return (
-    <div className="flex justify-between items-center w-full py-5">
+    <div className=" flex justify-between items-center w-full py-5">
       {/* Filters */}
-      <div className="flex justify-between items-center gap-4 p-2">
+      <div className="flex xl:flex-nowrap  3xs:flex-wrap justify-between 3xs:justify-start items-center gap-4 p-2">
         {/* All Filters */}
         <Button
           variant="outline"
           className={cn(
-            "gap-2 rounded-sm border-primary-400 hover:bg-primary-500 hover:text-primary-100",
+            "gap-2 sm:flex hidden rounded-sm  hover:bg-primary-500 hover:text-primary-100",
+
             isFiltersFullOpen && "bg-primary-700 text-primary-100"
           )}
           onClick={() => dispatch(toggleFiltersFullOpen())}
@@ -177,7 +178,7 @@ const FiltersBarPage = () => {
         </div>
 
         {/* Price Range */}
-        <div className="flex gap-1">
+        <div className="flex  gap-1 ">
           {/* Minimum Price Selector */}
           <Select
             value={filters?.priceRange[0]?.toString() || "any"}
@@ -185,7 +186,7 @@ const FiltersBarPage = () => {
               handleFilterChange("priceRange", value, true)
             }
           >
-            <SelectTrigger className="w-22 rounded-sm border-primary-400">
+            <SelectTrigger className=" rounded-sm border-primary-400">
               <SelectValue>
                 {formatPriceValue(filters?.priceRange[0], true)}
               </SelectValue>
@@ -207,7 +208,7 @@ const FiltersBarPage = () => {
               handleFilterChange("priceRange", value, false)
             }
           >
-            <SelectTrigger className="w-22 rounded-sm border-primary-400">
+            <SelectTrigger className=" rounded-sm border-primary-400">
               <SelectValue>
                 {formatPriceValue(filters?.priceRange[1], false)}
               </SelectValue>
@@ -224,42 +225,41 @@ const FiltersBarPage = () => {
         </div>
 
         {/* Beds and Baths */}
-        <div className="flex gap-1">
-          {/* Beds */}
-          <Select
-            value={filters?.beds}
-            onValueChange={(value) => handleFilterChange("beds", value, null)}
-          >
-            <SelectTrigger className="w-26 rounded-sm border-primary-400">
-              <SelectValue placeholder="Beds" />
-            </SelectTrigger>
-            <SelectContent className="bg-white">
-              <SelectItem value="any">Any Beds</SelectItem>
-              <SelectItem value="1">1+ bed</SelectItem>
-              <SelectItem value="2">2+ beds</SelectItem>
-              <SelectItem value="3">3+ beds</SelectItem>
-              <SelectItem value="4">4+ beds</SelectItem>
-            </SelectContent>
-          </Select>
 
-          {/* Baths */}
-          <Select
-            value={filters?.baths}
-            onValueChange={(value) => handleFilterChange("baths", value, null)}
-          >
-            <SelectTrigger className="w-26 rounded-sm border-primary-400">
-              <SelectValue placeholder="Baths" />
-            </SelectTrigger>
-            <SelectContent className="bg-white">
-              <SelectItem value="any">Any Baths</SelectItem>
-              <SelectItem value="1">1+ bath</SelectItem>
-              <SelectItem value="2">2+ baths</SelectItem>
-              <SelectItem value="3">3+ baths</SelectItem>
-              <SelectItem value="4">4+ baths</SelectItem>
-              <SelectItem value="5">5+ baths</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        {/* Beds */}
+        <Select
+          value={filters?.beds}
+          onValueChange={(value) => handleFilterChange("beds", value, null)}
+        >
+          <SelectTrigger className="mr-[-12px] rounded-sm border-primary-400">
+            <SelectValue placeholder="Beds" />
+          </SelectTrigger>
+          <SelectContent className="bg-white">
+            <SelectItem value="any">Any Beds</SelectItem>
+            <SelectItem value="1">1+ bed</SelectItem>
+            <SelectItem value="2">2+ beds</SelectItem>
+            <SelectItem value="3">3+ beds</SelectItem>
+            <SelectItem value="4">4+ beds</SelectItem>
+          </SelectContent>
+        </Select>
+
+        {/* Baths */}
+        <Select
+          value={filters?.baths}
+          onValueChange={(value) => handleFilterChange("baths", value, null)}
+        >
+          <SelectTrigger className=" rounded-sm border-primary-400">
+            <SelectValue placeholder="Baths" />
+          </SelectTrigger>
+          <SelectContent className="bg-white">
+            <SelectItem value="any">Any Baths</SelectItem>
+            <SelectItem value="1">1+ bath</SelectItem>
+            <SelectItem value="2">2+ baths</SelectItem>
+            <SelectItem value="3">3+ baths</SelectItem>
+            <SelectItem value="4">4+ baths</SelectItem>
+            <SelectItem value="5">5+ baths</SelectItem>
+          </SelectContent>
+        </Select>
 
         {/* Property Type */}
         <Select
@@ -268,7 +268,7 @@ const FiltersBarPage = () => {
             handleFilterChange("propertyType", value, null)
           }
         >
-          <SelectTrigger className="w-32 rounded-sm border-primary-400">
+          <SelectTrigger className=" rounded-sm border-primary-400">
             <SelectValue placeholder="Home Type" />
           </SelectTrigger>
           <SelectContent className="bg-white">
@@ -284,7 +284,7 @@ const FiltersBarPage = () => {
           </SelectContent>
         </Select>
 
-        <Button
+        {/* <Button
           variant="outline"
           className={cn(
             "gap-2 rounded-sm border-primary-400 hover:bg-primary-500 hover:text-primary-100"
@@ -293,11 +293,11 @@ const FiltersBarPage = () => {
         >
           <Home className="w-4 h-4" />
           <span>Go Home</span>
-        </Button>
+        </Button> */}
       </div>
 
       {/* View Mode */}
-      <div className="flex justify-between items-center gap-4 p-2">
+      <div className=" xl:block hidden justify-between items-center gap-4 p-2">
         <div className="flex border rounded-sm">
           <Button
             variant="ghost"

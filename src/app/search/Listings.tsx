@@ -69,7 +69,7 @@ const Listings = () => {
         </span>
       </h3>
       <div className="flex">
-        <div className="p-4 w-full">
+        <div className="p-4  2xl:block w-full hidden">
           {properties?.map((property) =>
             viewMode === "list" ? (
               <CardCompact
@@ -89,6 +89,17 @@ const Listings = () => {
               />
             )
           )}
+        </div>
+        <div className="p-4  2xl:hidden lg:w-full grid xl:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 2xs:w-full xl:gap-0 sm:gap-5 lg:mx-0 sm:mx-auto">
+          {properties?.map((property) => (
+            <CardTwo
+              key={property._id}
+              property={property}
+              // onFavoriteToggle={() => handleFavoriteToggle(property._id)}
+              showFavoriteButton={!!authUser}
+              propertyLink={`/search/${property._id}`}
+            />
+          ))}
         </div>
       </div>
     </div>

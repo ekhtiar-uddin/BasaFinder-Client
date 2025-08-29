@@ -35,9 +35,9 @@ const FiltersFullPage = () => {
   }, []);
   return (
     <div
-      className={`h-full overflow-auto transition-all duration-300 ease-in-out  ${
+      className={`xl:h-full 2xs:h-[65vh]  overflow-auto transition-all duration-300 ease-in-out  ${
         isFiltersFullOpen
-          ? "w-3/12 opacity-100 visible"
+          ? "md:w-5/12 sm:w-6/12    opacity-100 visible"
           : "w-0 opacity-0 invisible"
       }`}
     >

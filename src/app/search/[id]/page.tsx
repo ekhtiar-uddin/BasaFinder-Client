@@ -1,5 +1,8 @@
 "use client";
+import Footer from "@/components/shared/Footer";
+import Navbar from "@/components/shared/Navbar";
 import CardCompact from "@/components/ui/CardCompact";
+import CardTwo from "@/components/ui/CardTwo";
 import { useUser } from "@/context/UserContext";
 import { useAllProduct, useSingleProduct } from "@/redux/hook";
 import { useParams } from "next/navigation";
@@ -11,6 +14,7 @@ import ImagePreviews from "./ImagePreviews";
 import PropertyDetails from "./PropertyDetails";
 import PropertyLocation from "./PropertyLocation";
 import PropertyOverview from "./PropertyOverview";
+import SuggestedForSmallDevice from "./SuggestedForSmallDevice";
 
 const SingleListing = () => {
   const propertyId = useParams().id as string;
@@ -22,6 +26,7 @@ const SingleListing = () => {
 
   return (
     <>
+      <Navbar />
       {isLoading ? (
         <DetailsSkeleton />
       ) : (
@@ -38,17 +43,28 @@ const SingleListing = () => {
               <PropertyLocation propertyId={propertyId} />
             </div>
 
-            <div className="order-1 md:order-2 w-2/6">
+            <div className="order-1 md:order-2 lg:w-2/6 2xs:w-full">
               <ContactWidget onOpenModal={() => setIsModalOpen(true)} />
 
-              <div className="w-full ">
+              <div className=" w-full mt-10 h-[120vh] overflow-auto">
                 {" "}
-                <h1 className="mt-10 font-bold text-2xl ">
+                <h1 className=" font-bold text-2xl ">
                   Some Suggested Properties
                 </h1>
-                <div className="p-4 w-full grid  grid-cols-1">
+                <div className="p-4 w-full 2xl:grid hidden  grid-cols-1">
                   {properties?.slice(2, 8)?.map((property) => (
                     <CardCompact
+                      key={property._id}
+                      property={property}
+                      // onFavoriteToggle={() => handleFavoriteToggle(property._id)}
+                      showFavoriteButton={!!authUser}
+                      propertyLink={`/search/${property._id}`}
+                    />
+                  ))}
+                </div>
+                <div className="p-1 2xl:hidden 2xs:w-full 2xs:grid grid-cols-1">
+                  {properties?.slice(2, 8)?.map((property) => (
+                    <CardTwo
                       key={property._id}
                       property={property}
                       // onFavoriteToggle={() => handleFavoriteToggle(property._id)}
@@ -60,6 +76,9 @@ const SingleListing = () => {
               </div>
             </div>
           </div>
+
+          <SuggestedForSmallDevice />
+
           {authUser && (
             <ApplicationModal
               isOpen={isModalOpen}
@@ -69,6 +88,8 @@ const SingleListing = () => {
           )}
         </div>
       )}
+
+      <Footer />
     </>
   );
 };

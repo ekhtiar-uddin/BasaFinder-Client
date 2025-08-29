@@ -23,16 +23,15 @@ import {
   initialState,
   setFilters,
 } from "@/redux/features/globalSlice";
-import { useAppSelector } from "@/redux/hook";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { debounce } from "lodash";
 import { Search } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { getCoordinates } from "./utilsCoordinates";
 
 const FiltersFull = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const pathname = usePathname();
   const filters = useAppSelector((state) => state.global.filters);
@@ -84,14 +83,23 @@ const FiltersFull = () => {
   });
 
   const handleSubmit = async () => {
-    const res = await getCoordinates(localFilters?.location);
-    if (res?.lat) {
-      const lat = res.lat;
-      const lng = res.lng;
-      setLocalFilters({ ...localFilters, coordinates: [lng, lat] });
-      dispatch(setFilters({ ...localFilters, coordinates: [lng, lat] }));
-      updateURL(localFilters);
+    if (localFilters?.location?.trim()) {
+      // Only get coordinates if location exists
+      const res = await getCoordinates(localFilters?.location);
+      if (res?.lat) {
+        const updatedFilters = {
+          ...localFilters,
+          coordinates: [res.lng, res.lat] as [number, number],
+        };
+        setLocalFilters(updatedFilters);
+        dispatch(setFilters(updatedFilters));
+        updateURL(updatedFilters);
+        return;
+      }
     }
+
+    // Always apply filters even without location
+    dispatch(setFilters(localFilters));
     updateURL(localFilters);
   };
 
@@ -139,8 +147,8 @@ const FiltersFull = () => {
   if (!isFiltersFullOpen) return null;
 
   return (
-    <div className="bg-white rounded-lg px-4 h-full overflow-auto pb-10">
-      <div className="flex flex-col space-y-6">
+    <div className="bg-white rounded-lg px-4 h-full  overflow-auto pb-10">
+      <div className="flex flex-col space-y-6 ">
         {/* Location */}
         <div>
           <h4 className="font-bold mb-2">Location</h4>
@@ -307,7 +315,9 @@ const FiltersFull = () => {
               </div>
             ))} */}
             {Object.entries(AmenityIcons).map(([amenity, Icon]) => {
-              const selected = localFilters?.amenities[0] === amenity;
+              const amenities = localFilters?.amenities || [];
+              const selected = amenities.includes(amenity as AmenityEnum);
+
               return (
                 <div
                   key={amenity}
@@ -317,15 +327,16 @@ const FiltersFull = () => {
                   )}
                   onClick={() => {
                     const newAmenities = selected
-                      ? []
-                      : [amenity as AmenityEnum];
+                      ? amenities.filter((a) => a !== amenity)
+                      : [...amenities, amenity as AmenityEnum];
+
                     setLocalFilters((prev) => ({
                       ...prev,
                       amenities: newAmenities,
                     }));
                   }}
                 >
-                  <Icon className="w-5 h-5 hover:cursor-pointer" />
+                  <Icon className="w-5 h-5" />
                   <Label className="hover:cursor-pointer">
                     {formatEnumString(amenity)}
                   </Label>

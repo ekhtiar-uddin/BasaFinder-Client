@@ -11,19 +11,7 @@
   --color-secondary-900: var(--secondary-900);
   --color-secondary-950: var(--secondary-950);
 }
-/* :root {
-  --secondary-50: #fefcfc;
-  --secondary-100: #fdf2f2;
-  --secondary-200: #fae1e1;
-  --secondary-300: #f6c9c9;
-  --secondary-400: #f1abab;
-  --secondary-500: #eb8686;
-  --secondary-600: #e45a5a;
-  --secondary-700: #dc2828;
-  --secondary-800: #7c1414;
-  --secondary-900: #400a0a;
-  --secondary-950: #2c0707;
-} */
+
 :root {
   --secondary-50: #fffaeb;
   --secondary-100: #fef0c7;

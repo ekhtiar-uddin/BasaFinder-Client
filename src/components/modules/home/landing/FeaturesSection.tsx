@@ -47,7 +47,7 @@ const FeaturesSection = () => {
                     "Reliable and Authenticated Homes",
                     "Easily Explore Verified Rentals Today",
                     "Make Your Rental Hunt Easy and Smarter",
-                    "Make Your Rental Hunt Easy and Smarter",
+                    "Connect with Trusted Property Owners",
                   ][index]
                 }
                 description={
@@ -55,11 +55,11 @@ const FeaturesSection = () => {
                     "Explore top rental choices backed by real reviews and ratings.",
                     "Read real reviews and ratings to better understand your rental choices.",
                     "Browse verified rental listings you can trust for a smooth, stress-free process.",
-                    "Browse verified rental listings you can trust for a smooth, stress-free process.",
+                    "Get direct access to verified landlords and property managers for communication.",
                   ][index]
                 }
-                linkText={["Explore", "Search", "Discover", "general"][index]}
-                linkHref={["/search", "/search", "/search", "general"][index]}
+                linkText={["Explore", "Search", "Discover", "General"][index]}
+                linkHref={["/search", "/search", "/search", "/search"][index]}
               />
             </motion.div>
           ))}

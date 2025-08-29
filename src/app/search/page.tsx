@@ -4,6 +4,8 @@ import { NAVBAR_HEIGHT } from "@/lib/constants";
 
 import FiltersBarPage from "./FiltersBar";
 
+import Footer from "@/components/shared/Footer";
+import Navbar from "@/components/shared/Navbar";
 import { getAllProducts } from "@/services/Product";
 import FiltersFullPage from "./FiltersFullPage";
 import Listings from "./Listings";
@@ -25,21 +27,27 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
   );
 
   return (
-    <div
-      className="w-full mx-auto px-5 flex flex-col"
-      style={{
-        height: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
-      }}
-    >
-      <FiltersBarPage />
-      <div className="flex justify-between flex-1 overflow-hidden gap-3 mb-5">
-        <FiltersFullPage />
-        <Map properties={properties} />
-        <div className="basis-4/12 overflow-y-auto">
-          <Listings />
+    <>
+      <Navbar />
+      <div
+        className="w-full mx-auto px-5 flex flex-col 2xl:[--vh:100vh] sm:[--vh:210vh]"
+        style={{ height: `calc(var(--vh) - ${NAVBAR_HEIGHT}px)` }}
+      >
+        <FiltersBarPage />
+        {/* flex-1 */}
+        <div className="flex xl:flex-row 2xs:flex-col justify-between flex-1 overflow-hidden gap-3 mb-5">
+          <div className="flex xl:basis-8/12  2xl:h-full 2xs:h-1/2  gap-5">
+            <FiltersFullPage />
+            <Map properties={properties} />
+          </div>
+          <div className="xl:basis-4/12 overflow-y-auto ">
+            <Listings />
+          </div>
         </div>
       </div>
-    </div>
+
+      <Footer />
+    </>
   );
 };
 

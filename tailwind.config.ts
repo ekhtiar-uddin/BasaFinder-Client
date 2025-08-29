@@ -6,6 +6,11 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screen: {
+      sm: "480px",
+      md: "780px",
+      lg: "976px",
+    },
     extend: {
       colors: {
         background: "hsl(var(--background))",

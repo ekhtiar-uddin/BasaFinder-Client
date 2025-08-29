@@ -58,7 +58,7 @@ const Map = ({ properties }: { properties: IProduct[] }) => {
   if (!properties) return <div>Failed to fetch properties</div>;
 
   return (
-    <div className="basis-5/12 grow relative rounded-xl">
+    <div className="basis-8/12 xl:h-full 2xs:h-[65vh]  grow relative rounded-xl">
       <div
         className="map-container rounded-xl"
         ref={mapContainerRef}

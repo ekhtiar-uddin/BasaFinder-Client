@@ -4,36 +4,43 @@ import { AmenityEnum, AmenityIcons, HighlightIcons } from "@/lib/constants";
 import { formatEnumString } from "@/lib/utils";
 import { useSingleProduct } from "@/redux/hook";
 import { HighlightEnum } from "@/types";
-// import { useGetPropertyQuery } from "@/state/api";
+
 import { HelpCircle } from "lucide-react";
-//  PropertyDetailsProps
+
+import { useUser } from "@/context/UserContext";
+import { useAllProduct } from "@/redux/hook";
+
+import { useSearchParams } from "next/navigation";
+
 const PropertyDetails = ({ propertyId }: { propertyId: string }) => {
   const { data: property } = useSingleProduct(propertyId);
+  const { user: authUser } = useUser();
 
-  // const { data: property } = await getSingleProduct(propertyId);
-  // const { data: property } = await getSingleProduct(propertyId);
-  // const {
-  //   data: property,
-  //   isError,
-  //   isLoading,
-  // } = useGetPropertyQuery(propertyId);
+  const searchParams = useSearchParams();
+  const query = Object.fromEntries(searchParams.entries());
 
-  // const { data: property } = await getSingleProduct(propertyId);
-
-  // if (isLoading) return <>Loading...</>;
-  // if (isError || !property) {
-  //   return <>Property not Found</>;
-  // }
-  // const Icon =
-  //   AmenityIcons[property?.amenities as unknown as AmenityEnum] || HelpCircle;
-  // const IconTwo =
-  //   HighlightIcons[property?.highlights as unknown as HighlightEnum] ||
-  //   HelpCircle;
-
+  // console.log("here sdfsdf", query);
+  const { data: properties } = useAllProduct(undefined, undefined, query);
   return (
     <div className="mb-6">
       {/* Amenities */}
-
+      {/* <div className="lg:hidden block w-full mt-10 h-[120vh] overflow-auto">
+        {" "}
+        <h1 className=" font-bold text-2xl ">
+          sdfsdsSome Suggested Properties
+        </h1>
+        <div className="p-1 2xl:hidden 2xs:w-full 2xs:grid grid-cols-1">
+          {properties?.slice(2, 8)?.map((property) => (
+            <CardTwo
+              key={property._id}
+              property={property}
+              // onFavoriteToggle={() => handleFavoriteToggle(property._id)}
+              showFavoriteButton={!!authUser}
+              propertyLink={`/search/${property._id}`}
+            />
+          ))}
+        </div>
+      </div> */}
       <div>
         <h2 className="text-xl font-semibold my-3">Property Amenities</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -74,13 +81,6 @@ const PropertyDetails = ({ propertyId }: { propertyId: string }) => {
               </div>
             );
           })}
-
-          {/* <div className="flex flex-col items-center border rounded-xl py-8 px-4">
-            <IconTwo className="w-8 h-8 mb-2 text-primary-600 dark:text-primary-300" />
-            <span className="text-sm text-center text-primary-600 dark:text-primary-300">
-              {formatEnumString(property?.highlights)}
-            </span>
-          </div> */}
         </div>
       </div>
       {/* Tabs Section */}

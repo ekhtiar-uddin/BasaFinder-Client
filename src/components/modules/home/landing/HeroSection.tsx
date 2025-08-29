@@ -3,14 +3,14 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { setFilters } from "@/redux/features/globalSlice";
+import { useAppDispatch } from "@/redux/hook";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 
 const HeroSection = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 

@@ -44,8 +44,9 @@ const PropertyOverview = ({ propertyId }: { propertyId: string }) => {
       </div>
 
       {/* Details */}
-      <div className="border border-primary-200 rounded-xl p-6 mb-6">
-        <div className="flex justify-between items-center gap-4 px-5">
+      {/* Details */}
+      <div className="w-[350px] sm:w-[500px] md:w-full border border-primary-200 rounded-xl p-3 sm:p-6 mb-6">
+        <div className="grid grid-cols-2 sm:flex sm:justify-between sm:items-center gap-4 px-2 sm:px-5">
           <div>
             <div className="text-sm text-gray-500">Monthly Rent</div>
             <div className="font-semibold">
