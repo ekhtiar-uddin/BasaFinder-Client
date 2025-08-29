@@ -24,7 +24,7 @@ const SingleListing = () => {
   const { data: properties } = useAllProduct(undefined, undefined, undefined);
 
   return (
-    <>
+    <section className="bg-white">
       <Navbar />
       {isLoading ? (
         <DetailsSkeleton />
@@ -119,7 +119,7 @@ const SingleListing = () => {
       )}
 
       <Footer />
-    </>
+    </section>
   );
 };
 

@@ -1,3 +1,4 @@
+import Footer from "@/components/shared/Footer";
 import { Button } from "@/components/ui/button";
 import { pricingPlans } from "@/lib/pricingData";
 import { Check } from "lucide-react";
@@ -91,6 +92,8 @@ const page = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

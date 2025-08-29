@@ -36,7 +36,7 @@ const FeaturedProducts = () => {
             </div>
           ) : (
             <div className=" w-full ">
-              <div className="grid lg:grid-cols-4 gap-5">
+              <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2  gap-5">
                 {properties?.slice(0, 8).map((property: IProduct) => (
                   <CardTwo
                     key={property._id}

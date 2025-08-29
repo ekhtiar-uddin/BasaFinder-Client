@@ -37,7 +37,7 @@ const FeaturesSection = () => {
         >
           Quickly find the home you want using our effective search filters!
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-12 xl:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-8 xl:gap-6 ">
           {[0, 1, 2, 3].map((index) => (
             <motion.div key={index} variants={itemVariants}>
               <FeatureCard
@@ -55,7 +55,7 @@ const FeaturesSection = () => {
                     "Explore top rental choices backed by real reviews and ratings.",
                     "Read real reviews and ratings to better understand your rental choices.",
                     "Browse verified rental listings you can trust for a smooth, stress-free process.",
-                    "Get direct access to verified landlords and property managers for communication.",
+                    "Get direct access to verified landlords and property managers for contact.",
                   ][index]
                 }
                 linkText={["Explore", "Search", "Discover", "General"][index]}
@@ -82,7 +82,7 @@ const FeatureCard = ({
   linkText: string;
   linkHref: string;
 }) => (
-  <div className="border rounded p-4 hover:shadow-lg">
+  <div className="border 2xl:h-full lg:h-[480px]  xl:h-[450px] rounded p-4 hover:shadow-lg">
     <div className=" rounded-lg bg-secondary-20d0 mb-4 flex items-center justify-center h-56">
       <Image
         src={imageSrc}

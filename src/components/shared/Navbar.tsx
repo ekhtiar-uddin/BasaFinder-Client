@@ -50,6 +50,7 @@ const Navbar = () => {
     pathname.includes("/landlord") ||
     pathname.includes("/tenant") ||
     pathname.includes("/admin");
+  const isPropertiesPage = pathname.includes("/search");
 
   const handleSignOut = async () => {
     await logout();
@@ -163,7 +164,7 @@ const Navbar = () => {
   // console.log("userInfo", userInfo?.role);
 
   return (
-    <div className="w-full  text-sm">
+    <div className="w-full border-b-2 text-sm">
       <div className=" shadow-xl bg-secondary-500 text-white">
         <div
           className=" customWidth flex justify-center items-center w-full"

@@ -27,7 +27,7 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
   );
 
   return (
-    <>
+    <section className="bg-white">
       <Navbar />
       <div
         className="w-full mx-auto px-5 flex flex-col 2xl:[--vh:100vh] sm:[--vh:210vh]"
@@ -47,7 +47,7 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
       </div>
 
       <Footer />
-    </>
+    </section>
   );
 };
 

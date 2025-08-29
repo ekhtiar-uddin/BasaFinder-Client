@@ -13,7 +13,6 @@ import { PropertyTypeIcons } from "@/lib/constants";
 import { cleanParams, cn, formatPriceValue } from "@/lib/utils";
 import {
   FiltersState,
-  initialState,
   setFilters,
   setViewMode,
   toggleFiltersFullOpen,
@@ -131,14 +130,14 @@ const FiltersBarPage = () => {
     }
   };
 
-  const handleGoHome = () => {
-    router.push("/");
-    dispatch(setFilters(initialState.filters));
-    if (isFiltersFullOpen === false) {
-      return;
-    }
-    dispatch(toggleFiltersFullOpen());
-  };
+  // const handleGoHome = () => {
+  //   router.push("/");
+  //   dispatch(setFilters(initialState.filters));
+  //   if (isFiltersFullOpen === false) {
+  //     return;
+  //   }
+  //   dispatch(toggleFiltersFullOpen());
+  // };
 
   // console.log("here", filters);
 

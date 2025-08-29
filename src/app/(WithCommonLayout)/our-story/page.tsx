@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AboutPage = () => {
   return (
-    <>
+    <section className="">
       {/* <div className="h-[60px]"></div> */}
       <ImagePreviews images={["/story-2.avif", "/story-1.avif"]} />
 
@@ -99,7 +99,7 @@ const AboutPage = () => {
           <li>Address: 123 Dublin, Ireland, </li>
         </ul>
       </section>
-    </>
+    </section>
   );
 };
 
