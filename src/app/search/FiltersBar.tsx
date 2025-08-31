@@ -144,7 +144,7 @@ const FiltersBarPage = () => {
   return (
     <div className=" flex justify-between items-center w-full py-5">
       {/* Filters */}
-      <div className="flex xl:flex-nowrap  3xs:flex-wrap justify-between 3xs:justify-start items-center gap-4 p-2">
+      <div className="flex xl:flex-nowrap  3xs:flex-wrap justify-between 3xs:justify-start items-center gap-4 ">
         {/* All Filters */}
         <Button
           variant="outline"
@@ -297,7 +297,7 @@ const FiltersBarPage = () => {
 
       {/* View Mode */}
       <div className=" xl:block hidden justify-between items-center gap-4 p-2">
-        <div className="flex border rounded-sm">
+        <div className="flex border rounded-xl">
           <Button
             variant="ghost"
             className={cn(

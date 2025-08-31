@@ -21,7 +21,7 @@ const OverviewDashboard = () => {
 
         <Widget type="order" amount={2330} />
 
-        <Widget type="products" amount={2330} />
+        <Widget type="properties" amount={2330} />
         <Widget type="earning" amount={2330} />
       </div>
       <div className="charts flex gap-5 mt-5">

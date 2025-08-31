@@ -4,7 +4,7 @@ import Navbar from "@/components/shared/Navbar";
 import CardCompact from "@/components/ui/CardCompact";
 import CardTwo from "@/components/ui/CardTwo";
 import { useUser } from "@/context/UserContext";
-import { useAllProduct, useSingleProduct } from "@/redux/hook";
+import { useAllProperties, useSingleProperty } from "@/redux/hook";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import ApplicationModal from "./ApplicationModal";
@@ -20,8 +20,12 @@ const SingleListing = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { user: authUser } = useUser();
-  const { data: property, isLoading } = useSingleProduct(propertyId as string);
-  const { data: properties } = useAllProduct(undefined, undefined, undefined);
+  const { data: property, isLoading } = useSingleProperty(propertyId as string);
+  const { data: properties } = useAllProperties(
+    undefined,
+    undefined,
+    undefined
+  );
 
   return (
     <section className="bg-white">

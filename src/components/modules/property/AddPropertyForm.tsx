@@ -3,39 +3,51 @@
 import { Form } from "@/components/ui/form";
 import { PropertyFormData, propertySchema } from "@/lib/schemas";
 // import { useCreatePropertyMutation, useGetAuthUserQuery } from "@/state/api";
-import Logo from "@/app/assets/svgs/Logo";
 import { Button } from "@/components/ui/button";
 import { CustomFormField } from "@/components/ui/form/FormField";
+import Header from "@/components/ui/form/Header";
 import { useUser } from "@/context/UserContext";
 import { AmenityEnum, HighlightEnum, PropertyTypeEnum } from "@/lib/constants";
-import { updateProduct } from "@/services/Product";
-import { IProduct } from "@/types";
+import { addProperty } from "@/services/Property";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-const UpdateProductForm = ({ product }: { product: IProduct }) => {
+const AddPropertyForm = () => {
   const { user } = useUser();
   const router = useRouter();
   const form = useForm<PropertyFormData>({
     resolver: zodResolver(propertySchema),
     defaultValues: {
-      ...product,
+      name: "",
+      description: "",
+      price: 7000,
+      securityDeposit: 500,
+      applicationFee: 100,
+      isPetsAllowed: true,
+      isParkingIncluded: true,
+      imageUrls: [],
       amenities: [],
       highlights: [],
+      beds: 1,
+      baths: 1,
+      squareFeet: 1000,
+      address: "",
+      city: "",
+      state: "",
+      country: "",
+      postalCode: "",
     },
   });
+
   const {
     formState: { isSubmitting },
   } = form;
 
-  // console.log("skdfj", product?.imageUrls);
-
   // data: PropertyFormData
   const onSubmit: SubmitHandler<PropertyFormData> = async (data) => {
-    const toastId = toast.loading("Property Updating... ");
-
+    const toastId = toast.loading("Property Creating... ");
     const formData = new FormData();
 
     const formattedAmenities = data?.amenities
@@ -52,11 +64,13 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
     const modifiedData = {
       ...data,
       landlord: user?.userId,
-      price: parseFloat(data.price.toString()),
-      beds: parseFloat(data.beds.toString()),
+      price: parseFloat(data?.price?.toString()),
+      beds: parseFloat(data?.beds?.toString()),
       amenities: formattedAmenities,
       highlights: formattedhighlights,
     };
+
+    console.log("datasdf", modifiedData);
 
     formData.append("data", JSON.stringify(modifiedData));
 
@@ -75,15 +89,11 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
 
     // Send the formData
     try {
-      const res = await updateProduct(formData, product?._id);
+      const res = await addProperty(formData);
 
       if (res.success) {
-        toast.success("Property Updated", { id: toastId });
-        if (user?.role === "landlord") {
-          router.push("/landlord/list/rental");
-        } else {
-          router.push("/admin/manage-property");
-        }
+        toast.success("Property Created", { id: toastId });
+        router.push("/landlord/property");
       } else {
         toast.error(res.message, { id: toastId });
       }
@@ -92,17 +102,12 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
     }
   };
 
-  // const onSubmit = async (data) => {
-  //   console.log("data", data);
-  // };
-
   return (
     <div className="dashboard-container">
-      <div className="flex items-center space-x-4 mb-5 ">
-        <Logo />
-
-        <h1 className="text-xl font-bold">Update Product Info</h1>
-      </div>
+      <Header
+        title="Add New Property"
+        subtitle="Create a new property listing with detailed information"
+      />
       <div className="bg-white rounded-xl p-6">
         <Form {...form}>
           <form
@@ -244,43 +249,40 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
               <h2 className="text-lg font-semibold mb-4">
                 Additional Information
               </h2>
-              <CustomFormField
-                name="address"
-                initialValue={product?.location?.address}
-                label="Address"
-              />
+
+              <CustomFormField name="city" placeholder="Boston" label="City" />
               <div className="flex justify-between gap-4">
                 <CustomFormField
-                  name="city"
-                  label="City"
+                  name="address"
+                  placeholder="Back Bay"
+                  label="Address"
                   className="w-full"
-                  initialValue={product?.location?.city}
                 />
                 <CustomFormField
                   name="state"
+                  placeholder="MA"
                   label="State"
                   className="w-full"
-                  initialValue={product?.location?.state}
                 />
                 <CustomFormField
                   name="postalCode"
+                  placeholder="02116"
                   label="Postal Code"
                   className="w-full"
-                  initialValue={product?.location?.postalCode}
                 />
               </div>
               <CustomFormField
                 name="country"
+                placeholder="USA"
                 label="Country"
-                initialValue={product?.location?.country}
               />
             </div>
 
             <Button
               type="submit"
-              className="bg-primary-700 rounded text-white w-full mt-8"
+              className="bg-primary-700 text-white w-full mt-8"
             >
-              {isSubmitting ? "Updating Property....." : "Update Property"}
+              {isSubmitting ? "Creating Property....." : "Create Property"}
             </Button>
           </form>
         </Form>
@@ -289,4 +291,4 @@ const UpdateProductForm = ({ product }: { product: IProduct }) => {
   );
 };
 
-export default UpdateProductForm;
+export default AddPropertyForm;

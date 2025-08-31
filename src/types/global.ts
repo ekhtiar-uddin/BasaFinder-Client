@@ -1,7 +1,7 @@
 import { SettingsFormData } from "@/lib/schemas";
 import { MotionProps as OriginalMotionProps } from "framer-motion";
 import { LucideIcon } from "lucide-react";
-import { IApplication, IProduct } from "./product";
+import { IApplication, IProperty } from "./property";
 import { IUser } from "./user";
 
 declare module "framer-motion" {
@@ -97,7 +97,7 @@ export interface ApplicationCardProps {
 }
 
 export interface CardProps {
-  property: IProduct;
+  property: IProperty;
   isFavorite: boolean;
   onFavoriteToggle: () => void;
   showFavoriteButton?: boolean;
@@ -105,7 +105,7 @@ export interface CardProps {
 }
 
 export interface CardCompactProps {
-  property: IProduct;
+  property: IProperty;
   isFavorite: boolean;
   onFavoriteToggle: () => void;
   showFavoriteButton?: boolean;

@@ -2,7 +2,7 @@
 import CardCompact from "@/components/ui/CardCompact";
 import CardTwo from "@/components/ui/CardTwo";
 import { useUser } from "@/context/UserContext";
-import { useAllProduct } from "@/redux/hook";
+import { useAllProperties } from "@/redux/hook";
 
 import { useSearchParams } from "next/navigation";
 const SuggestedForSmallDevice = () => {
@@ -12,7 +12,7 @@ const SuggestedForSmallDevice = () => {
   const query = Object.fromEntries(searchParams.entries());
 
   // console.log("here sdfsdf", query);
-  const { data: properties } = useAllProduct(undefined, undefined, query);
+  const { data: properties } = useAllProperties(undefined, undefined, query);
   return (
     <div className="lg:hidden block w-full mt-10 h-[120vh] overflow-auto">
       {" "}

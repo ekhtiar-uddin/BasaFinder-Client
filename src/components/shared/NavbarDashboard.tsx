@@ -82,7 +82,7 @@ const NavbarDashboard = () => {
               onClick={() =>
                 router.push(
                   userInfo.role?.toLowerCase() === "landlord"
-                    ? "/landlord/list/rental/add-rental"
+                    ? "/landlord/property/add-property"
                     : "/search"
                 )
               }
@@ -153,7 +153,7 @@ const NavbarDashboard = () => {
                         userInfo?.role?.toLowerCase() === "admin"
                           ? "/admin/users"
                           : userInfo?.role?.toLowerCase() === "landlord"
-                          ? "/landlord/list/rental"
+                          ? "/landlord/property"
                           : "/tenant/applications",
                         { scroll: false }
                       )
@@ -168,7 +168,7 @@ const NavbarDashboard = () => {
                         userInfo?.role?.toLowerCase() === "admin"
                           ? "/admin/users"
                           : userInfo?.role?.toLowerCase() === "landlord"
-                          ? "/landlord/list/rental"
+                          ? "/landlord/property"
                           : "/tenant/applications",
                         { scroll: false }
                       )
@@ -183,7 +183,7 @@ const NavbarDashboard = () => {
                         userInfo?.role?.toLowerCase() === "admin"
                           ? "/admin/users"
                           : userInfo?.role?.toLowerCase() === "landlord"
-                          ? "/landlord/list/rental"
+                          ? "/landlord/property"
                           : "/tenant/applications",
                         { scroll: false }
                       )

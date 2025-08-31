@@ -1,6 +1,6 @@
-import { getAllProducts, getSingleProduct } from "@/services/Product";
+import { getAllProperties, getSingleProperty } from "@/services/Property";
 import { getAllUsers } from "@/services/User";
-import { IProduct } from "@/types";
+import { IProperty } from "@/types";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector, useStore } from "react-redux";
 import type { AppDispatch, AppStore, RootState } from "./store";
@@ -10,8 +10,8 @@ export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();
 export const useAppStore = useStore.withTypes<AppStore>();
 
-export const useSingleProduct = (productId: string) => {
-  const [data, setData] = useState<IProduct | null>(null);
+export const useSingleProperty = (propertyId: string) => {
+  const [data, setData] = useState<IProperty | null>(null);
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -20,7 +20,7 @@ export const useSingleProduct = (productId: string) => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const res = await getSingleProduct(productId);
+        const res = await getSingleProperty(propertyId);
         setData(res.data);
       } catch (err: any) {
         setIsError(err);
@@ -28,12 +28,12 @@ export const useSingleProduct = (productId: string) => {
       setIsLoading(false);
     };
     fetchData();
-  }, [productId]);
+  }, [propertyId]);
 
   // const reFetch = async () => {
   //   setIsLoading(true);
   //   try {
-  //     const res = await getSingleProduct(productId);
+  //     const res = await getSingleProperty(propertyId);
   //     setData(res.data);
   //   } catch (err) {
   //     setIsError(err);
@@ -42,14 +42,14 @@ export const useSingleProduct = (productId: string) => {
   // };
 
   return { data, isError, isLoading } as {
-    data: IProduct;
+    data: IProperty;
     isError: boolean;
     isLoading: boolean;
   };
 };
 
-export const useAllProduct = (page, limit, query) => {
-  const [data, setData] = useState<IProduct[]>([]);
+export const useAllProperties = (page, limit, query) => {
+  const [data, setData] = useState<IProperty[]>([]);
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -58,8 +58,8 @@ export const useAllProduct = (page, limit, query) => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        console.log("from useAllProduct", query);
-        const res = await getAllProducts(page, limit, query);
+        console.log("from useAllProperties", query);
+        const res = await getAllProperties(page, limit, query);
         console.log("from res sdkjf", res);
         setData(res.data);
       } catch (err: any) {
@@ -73,7 +73,7 @@ export const useAllProduct = (page, limit, query) => {
   // const reFetch = async () => {
   //   setIsLoading(true);
   //   try {
-  //     const res = await getAllProducts("ksdjf", undefined, memoQuery);
+  //     const res = await getAllProperties("ksdjf", undefined, memoQuery);
   //     setData(res.data);
   //   } catch (err) {
   //     setIsError(err);
@@ -118,25 +118,3 @@ export const useAllUsers = () => {
 
   return { data, isError, isLoading, setData };
 };
-
-// export const useAllApplication = () => {
-//   const [data, setData] = useState([]);
-//   const [isLoading, setIsLoading] = useState(false);
-//   const [isError, setIsError] = useState(false);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       setIsLoading(true);
-//       try {
-//         const res = await getAllApplications(undefined, undefined);
-//         setData(res.data);
-//       } catch (err: any) {
-//         setIsError(err);
-//       }
-//       setIsLoading(false);
-//     };
-//     fetchData();
-//   }, []);
-
-//   return { data, isError, isLoading, setData };
-// };

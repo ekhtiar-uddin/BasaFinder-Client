@@ -6,7 +6,6 @@ import { getCurrentUser } from "@/services/AuthService";
 import { cookies } from "next/headers";
 
 const Applications = async () => {
-  // console.log("here", query);
   const token = (await cookies()).get("accessToken")?.value;
   const user = await getCurrentUser();
 
@@ -15,10 +14,6 @@ const Applications = async () => {
   const individualRequests = applications?.filter(
     (item) => item?.property?.landlord?.email === user?.email
   );
-
-  // console.log("individualRequests", individualRequests);
-  // if (isLoading) return <Loading />;
-  // if (isError || !applications) return <div>Error fetching applications</div>;
 
   return (
     <div className="dashboard-container">

@@ -3,7 +3,7 @@
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 
-// get single product
+// get all users
 export const getAllUsers = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/user`, {
@@ -43,7 +43,7 @@ export const getSingleUser = async () => {
   }
 };
 
-// update product
+// update profile
 export const updateUserProfile = async (
   profileData: FormData
 ): Promise<any> => {
@@ -77,7 +77,7 @@ export const updateUserProfile = async (
   }
 };
 
-// update product
+// update status of user
 export const updateUserStatus = async (
   userData: { updatedRole?: string; isDeleted?: string },
   userId: string

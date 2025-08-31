@@ -20,20 +20,10 @@ const MakePayment = ({ application }: { application: IApplication }) => {
         throw new Error("Please login first.");
       }
 
-      // if (!city) {
-      //   throw new Error("City is missing");
-      // }
-      // if (!shippingAddress) {
-      //   throw new Error("Shipping address is missing");
-      // }
-
-      // if (cartProducts?.length === 0) {
-      //   throw new Error("Cart is empty, what are you trying to order ??");
-      // }
       const order = {
-        products: [
+        properties: [
           {
-            product: propertyId, // application?.property?._id
+            property: propertyId, // application?.property?._id
             color: "White",
             quantity: 1,
           },
@@ -46,7 +36,7 @@ const MakePayment = ({ application }: { application: IApplication }) => {
 
       if (res.success) {
         toast.success(res.message, { id: orderLoading });
-        // dispatch(clearCart());
+
         router.push(res.data.paymentUrl);
       }
 

@@ -50,7 +50,7 @@ const Navbar = () => {
     pathname.includes("/landlord") ||
     pathname.includes("/tenant") ||
     pathname.includes("/admin");
-  const isPropertiesPage = pathname.includes("/search");
+  // const isPropertiesPage = pathname.includes("/search");
 
   const handleSignOut = async () => {
     await logout();
@@ -164,7 +164,7 @@ const Navbar = () => {
   // console.log("userInfo", userInfo?.role);
 
   return (
-    <div className="w-full border-b-2 text-sm">
+    <div className="w-full border-b text-sm">
       <div className=" shadow-xl bg-secondary-500 text-white">
         <div
           className=" customWidth flex justify-center items-center w-full"
@@ -203,9 +203,9 @@ const Navbar = () => {
       <div
         className={`${
           scrollY > 30
-            ? "border-b-2 border-b1 w-full fixed top-0 left-0  z-50  "
+            ? "border-b border-b1 w-full fixed top-0 left-0  z-50  "
             : ""
-        }  bg-white   h-[75px] flex justify-between  `}
+        }  bg-white   h-[74px] flex justify-between  `}
       >
         <div className="customWidth flex justify-between items-center  ">
           <div className="flex items-center gap-4 md:gap-6">
@@ -270,7 +270,7 @@ const Navbar = () => {
                           userInfo?.role?.toLowerCase() === "admin"
                             ? "/admin/users"
                             : userInfo?.role?.toLowerCase() === "landlord"
-                            ? "/landlord/list/rental"
+                            ? "/landlord/property"
                             : "/tenant/applications",
                           { scroll: false }
                         )
@@ -285,7 +285,7 @@ const Navbar = () => {
                           userInfo?.role?.toLowerCase() === "admin"
                             ? "/admin/users"
                             : userInfo?.role?.toLowerCase() === "landlord"
-                            ? "/landlord/list/rental"
+                            ? "/landlord/property"
                             : "/tenant/applications",
                           { scroll: false }
                         )
@@ -423,8 +423,8 @@ const Navbar = () => {
           onMouseEnter={() => setShow(true)}
           onMouseLeave={() => setShow(false)}
           className={`${
-            scrollY > 30 ? "top-[74px]" : "top-[125px]"
-          } fixed  left-0    bg-[#ededee] z-80 h-[70vh] w-full border-b-5 border-secondary-600`}
+            scrollY > 30 ? "top-[74px] border-t-none" : "top-[125px] border-t"
+          } fixed  left-0  bg-white z-80 h-[70vh] w-full border-b-5  border-b-secondary-600`}
         >
           <div className="flex  mt-7  justify-center gap-8">
             <div>

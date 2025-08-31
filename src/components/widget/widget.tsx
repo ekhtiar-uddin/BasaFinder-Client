@@ -28,11 +28,11 @@ const Widget = ({ type, amount }) => {
       };
       break;
 
-    case "products":
+    case "properties":
       data = {
-        title: "PRODUCTS",
+        title: "PROPERTIES",
         isMoney: false,
-        link: "See all products",
+        link: "See all properties",
         icon: (
           <Inventory2Icon
             className="icon"

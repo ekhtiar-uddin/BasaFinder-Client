@@ -1,6 +1,6 @@
 "use client";
 
-import { useSingleProduct } from "@/redux/hook";
+import { useSingleProperty } from "@/redux/hook";
 // import { useGetPropertyQuery } from "@/state/api";
 import { PropertyDetailsProps } from "@/types";
 import { Compass, MapPin } from "lucide-react";
@@ -11,8 +11,8 @@ import { useEffect, useRef } from "react";
 
 // PropertyDetailsProps
 const PropertyLocation = ({ propertyId }: PropertyDetailsProps) => {
-  // const { data: property } = getSingleProduct(propertyId);
-  const { data: property, isLoading } = useSingleProduct(propertyId);
+  // const { data: property } = getSingleProperty(propertyId);
+  const { data: property, isLoading } = useSingleProperty(propertyId);
   const mapContainerRef = useRef(null);
 
   const coordinatesInfoOne = property?.location?.coordinates?.coordinates?.[0];

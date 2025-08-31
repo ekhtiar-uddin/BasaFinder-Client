@@ -3,8 +3,8 @@ import { getValidToken } from "@/lib/verifyTokent";
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 
-// get all products
-export const getAllProducts = async (
+// get all properties
+export const getAllProperties = async (
   page?: string,
   limit?: string,
   query?: { [key: string]: string | string[] | undefined }
@@ -47,10 +47,10 @@ export const getAllProducts = async (
   try {
     console.log("Before fetching data");
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/product?limit=${limit}&page=${page}&${params}`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/property?limit=${limit}&page=${page}&${params}`,
       {
         next: {
-          tags: ["PRODUCT"],
+          tags: ["PROPERTY"],
         },
       }
     );
@@ -62,14 +62,14 @@ export const getAllProducts = async (
   }
 };
 
-// get single product
-export const getSingleProduct = async (productId: string) => {
+// get single property
+export const getSingleProperty = async (propertyId: string) => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/product/${productId}`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/property/${propertyId}`,
       {
         next: {
-          tags: ["PRODUCT"],
+          tags: ["PROPERTY"],
         },
       }
     );
@@ -80,52 +80,52 @@ export const getSingleProduct = async (productId: string) => {
   }
 };
 
-// add product
-export const addProduct = async (productData: FormData): Promise<any> => {
+// add property
+export const addProperty = async (propertyData: FormData): Promise<any> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/product`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/property`, {
       method: "POST",
-      body: productData,
+      body: propertyData,
       headers: {
         Authorization: (await cookies()).get("accessToken")!.value,
       },
     });
-    revalidateTag("PRODUCT");
+    revalidateTag("PROPERTY");
     return res.json();
   } catch (error: any) {
     return Error(error);
   }
 };
 
-// update product
-export const updateProduct = async (
-  productData: FormData,
-  productId: string
+// update property
+export const updateProperty = async (
+  propertyData: FormData,
+  propertyId: string
 ): Promise<any> => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/product/${productId}`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/property/${propertyId}`,
       {
         method: "PATCH",
-        body: productData,
+        body: propertyData,
         headers: {
           Authorization: (await cookies()).get("accessToken")!.value,
         },
       }
     );
-    revalidateTag("PRODUCT");
+    revalidateTag("PROPERTY");
     return res.json();
   } catch (error: any) {
     return Error(error);
   }
 };
 
-export const deleteProduct = async (productId: string): Promise<any> => {
+export const deleteproperty = async (propertyId: string): Promise<any> => {
   const token = await getValidToken();
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API}/product/${productId}`,
+      `${process.env.NEXT_PUBLIC_BASE_API}/property/${propertyId}`,
       {
         method: "DELETE",
         headers: {
@@ -133,7 +133,7 @@ export const deleteProduct = async (productId: string): Promise<any> => {
         },
       }
     );
-    revalidateTag("PRODUCT");
+    revalidateTag("PROPERTY");
     return res.json();
   } catch (error: any) {
     return Error(error);

@@ -5,8 +5,8 @@ import DeleteConfirmationModal from "@/components/ui/core/NMModal/DeleteConfirma
 import { NMTable } from "@/components/ui/core/NMTable/index";
 import TablePagination from "@/components/ui/core/NMTable/TablePagination";
 import { useUser } from "@/context/UserContext";
-import { deleteProduct } from "@/services/Product";
-import { IProduct } from "@/types";
+import { deleteproperty } from "@/services/Property";
+import { IProperty } from "@/types";
 import { IMeta } from "@/types/meta";
 import { ColumnDef } from "@tanstack/react-table";
 import { Edit, Trash } from "lucide-react";
@@ -16,11 +16,11 @@ import { useState } from "react";
 import { toast } from "sonner";
 import DiscountModal from "./DiscountModal";
 
-const ManageProducts = ({
-  products,
+const ManageProperties = ({
+  properties,
   meta,
 }: {
-  products: IProduct[];
+  properties: IProperty[];
   meta: IMeta;
 }) => {
   const { user } = useUser();
@@ -30,7 +30,7 @@ const ManageProducts = ({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
 
-  const handleDelete = (data: IProduct) => {
+  const handleDelete = (data: IProperty) => {
     // console.log(data);
     setSelectedId(data?._id);
     setSelectedItem(data?.name);
@@ -41,7 +41,7 @@ const ManageProducts = ({
     const toastId = toast.loading("Property Deleting... ");
     try {
       if (selectedId) {
-        const res = await deleteProduct(selectedId);
+        const res = await deleteproperty(selectedId);
         // console.log(res);
         if (res.success) {
           toast.success("Property Deleted", { id: toastId });
@@ -55,11 +55,7 @@ const ManageProducts = ({
     }
   };
 
-  // const handleDelete = (productId: string) => {
-  //   console.log("Deleting product with ID:", productId);
-  // };
-
-  const columns: ColumnDef<IProduct>[] = [
+  const columns: ColumnDef<IProperty>[] = [
     {
       id: "select",
       header: ({ table }) => (
@@ -92,7 +88,7 @@ const ManageProducts = ({
 
     {
       accessorKey: "name",
-      header: "Product Name",
+      header: "Property Name",
       cell: ({ row }) => (
         <div className=" flex items-center space-x-3">
           <Image
@@ -148,11 +144,11 @@ const ManageProducts = ({
             onClick={() => {
               if (user?.role === "admin") {
                 router.push(
-                  `/admin/manage-property/update-product/${row?.original?._id}`
+                  `/admin/manage-property/update-property/${row?.original?._id}`
                 );
               } else {
                 router.push(
-                  `/landlord/list/rental/update-product/${row?.original?._id}`
+                  `/landlord/property/update-property/${row?.original?._id}`
                 );
               }
             }}
@@ -192,7 +188,7 @@ const ManageProducts = ({
       </div>
 
       <hr className=" border-t border-input" />
-      <NMTable columns={columns} data={products || []} />
+      <NMTable columns={columns} data={properties || []} />
       <hr className=" border-t border-input" />
       <TablePagination totalPage={meta?.totalPage} />
       <DeleteConfirmationModal
@@ -205,4 +201,4 @@ const ManageProducts = ({
   );
 };
 
-export default ManageProducts;
+export default ManageProperties;

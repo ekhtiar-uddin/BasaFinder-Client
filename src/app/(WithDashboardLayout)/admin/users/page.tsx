@@ -1,4 +1,4 @@
-import UsersPage from "@/components/modules/shop/product/Testform";
+import UsersPage from "@/components/modules/property/ManageUsers";
 import { getAllUsers } from "@/services/User";
 
 const Page = async () => {

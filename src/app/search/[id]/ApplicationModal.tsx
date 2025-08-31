@@ -61,7 +61,6 @@ const ApplicationModal = ({
       if (res.success) {
         toast.success("Application Created", { id: toastId });
         onClose();
-        // router.push("/user/shop/products");
       } else {
         toast.error(res.message, { id: toastId });
       }

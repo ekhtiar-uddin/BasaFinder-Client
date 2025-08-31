@@ -2,12 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import CardTwo from "@/components/ui/CardTwo";
-import { useAllProduct } from "@/redux/hook";
-import { IProduct } from "@/types";
+import { useAllProperties } from "@/redux/hook";
+import { IProperty } from "@/types";
 import Link from "next/link";
 import FeaturedPropertiesSkeleton from "./FeaturedPropertiesSkeleton";
-const FeaturedProducts = () => {
-  const { data: properties, isLoading } = useAllProduct(
+const FeaturedProperties = () => {
+  const { data: properties, isLoading } = useAllProperties(
     undefined,
     undefined,
     undefined
@@ -37,7 +37,7 @@ const FeaturedProducts = () => {
           ) : (
             <div className=" w-full ">
               <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2  gap-5">
-                {properties?.slice(0, 8).map((property: IProduct) => (
+                {properties?.slice(0, 8).map((property: IProperty) => (
                   <CardTwo
                     key={property._id}
                     property={property}
@@ -60,15 +60,9 @@ const FeaturedProducts = () => {
             </Link>
           </div>
         </div>
-
-        {/* <div className="grid grid-cols-5 gap-8 my-5">
-          {products?.slice(0, 5).map((product: IProduct, idx: number) => (
-            <ProductCard key={idx} product={product} />
-          ))}
-        </div> */}
       </div>
     </div>
   );
 };
 
-export default FeaturedProducts;
+export default FeaturedProperties;

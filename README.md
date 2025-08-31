@@ -1,8 +1,8 @@
-# BasaFinder - Property Rental Management Platform
+# RentMode - Property Rental Management Platform
 
 <div align="center">
 
-![BasaFinder Logo](public/logo.svg)
+![RentMode Logo](public/logo.svg)
 
 **A modern, full-stack property rental management platform built with Next.js, TypeScript, and Tailwind CSS**
 
@@ -37,7 +37,7 @@
 
 ## 🏠 Overview
 
-BasaFinder is a comprehensive property rental management platform that connects landlords, tenants, and administrators through a modern web application. The platform features a multi-role user system with role-based access control, interactive property search with map integration, and a complete property management workflow.
+RentMode is a comprehensive property rental management platform that connects landlords, tenants, and administrators through a modern web application. The platform features a multi-role user system with role-based access control, interactive property search with map integration, and a complete property management workflow.
 
 ### Key Highlights
 
@@ -316,10 +316,10 @@ The application integrates with a backend API for data management. Key API endpo
 
 ### Properties
 
-- `GET /product` - List properties with filters
-- `POST /product` - Create new property
-- `PUT /product/:id` - Update property
-- `DELETE /product/:id` - Delete property
+- `GET /property` - List properties with filters
+- `POST /property` - Create new property
+- `PUT /property/:id` - Update property
+- `DELETE /property/:id` - Delete property
 
 ### Applications
 
@@ -494,7 +494,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made with ❤️ by the BasaFinder Team**
+**Made with ❤️ by the RentMode Team**
 
 [![GitHub stars](https://img.shields.io/github/stars/your-username/basafinder-client?style=social)](https://github.com/your-username/basafinder-client)
 [![GitHub forks](https://img.shields.io/github/forks/your-username/basafinder-client?style=social)](https://github.com/your-username/basafinder-client)

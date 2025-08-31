@@ -1,14 +1,14 @@
 "use client";
 import { useAppSelector } from "@/redux/hook";
-import { IProduct } from "@/types";
+import { IProperty } from "@/types";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 
-const Map = ({ properties }: { properties: IProduct[] }) => {
+const Map = ({ properties }: { properties: IProperty[] }) => {
   const mapContainerRef = useRef(null);
   const filters = useAppSelector((state) => state.global.filters);
-  // const { data: properties, isLoading, isError } = useAllProduct();
+  // const { data: properties, isLoading, isError } = useAllProperties();
 
   useEffect(() => {
     if (!properties) return;
@@ -71,7 +71,7 @@ const Map = ({ properties }: { properties: IProduct[] }) => {
   );
 };
 
-const createPropertyMarker = (property: IProduct, map: maplibregl.Map) => {
+const createPropertyMarker = (property: IProperty, map: maplibregl.Map) => {
   // console.log("lat", property?.location?.coordinates?.coordinates?.[0]);
   // console.log('pro',)
 

@@ -19,7 +19,7 @@ export const landlordPaths = [
   },
   {
     title: "Manage Listing",
-    url: "/landlord/list/rental",
+    url: "/landlord/property",
     icon: Building,
   },
   {

@@ -2,13 +2,13 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AmenityEnum, AmenityIcons, HighlightIcons } from "@/lib/constants";
 import { formatEnumString } from "@/lib/utils";
-import { useSingleProduct } from "@/redux/hook";
+import { useSingleProperty } from "@/redux/hook";
 import { HighlightEnum } from "@/types";
 
 import { HelpCircle } from "lucide-react";
 
 const PropertyDetails = ({ propertyId }: { propertyId: string }) => {
-  const { data: property } = useSingleProduct(propertyId);
+  const { data: property } = useSingleProperty(propertyId);
 
   return (
     <div className="mb-6">

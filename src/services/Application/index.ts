@@ -3,13 +3,13 @@
 import { revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 
-export const createApplication = async (productData: any): Promise<any> => {
+export const createApplication = async (propertyData: any): Promise<any> => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_API}/application/create-application`,
       {
         method: "POST",
-        body: productData,
+        body: propertyData,
         headers: {
           "Content-Type": "application/json",
           Authorization: (await cookies()).get("accessToken")!.value,

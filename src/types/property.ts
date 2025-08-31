@@ -7,7 +7,7 @@ type Specification = {
   display: string;
 };
 
-export interface IProduct {
+export interface IProperty {
   _id: string;
   name: string;
   isParkingIncluded: boolean;
@@ -49,42 +49,13 @@ export interface IProduct {
   updatedAt?: Date;
 }
 
-// interface IProduct {
-//   id: number;
-//   name: string;
-//   description: string;
-//   pricePerMonth: number;
-//   securityDeposit: number;
-//   applicationFee: number;
-//   photoUrls: string[];
-//   amenities: Amenity[];
-//   highlights: Highlight[];
-//   isPetsAllowed: boolean;
-//   isParkingIncluded: boolean;
-//   beds: number;
-//   baths: number;
-//   squareFeet: number;
-//   propertyType: PropertyType;
-//   postedDate: Date;
-//   averageRating?: number;
-//   numberOfReviews?: number;
-//   locationId: number;
-//   managerCognitoId: string;
-//   location: ILocation;
-//   manager: IManager;
-//   leases: ILease[];
-//   applications: IApplication[];
-//   favoritedBy: ITenant[];
-//   tenants: ITenant[];
-// }
-
 export interface IManager {
   id: number;
   cognitoId?: string;
   name: string;
   email: string;
   phoneNumber: string;
-  managedProperties: IProduct[];
+  managedProperties: IProperty[];
 }
 
 export interface ITenant {
@@ -93,8 +64,8 @@ export interface ITenant {
   name: string;
   email: string;
   phoneNumber: string;
-  properties: IProduct[];
-  favorites: IProduct[];
+  properties: IProperty[];
+  favorites: IProperty[];
   applications: IApplication[];
   leases: ILease[];
 }
@@ -107,7 +78,7 @@ export interface ILocation {
   country: string;
   postalCode: string;
   coordinates: string;
-  properties: IProduct[];
+  properties: IProperty[];
 }
 
 export interface IApplication {

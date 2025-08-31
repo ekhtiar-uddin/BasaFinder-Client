@@ -10,7 +10,7 @@
 import CardCompact from "@/components/ui/CardCompact";
 import CardTwo from "@/components/ui/CardTwo";
 import { useUser } from "@/context/UserContext";
-import { useAllProduct, useAppSelector } from "@/redux/hook";
+import { useAllProperties, useAppSelector } from "@/redux/hook";
 import { useSearchParams } from "next/navigation";
 import CardCompactSkeleton from "./CardCompactSkeleton";
 
@@ -20,7 +20,7 @@ const Listings = () => {
   const query = Object.fromEntries(searchParams.entries());
 
   // console.log("here sdfsdf", query);
-  const { data: properties, isLoading } = useAllProduct(
+  const { data: properties, isLoading } = useAllProperties(
     undefined,
     undefined,
     query

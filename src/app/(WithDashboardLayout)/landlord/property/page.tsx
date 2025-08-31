@@ -1,5 +1,4 @@
 import ManageProperties from "@/components/modules/property/ManageProperties";
-import Header from "@/components/ui/form/Header";
 import { getAllProperties } from "@/services/Property";
 
 const ManagePropertiesPage = async ({
@@ -14,7 +13,6 @@ const ManagePropertiesPage = async ({
   // console.log("here sdf", meta);
   return (
     <div>
-      <Header title={"Manage Properties"} subtitle="" />
       <ManageProperties properties={data} meta={meta} />
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/shared/Footer";
 import { MessageSquareCode, PhoneIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 
@@ -24,10 +25,10 @@ const Contact = () => {
     }
   };
   return (
-    <div className="bg-gray-100  min-h-screen pt-5  py-10">
+    <section className="bg-gray-100  min-h-screen pt-10">
       <div
         id="contact"
-        className="mx-auto container rounded-lg px-5 md:px-10 pt-10 md:pt-20"
+        className="mb-20 mx-auto container rounded-lg px-5 md:px-10 pt-10 md:pt-20"
       >
         <div className="text-center pb-10">
           <h1 className="text-2xl md:text-4xl font-bold mb-5">Contact Us</h1>
@@ -178,7 +179,9 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+
+      <Footer />
+    </section>
   );
 };
 

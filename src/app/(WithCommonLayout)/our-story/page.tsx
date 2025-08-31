@@ -1,9 +1,13 @@
 import ImagePreviews from "@/app/search/[id]/ImagePreviews";
+import Footer from "@/components/shared/Footer";
 import Image from "next/image";
+const storyThree = "/story-3.avif";
+const storyTwo = "/story-4.webp";
+const storyOne = "/story-5.webp";
 
 const AboutPage = () => {
   return (
-    <section className="">
+    <section className="bg-white">
       {/* <div className="h-[60px]"></div> */}
       <ImagePreviews images={["/story-2.avif", "/story-1.avif"]} />
 
@@ -42,7 +46,7 @@ const AboutPage = () => {
       <section className="customWidth my-20 flex lg:flex-col flex-col items-center justify-between gap-10">
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <Image
-            src="https://www.houselogic.com/wp-content/uploads/2016/08/tax-deductions-rental-home-standard_1f79136f45639b6e63f8a93b18c9fdcc.jpg"
+            src={storyThree}
             width={200}
             alt=""
             height={500}
@@ -50,14 +54,14 @@ const AboutPage = () => {
           />
 
           <Image
-            src="https://www.houselogic.com/wp-content/uploads/2016/08/tax-deductions-rental-home-standard_1f79136f45639b6e63f8a93b18c9fdcc.jpg"
+            src={storyOne}
             width={500}
             alt=""
             height={500}
             className="w-full h-auto rounded"
           />
           <Image
-            src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src={storyTwo}
             width={500}
             alt=""
             height={500}
@@ -99,6 +103,8 @@ const AboutPage = () => {
           <li>Address: 123 Dublin, Ireland, </li>
         </ul>
       </section>
+
+      <Footer />
     </section>
   );
 };

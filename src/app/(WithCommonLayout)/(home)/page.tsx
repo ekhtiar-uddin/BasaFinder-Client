@@ -1,4 +1,4 @@
-import FeaturedProducts from "@/components/modules/home/FeaturedProducts";
+import FeaturedProperties from "@/components/modules/home/FeaturedProperties/FeaturedProperties";
 import CallToActionSection from "@/components/modules/home/landing/CallToActionSection";
 import DiscoverSection from "@/components/modules/home/landing/DiscoverSection";
 import FeaturesSection from "@/components/modules/home/landing/FeaturesSection";
@@ -12,7 +12,7 @@ const HomePage = () => {
     <div className="bg-white">
       <HeroSection />
 
-      <FeaturedProducts />
+      <FeaturedProperties />
       <FeaturesSection />
       <DiscoverSection />
 

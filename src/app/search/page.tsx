@@ -6,7 +6,7 @@ import FiltersBarPage from "./FiltersBar";
 
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
-import { getAllProducts } from "@/services/Product";
+import { getAllProperties } from "@/services/Property";
 import FiltersFullPage from "./FiltersFullPage";
 import Listings from "./Listings";
 import Map from "./Map";
@@ -20,7 +20,7 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
 
   // console.log("here", query);
 
-  const { data: properties } = await getAllProducts(
+  const { data: properties } = await getAllProperties(
     undefined,
     undefined,
     query
@@ -35,8 +35,8 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
       >
         <FiltersBarPage />
         {/* flex-1 */}
-        <div className="flex xl:flex-row 2xs:flex-col justify-between flex-1 overflow-hidden gap-3 mb-5">
-          <div className="flex xl:basis-8/12  2xl:h-full 2xs:h-1/2  gap-5">
+        <div className="flex xl:flex-row 2xs:flex-col justify-between flex-1 overflow-hidden gap-4 mb-5">
+          <div className=" flex xl:basis-8/12  2xl:h-full 2xs:h-1/2  ">
             <FiltersFullPage />
             <Map properties={properties} />
           </div>

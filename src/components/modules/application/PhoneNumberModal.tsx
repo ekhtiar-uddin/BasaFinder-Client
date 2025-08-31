@@ -46,7 +46,6 @@ const PhoneNumberModal = ({
       if (res.success) {
         toast.success("Phone Number Sent", { id: toastId });
         onClose();
-        // router.push("/user/shop/products");
       } else {
         toast.error(res.message, { id: toastId });
       }

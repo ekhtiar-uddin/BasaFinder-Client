@@ -1,14 +1,14 @@
 "use client";
 
-import { useSingleProduct } from "@/redux/hook";
+import { useSingleProperty } from "@/redux/hook";
 // import { useGetPropertyQuery } from "@/state/api";
 import { MapPin, Star } from "lucide-react";
 
 const PropertyOverview = ({ propertyId }: { propertyId: string }) => {
   // const [property, setProperty] = useState(null);
 
-  // const { data: property } = await getSingleProduct(propertyId);
-  const { data: property } = useSingleProduct(propertyId);
+  // const { data: property } = await getSingleProperty(propertyId);
+  const { data: property } = useSingleProperty(propertyId);
 
   // if (isLoading) return <>Loading...</>;
   // if (isError || !property) {
