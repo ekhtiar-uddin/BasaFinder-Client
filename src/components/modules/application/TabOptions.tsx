@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { useUser } from "@/context/UserContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { updateApplication } from "@/services/Application";
 import { IApplication } from "@/types";
 import { Download } from "lucide-react";
@@ -14,7 +15,7 @@ import { toast } from "sonner";
 import PhoneNumberModal from "./PhoneNumberModal";
 const TabOptions = ({ applications }: { applications: IApplication[] }) => {
   const router = useRouter();
-
+  const isMobile = useIsMobile(685);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedApplication, setSelectedApplication] = useState({});
   const [activeTab, setActiveTab] = useState("all");
@@ -77,7 +78,10 @@ const TabOptions = ({ applications }: { applications: IApplication[] }) => {
             )
             .map((application) => (
               <ApplicationCard key={application?._id} application={application}>
-                <div className="flex justify-between gap-5 w-full pb-4 px-4">
+                <div
+                  className="flex 2xl:flex-row
+                 flex-col justify-between gap-5 w-full pb-4 px-4"
+                >
                   {/* Colored Section Status */}
                   <div
                     className={`p-4 text-green-700 grow ${
@@ -118,12 +122,16 @@ const TabOptions = ({ applications }: { applications: IApplication[] }) => {
                   </div>
 
                   {/* Right Buttons */}
-                  <div className="flex gap-2">
+                  <div
+                    className={`${
+                      isMobile ? "flex flex-col gap-2" : "flex flex-row gap-2"
+                    }`}
+                  >
                     {application?.status === "Approved" && (
                       <button
                         onClick={() => handleButtonClick(application)}
-                        className={`cursor-pointer bg-white border border-gray-300 text-gray-700 py-2 px-4
-                      rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50`}
+                        className={`cursor-pointer bg-white border border-gray-300 text-gray-700 py-4 px-4
+                      rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50 2xl:py-0`}
                       >
                         <PhoneOutgoing className="w-5 sh-5 mr-2" />
                         Provide Number
@@ -141,7 +149,7 @@ const TabOptions = ({ applications }: { applications: IApplication[] }) => {
 
                     <Link
                       href={`/search/${application?.property?._id}`}
-                      className={`bg-white border border-gray-300 text-gray-700 py-2 px-4 
+                      className={`bg-white border border-gray-300 text-gray-700 py-4 px-4 
                       rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50`}
                       scroll={false}
                     >
@@ -151,7 +159,7 @@ const TabOptions = ({ applications }: { applications: IApplication[] }) => {
 
                     {application?.status === "Approved" && (
                       <button
-                        className={`bg-white border border-gray-300 text-gray-700 py-2 px-4
+                        className={`bg-white border border-gray-300 text-gray-700 py-4 px-4
                       rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50`}
                       >
                         <Download className="w-5 h-5 mr-2" />
@@ -183,7 +191,7 @@ const TabOptions = ({ applications }: { applications: IApplication[] }) => {
                     )}
                     {application?.status === "Denied" && (
                       <button
-                        className={`bg-gray-800 text-white py-2 px-4 rounded-md flex items-center
+                        className={`bg-gray-800 text-white py-4 px-4 rounded-md flex items-center
                       justify-center hover:bg-secondary-500 hover:text-primary-50`}
                       >
                         Contact User

@@ -19,7 +19,7 @@ const roboto = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "BasaFinder",
+  title: "RentMode",
   description:
     "Discover, compare, and book rental properties with ease on BasaFinder.",
   icons: {

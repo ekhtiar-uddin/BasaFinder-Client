@@ -91,7 +91,7 @@ const SettingsForm = ({ onSubmit, userType }: SettingsFormProps) => {
                 />
               ) : (
                 <NMImageUploader
-                  className="max-w-max mt-2"
+                  className="md:max-w-max w-[150px] mt-2"
                   setImageFiles={setImageFiles}
                   setImagePreview={setImagePreview}
                   label="Upload Here"
@@ -99,7 +99,7 @@ const SettingsForm = ({ onSubmit, userType }: SettingsFormProps) => {
               )}
             </div>
 
-            <div className="pt-4 flex justify-between">
+            <div className="pt-4 flex md:flex-row md:gap-0 gap-5 flex-col md:justify-between">
               <div className="flex gap-5">
                 <Button
                   type="button"
@@ -119,7 +119,7 @@ const SettingsForm = ({ onSubmit, userType }: SettingsFormProps) => {
               {editMode && (
                 <Button
                   type="submit"
-                  className="bg-primary-700 text-white hover:bg-primary-800"
+                  className=" bg-primary-700 text-white hover:bg-primary-800"
                 >
                   Save Changes
                 </Button>

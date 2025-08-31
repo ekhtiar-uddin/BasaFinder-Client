@@ -1,5 +1,6 @@
 "use client";
 
+import { useIsMobile } from "@/hooks/use-mobile";
 import { NAVBAR_HEIGHT } from "@/lib/constants";
 import { selectCurrentUser, setUser } from "@/redux/features/authSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
@@ -27,6 +28,7 @@ const NavbarDashboard = () => {
   // console.log("here userinfo", userInfo);
   const router = useRouter();
   const pathname = usePathname();
+  const isMobile = useIsMobile(1140);
 
   const isDashboardPage =
     pathname.includes("/landlord") ||
@@ -49,7 +51,7 @@ const NavbarDashboard = () => {
       <div className="flex justify-between items-center w-full py-3 px-8 bg-primary-700 text-white">
         <div className="flex items-center gap-4 md:gap-6">
           {isDashboardPage && (
-            <div className="md:hidden">
+            <div className={`${isMobile ? "block" : "hidden"}`}>
               <SidebarTrigger />
             </div>
           )}
