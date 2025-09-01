@@ -67,19 +67,6 @@ export function AppSidebar() {
     }
   }
 
-  // if (user?.role === "admin") {
-  //   sidebarItems = adminPaths;
-  // }
-  // if (user?.role === "landlord") {
-  //   sidebarItems = landlordPaths;
-  // } else {
-  //   sidebarItems = tenantsPaths;
-  // }
-
-  // sidebarItems = adminPaths;
-
-  // const isActive = pathname === link.href;
-
   return (
     <Sidebar
       collapsible="icon"
@@ -149,18 +136,20 @@ export function AppSidebar() {
                       <link.icon
                         className={`${
                           !open && (index === 2 || index === 3)
-                            ? "h-3 w-3"
+                            ? "h-5 w-5"
                             : "h-5 w-5"
                         } ${isActive ? "text-primary" : "text-gray-600"}`}
                       />
 
-                      <span
-                        className={`font-medium ${
-                          isActive ? "text-primary" : "text-gray-600"
-                        }`}
-                      >
-                        {link.title}
-                      </span>
+                      {open && (
+                        <span
+                          className={`font-medium ${
+                            isActive ? "text-primary" : "text-gray-600"
+                          }`}
+                        >
+                          {link.title}
+                        </span>
+                      )}
                     </div>
                   </Link>
                 </SidebarMenuButton>

@@ -1,6 +1,6 @@
 "use server";
 
-import { IOrder } from "@/types/cart";
+import { IOrder } from "@/types/order";
 import { cookies } from "next/headers";
 
 export const createOrder = async (order: IOrder) => {

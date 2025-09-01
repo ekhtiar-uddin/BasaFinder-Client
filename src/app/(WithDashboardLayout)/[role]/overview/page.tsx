@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import Chart from "@/components/overviewDashboard/chart/Chart";
 import FeaturedDashboard from "@/components/overviewDashboard/featured/FeaturedDashboard";
@@ -6,8 +6,55 @@ import "@/components/overviewDashboard/overviewHome.scss";
 import List from "@/components/overviewDashboard/table/Table";
 
 import Widget from "@/components/widget/widget";
+import { getAllApplications } from "@/services/Application";
+import { getCurrentUser } from "@/services/AuthService";
+import { getAllProperties } from "@/services/Property";
+import { getAllUsers } from "@/services/User";
+import { cookies } from "next/headers";
 
-const OverviewPage = () => {
+const OverviewPage = async ({ params }: { params: { role: string } }) => {
+  const userRole = params.role;
+  const user = await getCurrentUser();
+  const token = (await cookies()).get("accessToken")?.value;
+  const response = await getAllApplications(token);
+  const { data: users } = await getAllUsers();
+
+  const applications = response?.data;
+
+  console.log("users", users);
+
+  const tenants = users?.filter((user) => user?.role === "tenant");
+  const landlords = users?.filter((user) => user?.role === "landlord");
+
+  const individualApplications = applications?.filter(
+    (item) => item?.email === user?.email
+  );
+
+  const individualRequests = applications?.filter(
+    (item) => item?.property?.landlord?.email === user?.email
+  );
+
+  const { data: properties } = await getAllProperties(
+    undefined,
+    undefined,
+    undefined
+  );
+
+  const landlorTotalEarning = individualRequests
+    ?.filter((item) => item?.status === "Approved")
+    .reduce((sum, item) => sum + (item?.property?.price || 0), 0);
+
+  console.log("individualRequests", individualRequests);
+  // console.log("individualApplications", individualApplications);
+
+  const allApprovedApplications = applications?.filter(
+    (item) => item?.status === "Approved"
+  );
+  const totalEarnings = allApprovedApplications?.reduce(
+    (sum, item) => sum + (item?.property?.price || 0),
+    0
+  );
+
   // const data = [
   //   { name: "January", Total: 1200 },
   //   { name: "February", Total: 2100 },
@@ -19,13 +66,38 @@ const OverviewPage = () => {
 
   return (
     <div className="pt-5">
-      <div className="grid grid-cols-4">
-        <Widget type="properties" amount={30} />
+      <div
+        className={`grid ${
+          userRole === "landlord" ? "grid-cols-5" : "grid-cols-4"
+        }`}
+      >
+        <Widget type="properties" amount={properties?.length} />
 
-        <Widget type="users" amount={20} />
+        {userRole === "tenant" && (
+          <>
+            <Widget
+              type="applications"
+              amount={individualApplications?.length}
+            />
+            <Widget type="favorites" amount={individualApplications?.length} />
+          </>
+        )}
 
-        <Widget type="landlords" amount={10} />
-        <Widget type="earning" amount={233444} />
+        {userRole !== "tenant" && userRole !== "admin" && (
+          <>
+            <Widget type="tenants" amount={tenants?.length} />
+            <Widget type="landlords" amount={landlords?.length} />
+            <Widget type="applications" amount={individualRequests?.length} />
+            <Widget type="earning" amount={landlorTotalEarning} />
+          </>
+        )}
+        {userRole !== "tenant" && userRole !== "landlord" && (
+          <>
+            <Widget type="users" amount={users?.length} />
+            <Widget type="balance" amount={13230} />
+            <Widget type="earning" amount={totalEarnings} />
+          </>
+        )}
       </div>
       <div className="charts flex gap-5 mt-5">
         <FeaturedDashboard todaySales={532.75} />

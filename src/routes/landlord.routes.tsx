@@ -8,11 +8,6 @@ import {
 } from "lucide-react";
 export const landlordPaths = [
   {
-    title: "Overview",
-    url: "/landlord/overview",
-    icon: SquareKanban,
-  },
-  {
     title: "My Profile",
     url: "/landlord/profile",
     icon: User,
@@ -27,7 +22,11 @@ export const landlordPaths = [
     url: "/landlord/applications",
     icon: Rows3,
   },
-
+  {
+    title: "Overview",
+    url: "/landlord/overview",
+    icon: SquareKanban,
+  },
   {
     title: "Settings",
     url: "/landlord/settings",

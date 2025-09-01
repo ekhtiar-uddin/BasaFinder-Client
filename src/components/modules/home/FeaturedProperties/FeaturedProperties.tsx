@@ -14,7 +14,7 @@ const FeaturedProperties = () => {
   );
 
   return (
-    <div className=" bg-opacity-50 py-20 customWidth">
+    <div className=" bg-opacity-50 py-20 customWidth ">
       <div className="">
         <div className="flex items-center  justify-between mb-5">
           <h2 className="font-bold text-2xl">
@@ -36,7 +36,7 @@ const FeaturedProperties = () => {
             </div>
           ) : (
             <div className=" w-full ">
-              <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2  gap-5">
+              <div className="grid 2xl:grid-cols-4  2lg:grid-cols-3 lg:grid-cols-3  md:grid-cols-2 sm:grid-cols-2  gap-5">
                 {properties?.slice(0, 8).map((property: IProperty) => (
                   <CardTwo
                     key={property._id}

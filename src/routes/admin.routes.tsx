@@ -8,11 +8,6 @@ import {
 } from "lucide-react";
 export const adminPaths = [
   {
-    title: "Overview",
-    url: "/admin/overview",
-    icon: SquareKanban,
-  },
-  {
     title: "My Profile",
     url: "/admin/profile",
     icon: User,
@@ -26,6 +21,11 @@ export const adminPaths = [
     title: "Property Management",
     url: "/admin/manage-property",
     icon: Landmark,
+  },
+  {
+    title: "Overview",
+    url: "/admin/overview",
+    icon: SquareKanban,
   },
   {
     title: "Settings",

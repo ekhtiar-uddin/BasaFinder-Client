@@ -16,9 +16,19 @@ xl =  → 1280px
 
 @theme inline {
   /* --breakpoint-*: initial; */
-  --breakpoint-xs: 512px; /* xs */
-  --breakpoint-2xs: 410px; /* 2xs */
-  --breakpoint-3xs: 328px; /* 3xs */
+
+  --breakpoint-3xs: 328px;
+  --breakpoint-2xs: 410px;
+  --breakpoint-xs: 512px;
+  --breakpoint-sm: 640px;
+  --breakpoint-2sm: 704px;
+  --breakpoint-md: 768px;
+  --breakpoint-2md: 832px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-2lg: 1120px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -125,7 +135,7 @@ xl =  → 1280px
   }
 
   .customWidth {
-    @apply 2xl:w-[1490px] xl:w-[1190px] lg:w-[970px] md:w-[704px] sm:w-[570px] w-[350px] xs:w-[448px] 2xs:w-[350] 3xs:w-[300px]  mx-auto;
+    @apply 2xl:w-[1475px] xl:w-[1190px] 2lg:w-[1080px] lg:w-[980px] md:w-[704px] 2sm:w-[660px] sm:w-[600px]  w-[350px] xs:w-[410px] 2xs:w-[350] 3xs:w-[300px]  mx-auto;
   }
   .addFlexItems {
     @apply flex items-center;

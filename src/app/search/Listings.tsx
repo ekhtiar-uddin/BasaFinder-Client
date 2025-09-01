@@ -90,7 +90,7 @@ const Listings = () => {
             )
           )}
         </div>
-        <div className="p-4  2xl:hidden lg:w-full grid xl:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 2xs:w-full xl:gap-0 sm:gap-5 lg:mx-0 sm:mx-auto">
+        <div className="p-4  2xl:hidden lg:w-full grid xl:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 2xs:w-full xl:gap-0 sm:gap-5 lg:mx-0 sm:mx-auto">
           {properties?.map((property) => (
             <CardTwo
               key={property._id}

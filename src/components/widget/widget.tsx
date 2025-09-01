@@ -1,3 +1,4 @@
+"use client";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import Inventory2Icon from "@mui/icons-material/Inventory2";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -8,14 +9,13 @@ import "./widget.scss";
 
 const Widget = ({ type, amount }) => {
   let data;
-  const diff = 20;
 
   switch (type) {
-    case "customers":
+    case "applications":
       data = {
-        title: "CUSTOMERS",
+        title: "APPLICATIONS",
         isMoney: false,
-        link: "See all customers",
+        link: "See all applications",
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -50,6 +50,22 @@ const Widget = ({ type, amount }) => {
         title: "ORDERS",
         isMoney: false,
         link: "View all orders",
+        icon: (
+          <ShoppingCartOutlinedIcon
+            className="icon"
+            style={{
+              backgroundColor: "rgba(218, 165, 32, 0.2)",
+              color: "goldenrod",
+            }}
+          />
+        ),
+      };
+      break;
+    case "favorites":
+      data = {
+        title: "FAVORITES",
+        isMoney: false,
+        link: "View all favorites",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -111,6 +127,23 @@ const Widget = ({ type, amount }) => {
       };
       break;
 
+    case "tenants":
+      data = {
+        title: "TENANTS",
+        isMoney: false,
+        link: "See all tenants",
+        icon: (
+          <AccountBalanceWalletOutlinedIcon
+            className="icon"
+            style={{
+              backgroundColor: "rgba(255, 193, 7, 0.2)",
+              color: "#ffc107",
+            }}
+          />
+        ),
+      };
+      break;
+
     case "users":
       data = {
         title: "USERS",
@@ -162,7 +195,7 @@ const Widget = ({ type, amount }) => {
       <div className="right">
         <div className="percentage positive">
           <KeyboardArrowUpIcon />
-          {diff} %
+          {20} %
         </div>
         {data.icon}
       </div>

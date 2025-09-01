@@ -43,7 +43,7 @@ const CardTwo = ({
           dd
         </button> */}
       </div>
-      <div className="p-4">
+      <div className="p-4 sm:p-1 2sm:p-4">
         <div className="flex items-center justify-between">
           <h2 className=" font-bold mb-1 ">{property.name}</h2>
 
@@ -60,8 +60,8 @@ const CardTwo = ({
         <p className="text-gray-600 mb-2">
           {property?.location?.address}, {property?.location?.city}
         </p>
-        <div className="flex justify-between items-center">
-          <div className="flex items-center mb-2">
+        <div className="flex justify-between 2sm:flex-row sm:flex-col  items-center">
+          <div className="flex items-center  mb-2">
             <Star className="w-4 h-4 text-yellow-400 mr-1" />
             <span className="font-semibold">
               {/* {property?.averageRating?.toFixed(1)} */}
@@ -77,7 +77,7 @@ const CardTwo = ({
           </p>
         </div>
         <hr className="" />
-        <div className="flex justify-between items-center gap-4 text-gray-600 mt-5">
+        <div className="flex 2lg:flex-row lg:flex-col md:flex-row sm:flex-col justify-between items-center gap-4 text-gray-600 mt-5">
           <span className="flex items-center">
             <Bed className="w-5 h-5 mr-2" />
             {property.beds} Bed

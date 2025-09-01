@@ -41,7 +41,7 @@ const DiscoverSection = () => {
             a few clicks away. Begin your journey now!
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 text-center">
+        <div className="grid grid-cols-1 2sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 text-center">
           {[
             {
               imageSrc: "/landing-icon-wand.png",

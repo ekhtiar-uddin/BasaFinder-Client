@@ -37,7 +37,7 @@ const FeaturesSection = () => {
         >
           Quickly find the home you want using our effective search filters!
         </motion.h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-8 xl:gap-6 ">
+        <div className="grid grid-cols-1  lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:grid-cols-2  gap-4 lg:gap-8 xl:gap-6 ">
           {[0, 1, 2, 3].map((index) => (
             <motion.div key={index} variants={itemVariants}>
               <FeatureCard

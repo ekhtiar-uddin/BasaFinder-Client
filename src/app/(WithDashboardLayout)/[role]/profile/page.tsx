@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { selectCurrentUser } from "@/redux/features/authSlice";
 import { useAppSelector } from "@/redux/hook";
@@ -14,12 +15,12 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const LandlorPage = () => {
+const AdminPage = () => {
   const user = useAppSelector(selectCurrentUser);
 
   return (
     <section className="flex gap-5 pt-4 pl-4 text-sm">
-      <div className="w-6/10 ">
+      <div className="2xl:w-7/10 w-full ">
         <div className="pb-5 bg-white rounded ">
           <Image
             src="https://hype.my/wp-content/uploads/2024/07/4-10.jpg"
@@ -66,7 +67,7 @@ const LandlorPage = () => {
             </div>
 
             <div className="flex gap-4 mt-5">
-              <Link href="/landlord/settings">
+              <Link href={`/${user?.role}/settings`}>
                 <Button
                   type="button"
                   className="bg-secondary-500 text-white hover:bg-secondary-600"
@@ -89,7 +90,7 @@ const LandlorPage = () => {
         <div className="py-2 px-3 mt-5 bg-white  b1 rounded">
           <div className="flex justify-between border-b pb-5 border-gray-300">
             <h1 className="font-bold">Personal Informtion</h1>
-            <Link href="/landlord/settings">
+            <Link href={`/${user?.role}/settings`}>
               <p className="underline">Edit Profile</p>
             </Link>
           </div>
@@ -146,7 +147,7 @@ const LandlorPage = () => {
         </div>
       </div>
 
-      <div className="w-4/10">
+      <div className="2xl:w-3/10 2xl:block hidden">
         <div className="bg-white shadow-xl py-3 px-5 rounded">
           {user?.name} best performance from last year
         </div>
@@ -155,4 +156,4 @@ const LandlorPage = () => {
   );
 };
 
-export default LandlorPage;
+export default AdminPage;

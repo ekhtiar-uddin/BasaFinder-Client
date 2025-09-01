@@ -118,7 +118,7 @@
 }
 
 /* Media Query */
-@media (max-width: 576px) {
+@media (max-width: 900px) {
   .splide__slide {
     display: block;
     text-align: center;

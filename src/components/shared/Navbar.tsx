@@ -2,7 +2,11 @@
 
 import { NAVBAR_HEIGHT } from "@/lib/constants";
 import { selectCurrentUser, setUser } from "@/redux/features/authSlice";
-import { setFilters } from "@/redux/features/globalSlice";
+import {
+  initialState,
+  setFilters,
+  toggleFiltersFullOpen,
+} from "@/redux/features/globalSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { logout } from "@/services/AuthService";
 import {
@@ -50,7 +54,7 @@ const Navbar = () => {
     pathname.includes("/landlord") ||
     pathname.includes("/tenant") ||
     pathname.includes("/admin");
-  // const isPropertiesPage = pathname.includes("/search");
+  const isPropertiesPage = pathname.includes("/search");
 
   const handleSignOut = async () => {
     await logout();
@@ -103,12 +107,27 @@ const Navbar = () => {
       console.error("error search location:", error);
     }
   };
+  const isFiltersFullOpen = useAppSelector(
+    (state) => state.global.isFiltersFullOpen
+  );
+
+  const handleGoHome = () => {
+    router.push("/");
+    dispatch(setFilters(initialState.filters));
+    if (isFiltersFullOpen === false) {
+      return;
+    }
+    dispatch(toggleFiltersFullOpen());
+  };
 
   const navs = (
     <>
-      <Link href="/" className="md:mr-0 sm:mr-5">
+      <Link href="/" className="md:-mr-4 sm:mr-5">
         {" "}
-        <button className={`${pathname === "/" ? "navBtnActive" : "navBtn"}`}>
+        <button
+          onClick={isPropertiesPage ? handleGoHome : undefined}
+          className={`${pathname === "/" ? "navBtnActive" : "navBtn"} `}
+        >
           Home
         </button>
       </Link>
@@ -125,7 +144,7 @@ const Navbar = () => {
           </span>
         </button>
       </Link>
-      <Link href="/search" className="md:mr-0 sm:mr-5">
+      <Link href="/search" className="md:mr-0 md:-ml-4 sm:mr-5">
         {" "}
         <button
           className={`${pathname === "/search" ? "navBtnActive" : "navBtn"}`}
@@ -264,36 +283,6 @@ const Navbar = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="bg-white text-primary-700">
                     <DropdownMenuItem
-                      className="cursor-pointer sm:hidden block hover:!bg-primary-700 hover:!text-primary-100 font-bold"
-                      onClick={() =>
-                        router.push(
-                          userInfo?.role?.toLowerCase() === "admin"
-                            ? "/admin/users"
-                            : userInfo?.role?.toLowerCase() === "landlord"
-                            ? "/landlord/property"
-                            : "/tenant/applications",
-                          { scroll: false }
-                        )
-                      }
-                    >
-                      Properties
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      className="cursor-pointer sm:hidden block hover:!bg-primary-700 hover:!text-primary-100 font-bold"
-                      onClick={() =>
-                        router.push(
-                          userInfo?.role?.toLowerCase() === "admin"
-                            ? "/admin/users"
-                            : userInfo?.role?.toLowerCase() === "landlord"
-                            ? "/landlord/property"
-                            : "/tenant/applications",
-                          { scroll: false }
-                        )
-                      }
-                    >
-                      Our Story
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
                       className="cursor-pointer hover:!bg-primary-700 hover:!text-primary-100 font-bold"
                       onClick={() =>
                         router.push(
@@ -349,71 +338,71 @@ const Navbar = () => {
                     Sign Up
                   </Button>
                 </Link>
-
-                <button
-                  onClick={() => setMobileMenu(!mobileMenu)}
-                  className="2xs:block lg:hidden hover:bg-[#f8fafc] cursor-pointer p-1.5 rounded-sm "
-                >
-                  <Menu className="w-8" />
-                </button>
-                {mobileMenu && (
-                  <div
-                    className="fixed inset-0 backdrop-blur-sm z-40"
-                    onClick={() => setMobileMenu(false)}
-                  />
-                )}
-                <div
-                  className={`lg:hidden bg-white transition-all duration-300 fixed top-0 right-0 h-full shadow-xl z-50 border-l overflow-hidden w-80 ${
-                    mobileMenu
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-full opacity-0"
-                  }`}
-                >
-                  <div className="p-4  ">
-                    <button
-                      onClick={() => setMobileMenu(!mobileMenu)}
-                      className="2xs:block lg:hidden hover:bg-[#f8fafc] cursor-pointer p-2 rounded-sm"
-                    >
-                      <X className="w-[25px]" />
-                    </button>
-                    <div className="mt-10 mb-2">
-                      <div className="flex justify-center ">
-                        <Input
-                          type="text"
-                          value={searchQuery}
-                          onChange={(e) => setSearchQuery(e.target.value)}
-                          placeholder="Search by city or address"
-                          className="w-full  max-w-lg rounded-none rounded-l-xl  bg-white h-12"
-                        />
-                        <Button
-                          onClick={handleLocationSearch}
-                          className="bg-secondary-500 text-white rounded-none rounded-r-xl  border-none hover:bg-secondary-600 h-12 "
-                        >
-                          Find it
-                        </Button>
-                      </div>
-                    </div>
-
-                    <div
-                      className={`border-b pb-5 lg:hidden 3xs:flex flex-col items-center gap-1`}
-                    >
-                      {navs}
-                    </div>
-
-                    <div className="mt-8">
-                      <Link href="/login">
-                        <Button
-                          variant="outline"
-                          className="h-[40px] hover:bg-secondary-500/95 w-full bg-secondary-500  text-white "
-                        >
-                          Sign In
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
               </>
             )}
+
+            <button
+              onClick={() => setMobileMenu(!mobileMenu)}
+              className="2xs:block lg:hidden hover:bg-[#f8fafc] cursor-pointer p-1.5 rounded-sm "
+            >
+              <Menu className="w-8" />
+            </button>
+            {mobileMenu && (
+              <div
+                className="fixed inset-0 backdrop-blur-sm z-40"
+                onClick={() => setMobileMenu(false)}
+              />
+            )}
+            <div
+              className={`lg:hidden bg-white transition-all duration-300 fixed top-0 right-0 h-full shadow-xl z-50 border-l overflow-hidden w-80 ${
+                mobileMenu
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-full opacity-0"
+              }`}
+            >
+              <div className="p-4  ">
+                <button
+                  onClick={() => setMobileMenu(!mobileMenu)}
+                  className="2xs:block lg:hidden hover:bg-[#f8fafc] cursor-pointer p-2 rounded-sm"
+                >
+                  <X className="w-[25px]" />
+                </button>
+                <div className="mt-10 mb-2">
+                  <div className="flex justify-center ">
+                    <Input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search by city or address"
+                      className="w-full  max-w-lg rounded-none rounded-l-xl  bg-white h-12"
+                    />
+                    <Button
+                      onClick={handleLocationSearch}
+                      className="bg-secondary-500 text-white rounded-none rounded-r-xl  border-none hover:bg-secondary-600 h-12 "
+                    >
+                      Find it
+                    </Button>
+                  </div>
+                </div>
+
+                <div
+                  className={`border-b pb-5 lg:hidden 3xs:flex flex-col items-center gap-1`}
+                >
+                  {navs}
+                </div>
+
+                <div className="mt-8">
+                  <Link href="/login">
+                    <Button
+                      variant="outline"
+                      className="h-[40px] hover:bg-secondary-500/95 w-full bg-secondary-500  text-white "
+                    >
+                      Sign In
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
