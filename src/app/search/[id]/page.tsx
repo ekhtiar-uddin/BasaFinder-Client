@@ -49,11 +49,11 @@ const SingleListing = () => {
             <div className="order-1 lg:block hidden md:order-2 w-2/6">
               <ContactWidget onOpenModal={() => setIsModalOpen(true)} />
 
-              <div className=" w-full mt-10 h-[120vh] overflow-auto">
+              <h1 className=" font-bold text-2xl mt-24 mb-5">
+                Some Suggested Properties
+              </h1>
+              <div className=" w-full  ">
                 {" "}
-                <h1 className=" font-bold text-2xl ">
-                  Some Suggested Properties
-                </h1>
                 <div className="p-4 w-full 2xl:grid hidden  grid-cols-1">
                   {properties?.slice(2, 8)?.map((property) => (
                     <CardCompact

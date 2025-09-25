@@ -28,16 +28,24 @@ const FeaturesSection = () => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className="py-12 customWidth bg-white"
+      className=" customWidth bg-white"
     >
       <div className="">
         <motion.h2
           variants={itemVariants}
-          className="text-3xl font-bold text-center mb-12 w-full sm:w-2/3 mx-auto"
+          className="text-3xl mb-3 md:text-[40px] font-extrabold text-center "
+        >
+          Find Your Next Rental Home
+        </motion.h2>
+        <motion.p
+          variants={itemVariants}
+          className=" text-gray-500 text-center"
         >
           Quickly find the home you want using our effective search filters!
-        </motion.h2>
-        <div className="grid grid-cols-1  lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:grid-cols-2  gap-4 lg:gap-8 xl:gap-6 ">
+          Discover perfect rentals fast <br /> with powerful tools and smart
+          filtering options.
+        </motion.p>
+        <div className="mt-10 grid grid-cols-1  lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:grid-cols-2  gap-4 lg:gap-8 xl:gap-6 ">
           {[0, 1, 2, 3].map((index) => (
             <motion.div key={index} variants={itemVariants}>
               <FeatureCard

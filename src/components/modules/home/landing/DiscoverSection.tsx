@@ -25,23 +25,23 @@ const DiscoverSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.8 }}
       variants={containerVariants}
-      className="md:py-12 3xs:py-0 bg-white "
+      className="mt-[100px]  3xs:py-0  "
     >
       <div className="customWidth">
-        <motion.div variants={itemVariants} className="my-12 text-center">
-          <h2 className="text-3xl font-semibold leading-tight text-gray-800">
-            Identify
+        <motion.div variants={itemVariants} className=" text-center">
+          <h2 className="text-[40px] mb-3  font-extrabold leading-tight ">
+            Move to Dream Living{" "}
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="text-lg text-gray-600">
             Your Ideal Rental Home Awaits!
           </p>
-          <p className="mt-2 text-gray-500 max-w-3xl mx-auto">
+          <p className="mt-1 text-gray-500 max-w-3xl mx-auto">
             Easily explore rental listings tailored to your lifestyle. With our
             seamless search tools, finding a place that feels like home is just
             a few clicks away. Begin your journey now!
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 2sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 text-center">
+        <div className="mt-10 grid grid-cols-1 2sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 text-center">
           {[
             {
               imageSrc: "/landing-icon-wand.png",

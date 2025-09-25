@@ -30,7 +30,7 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
     <section className="bg-white">
       <Navbar />
       <div
-        className="w-full mx-auto px-5 flex flex-col 2xl:[--vh:100vh] sm:[--vh:210vh]"
+        className="w-full mx-auto px-5 flex flex-col 2xl:[--vh:97vh] sm:[--vh:210vh]"
         style={{ height: `calc(var(--vh) - ${NAVBAR_HEIGHT}px)` }}
       >
         <FiltersBarPage />

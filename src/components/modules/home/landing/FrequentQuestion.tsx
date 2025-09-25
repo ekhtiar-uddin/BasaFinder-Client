@@ -15,12 +15,17 @@ const FrequentQuestion = () => {
   };
 
   return (
-    <div className="my-24">
-      <h1 className="text-4xl md:text-5xl  mb-16 text-center font-bold text-primary-800">
+    <div className="mb-[100px]">
+      <h1 className="text-4xl md:text-[40px] mb-3 text-center font-extrabold text-primary-800">
         Frequently Asked <br className="md:hidden block" /> Questions
       </h1>
+      <p className=" text-gray-500 text-center">
+        Easily explore rental listings tailored to your lifestyle. With our
+        seamless search tools, finding a place that feels <br /> like home is
+        just a few clicks away. Begin your journey now!
+      </p>
 
-      <section className="customWidth xl:w-[40%] lg:w-[50%] md:w-[60%] mx-auto">
+      <section className="mt-10 customWidth xl:w-[40%] lg:w-[50%] md:w-[60%] mx-auto">
         {faqs?.map((item) => (
           <div
             onClick={() => handleVisibility(item?.id)}

@@ -142,7 +142,7 @@ const FiltersBarPage = () => {
   // console.log("here", filters);
 
   return (
-    <div className=" flex justify-between items-center w-full py-5">
+    <div className=" flex justify-between items-center w-full py-3 ">
       {/* Filters */}
       <div className="flex xl:flex-nowrap  3xs:flex-wrap justify-between 3xs:justify-start items-center gap-4 ">
         {/* All Filters */}
@@ -296,7 +296,7 @@ const FiltersBarPage = () => {
       </div>
 
       {/* View Mode */}
-      <div className=" xl:block hidden justify-between items-center gap-4 p-2">
+      <div className=" xl:block hidden justify-between items-center gap-4">
         <div className="flex border rounded-xl">
           <Button
             variant="ghost"

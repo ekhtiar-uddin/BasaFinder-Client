@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="text-center xl:text-left">
             <Link
               href="/"
-              className="text-xl md:text-2xl font-bold inline-block"
+              className="text-xl md:text-2xl font-extrabold inline-block"
               scroll={false}
             >
               RentMode
@@ -73,7 +73,7 @@ const Footer = () => {
                 <li className="w-full sm:w-auto">
                   <Link
                     href="/about"
-                    className="block py-1 hover:text-secondary-600 transition-colors"
+                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
                   >
                     About Us
                   </Link>
@@ -81,7 +81,7 @@ const Footer = () => {
                 <li className="w-full sm:w-auto">
                   <Link
                     href="/contact"
-                    className="block py-1 hover:text-secondary-600 transition-colors"
+                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
                   >
                     Contact Us
                   </Link>
@@ -89,7 +89,7 @@ const Footer = () => {
                 <li className="w-full sm:w-auto">
                   <Link
                     href="/faq"
-                    className="block py-1 hover:text-secondary-600 transition-colors"
+                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
                   >
                     FAQ
                   </Link>
@@ -97,7 +97,7 @@ const Footer = () => {
                 <li className="w-full sm:w-auto">
                   <Link
                     href="/terms"
-                    className="block py-1 hover:text-secondary-600 transition-colors"
+                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
                   >
                     Terms
                   </Link>
@@ -105,7 +105,7 @@ const Footer = () => {
                 <li className="w-full sm:w-auto">
                   <Link
                     href="/privacy"
-                    className="block py-1 hover:text-secondary-600 transition-colors"
+                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
                   >
                     Privacy
                   </Link>
@@ -140,7 +140,7 @@ const Footer = () => {
 
           {/* Newsletter Signup */}
           <div className="text-center xl:text-right order-2 xl:order-3 px-4">
-            <h2 className="font-bold text-base md:text-lg mb-4">
+            <h2 className="font-extrabold text-base md:text-lg mb-4">
               GET INVOLVED
             </h2>
             <div className="max-w-xs mx-auto xl:mx-0 xl:max-w-sm xl:ml-auto">

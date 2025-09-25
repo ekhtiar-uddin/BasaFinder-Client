@@ -10,8 +10,12 @@ const Testimonials = () => {
   return (
     <section className="testimonial-container ">
       <div className="title">
-        <h2 className="mb-3">Happy Renters</h2>
-        <p>Real stories from our residents.</p>
+        <h2 className="mb-3 ">Happy Renters</h2>
+        <p className="mb-10 text-gray-500 text-center">
+          Discover authentic testimonials from satisfied residents who found
+          their perfect home. Read real stories of comfort, community, and
+          happiness!
+        </p>
       </div>
 
       <div className="slider-container ">

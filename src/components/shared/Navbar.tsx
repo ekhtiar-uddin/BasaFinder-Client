@@ -184,7 +184,10 @@ const Navbar = () => {
 
   return (
     <div className="w-full border-b text-sm">
-      <div className=" shadow-xl bg-secondary-500 text-white">
+      <div className={`shadow-xl bg-secondary-500 text-white $`}>
+        {/* {
+          isPropertiesPage && "hidden"
+        } */}
         <div
           className=" customWidth flex justify-center items-center w-full"
           style={{ height: `${NAVBAR_HEIGHT}px ` }}
@@ -203,8 +206,6 @@ const Navbar = () => {
                 </div>
                 <div className="md:flex items-center  hidden ">
                   <p className="font-semibold  flex gap-1 items-center">
-                    {/* Discover your perfect rental apartment with our advanced search
-                     */}
                     <SearchCheck className="w-[20px]" />{" "}
                     <span className="">
                       Find your ideal rental home quickly{" "}
@@ -243,7 +244,7 @@ const Navbar = () => {
                   height={24}
                   className="w-6 h-6 bg-primary-700 p-1 rounded "
                 />
-                <div className="text-xl font-bold">
+                <div className="text-xl font-extrabold">
                   RENT
                   <span className=" font-light ">MODE</span>
                 </div>
@@ -412,7 +413,9 @@ const Navbar = () => {
           onMouseEnter={() => setShow(true)}
           onMouseLeave={() => setShow(false)}
           className={`${
-            scrollY > 30 ? "top-[74px] border-t-none" : "top-[125px] border-t"
+            scrollY > 30
+              ? "top-[74px] border-t-none"
+              : `${isPropertiesPage ? "" : "top-[125px] "} border-t`
           } fixed  left-0  bg-white z-80 h-[70vh] w-full border-b-5  border-b-secondary-600`}
         >
           <div className="flex  mt-7  justify-center gap-8">

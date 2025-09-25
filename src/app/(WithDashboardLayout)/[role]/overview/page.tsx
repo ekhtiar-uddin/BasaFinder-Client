@@ -12,8 +12,12 @@ import { getAllProperties } from "@/services/Property";
 import { getAllUsers } from "@/services/User";
 import { cookies } from "next/headers";
 
-const OverviewPage = async ({ params }: { params: { role: string } }) => {
-  const userRole = params.role;
+const OverviewPage = async ({
+  params,
+}: {
+  params: Promise<{ role: string }>;
+}) => {
+  const { role } = await params;
   const user = await getCurrentUser();
   const token = (await cookies()).get("accessToken")?.value;
   const response = await getAllApplications(token);
@@ -68,12 +72,12 @@ const OverviewPage = async ({ params }: { params: { role: string } }) => {
     <div className="pt-5">
       <div
         className={`grid ${
-          userRole === "landlord" ? "grid-cols-5" : "grid-cols-4"
+          role === "landlord" ? "grid-cols-5" : "grid-cols-4"
         }`}
       >
         <Widget type="properties" amount={properties?.length} />
 
-        {userRole === "tenant" && (
+        {role === "tenant" && (
           <>
             <Widget
               type="applications"
@@ -83,7 +87,7 @@ const OverviewPage = async ({ params }: { params: { role: string } }) => {
           </>
         )}
 
-        {userRole !== "tenant" && userRole !== "admin" && (
+        {role !== "tenant" && role !== "admin" && (
           <>
             <Widget type="tenants" amount={tenants?.length} />
             <Widget type="landlords" amount={landlords?.length} />
@@ -91,7 +95,7 @@ const OverviewPage = async ({ params }: { params: { role: string } }) => {
             <Widget type="earning" amount={landlorTotalEarning} />
           </>
         )}
-        {userRole !== "tenant" && userRole !== "landlord" && (
+        {role !== "tenant" && role !== "landlord" && (
           <>
             <Widget type="users" amount={users?.length} />
             <Widget type="balance" amount={13230} />

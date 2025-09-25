@@ -54,7 +54,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative h-[85vh]  ">
+    <div className="relative h-[87vh]  ">
       <Image
         src="/landing-hero.jpg"
         alt="Rentmode Rental Platform Hero Section"
@@ -70,8 +70,8 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className=" text-center w-full "
         >
-          <div className="max-w-4xl mx-auto px-16 sm:px-12">
-            <h1 className="text-5xl font-extrabold text-white mb-4">
+          <div className="max-w-5xl mx-auto px-16 sm:px-12">
+            <h1 className="text-[56px] leading-[60px] font-extrabold text-white mb-4">
               Take the first step toward your dream apartment.
             </h1>
             <p className="text-xl text-white mb-8">

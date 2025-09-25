@@ -17,8 +17,9 @@ const HomePage = () => {
       <DiscoverSection />
 
       <Testimonials />
-      <CallToActionSection />
+
       <FrequentQuestion />
+      <CallToActionSection />
       <Footer />
     </div>
   );
