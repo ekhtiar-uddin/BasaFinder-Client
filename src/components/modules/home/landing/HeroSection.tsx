@@ -70,11 +70,11 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className=" text-center w-full "
         >
-          <div className="max-w-5xl mx-auto px-16 sm:px-12">
-            <h1 className="text-[56px] leading-[60px] font-extrabold text-white mb-4">
+          <div className="  max-w-5xl mx-auto px-16 sm:px-12">
+            <h1 className="text-[40px] lg:text-[52px] xl:text-[56px]   leading-[45px]  lg:leading-[60px] font-extrabold text-white mb-4">
               Take the first step toward your dream apartment.
             </h1>
-            <p className="text-xl text-white mb-8">
+            <p className=" text-lg md:text-xl text-white mb-8">
               Browse our full list of rental homes designed to match your
               lifestyle and personal preferences!
             </p>

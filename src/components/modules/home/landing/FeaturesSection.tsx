@@ -33,17 +33,17 @@ const FeaturesSection = () => {
       <div className="">
         <motion.h2
           variants={itemVariants}
-          className="text-3xl mb-3 md:text-[40px] font-extrabold text-center "
+          className="text-3xl mb-4 md:text-[40px] font-extrabold text-center "
         >
-          Find Your Next Rental Home
+          Your Next Rental Home
         </motion.h2>
         <motion.p
           variants={itemVariants}
-          className=" text-gray-500 text-center"
+          className="md:text-base text-sm text-gray-500 text-center"
         >
-          Quickly find the home you want using our effective search filters!
-          Discover perfect rentals fast <br /> with powerful tools and smart
-          filtering options.
+          Find your ideal rental effortlessly using smart search filters,
+          verified listings, and real <br /> reviews for a fast, reliable home
+          search
         </motion.p>
         <div className="mt-10 grid grid-cols-1  lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 sm:grid-cols-2  gap-4 lg:gap-8 xl:gap-6 ">
           {[0, 1, 2, 3].map((index) => (

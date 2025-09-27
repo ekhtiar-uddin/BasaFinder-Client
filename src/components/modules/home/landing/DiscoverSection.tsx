@@ -29,16 +29,15 @@ const DiscoverSection = () => {
     >
       <div className="customWidth">
         <motion.div variants={itemVariants} className=" text-center">
-          <h2 className="text-[40px] mb-3  font-extrabold leading-tight ">
-            Move to Dream Living{" "}
-          </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-sm font-bold text-secondary-600 ">
             Your Ideal Rental Home Awaits!
           </p>
-          <p className="mt-1 text-gray-500 max-w-3xl mx-auto">
-            Easily explore rental listings tailored to your lifestyle. With our
-            seamless search tools, finding a place that feels like home is just
-            a few clicks away. Begin your journey now!
+          <h2 className="text-3xl mb-4   lg:text-[40px]    font-extrabold leading-tight ">
+            Move to Dream Living{" "}
+          </h2>
+          <p className=" md:text-base text-sm text-gray-500 max-w-3xl mx-auto">
+            Easily explore rental listings perfectly suited to your lifestyle.
+            Using smart search tools, finding the perfect home is quick.
           </p>
         </motion.div>
         <div className="mt-10 grid grid-cols-1 2sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 text-center">
@@ -81,7 +80,7 @@ const DiscoverCard = ({
   title: string;
   description: string;
 }) => (
-  <div className="px-4 py-12 border-b-4 border-primary-600 shadow-lg rounded-lg bg-primary-50 md:h-72">
+  <div className="px-4 border-t py-12 border-b-4 border-b-primary-600 shadow-lg rounded-lg bg-primary-50 md:h-72">
     <div className="bg-secondary-600 p-[0.6rem] rounded-full mb-4 h-10 w-10 mx-auto">
       <Image
         src={imageSrc}
@@ -92,7 +91,7 @@ const DiscoverCard = ({
       />
     </div>
     <h3 className="mt-4 text-xl font-medium text-gray-800">{title}</h3>
-    <p className="mt-2 text-base text-gray-500">{description}</p>
+    <p className="mt-2 md:text-base text-sm text-gray-500">{description}</p>
   </div>
 );
 

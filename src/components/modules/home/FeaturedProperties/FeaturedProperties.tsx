@@ -43,17 +43,16 @@ const FeaturedProperties = () => {
         <div className="">
           <motion.h2
             variants={itemVariants}
-            className="text-3xl mb-3  md:text-[40px] font-extrabold text-center "
+            className="text-3xl  lg:text-[40px]  mb-4 font-extrabold text-center "
           >
             Featured Properties
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className=" text-gray-500 text-center"
+            className="  text-gray-500 md:text-base text-sm text-center"
           >
-            Quickly find the home you want using our effective search filters!
-            Discover perfect rentals fast <br /> with powerful tools and smart
-            filtering options.
+            Quickly find the home you want using effective search filters and
+            powerful tools, <br /> simple to discover perfect rentals fast
           </motion.p>
 
           {/* <Link href="/search">

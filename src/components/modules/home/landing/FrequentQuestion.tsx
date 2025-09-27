@@ -15,14 +15,14 @@ const FrequentQuestion = () => {
   };
 
   return (
-    <div className="mb-[100px]">
-      <h1 className="text-4xl md:text-[40px] mb-3 text-center font-extrabold text-primary-800">
+    <div className="mb-[100px] md:mt-5 mt-20 customWidth">
+      <h1 className="text-3xl  lg:text-[40px] mb-4 text-center font-extrabold text-primary-800">
         Frequently Asked <br className="md:hidden block" /> Questions
       </h1>
-      <p className=" text-gray-500 text-center">
-        Easily explore rental listings tailored to your lifestyle. With our
-        seamless search tools, finding a place that feels <br /> like home is
-        just a few clicks away. Begin your journey now!
+      <p className="md:text-base text-sm text-gray-500 text-center">
+        Easily explore rental listings for your lifestyle. With seamless search
+        tools, <br />
+        finding a place that feels like home is simple.
       </p>
 
       <section className="mt-10 customWidth xl:w-[40%] lg:w-[50%] md:w-[60%] mx-auto">
@@ -52,7 +52,7 @@ const FrequentQuestion = () => {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="smallDesc text-left pb-5">{item?.answer}</p>
+                <p className="smallDesc  text-left pb-5">{item?.answer}</p>
               </div>
             </div>
           </div>

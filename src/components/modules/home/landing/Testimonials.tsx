@@ -8,13 +8,12 @@ import { reviews } from "./utils";
 
 const Testimonials = () => {
   return (
-    <section className="testimonial-container ">
+    <section className="testimonial-container customWidth ">
       <div className="title">
-        <h2 className="mb-3 ">Happy Renters</h2>
-        <p className="mb-10 text-gray-500 text-center">
-          Discover authentic testimonials from satisfied residents who found
-          their perfect home. Read real stories of comfort, community, and
-          happiness!
+        <h2 className="mb-4 !text-3xl md:!text-[40px] ">Happy Renters</h2>
+        <p className="   mb-10 md:text-base text-sm text-gray-500 text-center">
+          Discover real testimonials from happy residents who found their
+          perfect home . Read stories of comfort, community, and joy!
         </p>
       </div>
 
@@ -56,7 +55,7 @@ const Testimonials = () => {
               />
 
               <div className="content">
-                <p className="text">{review.text}</p>
+                <p className="text !text-base md:!text-lg">{review.text}</p>
                 <div className="info">
                   <div className="rating">
                     <span className="star">&#9733;</span>

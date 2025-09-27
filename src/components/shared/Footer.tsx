@@ -14,10 +14,10 @@ const Footer = () => {
       <div className="customWidth">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:justify-between xl:items-start">
           {/* Brand & Social */}
-          <div className="text-center xl:text-left">
+          <div className="text-center xl:text-left uppercase">
             <Link
               href="/"
-              className="text-xl md:text-2xl font-extrabold inline-block"
+              className="text-xl  md:text-2xl font-extrabold inline-block"
               scroll={false}
             >
               RentMode
@@ -140,7 +140,7 @@ const Footer = () => {
 
           {/* Newsletter Signup */}
           <div className="text-center xl:text-right order-2 xl:order-3 px-4">
-            <h2 className="font-extrabold text-base md:text-lg mb-4">
+            <h2 className="font-bold text-base md:text-lg mb-4">
               GET INVOLVED
             </h2>
             <div className="max-w-xs mx-auto xl:mx-0 xl:max-w-sm xl:ml-auto">

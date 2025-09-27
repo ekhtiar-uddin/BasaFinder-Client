@@ -22,15 +22,15 @@ const CallToActionSection = () => {
       >
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0 md:mr-10">
-            <h2 className="text-2xl font-extrabold text-white">
+            <h2 className="text-3xl  font-extrabold text-white">
               Discover Your Perfect Rental Space
             </h2>
           </div>
           <div>
-            <p className="text-white mb-3">
+            <p className="text-white mb-3 md:-mt-0 -mt-3">
               Browse various rental listings in the area you want to live in.
             </p>
-            <div className="flex justify-center md:justify-start gap-4">
+            <div className="flex  justify-start gap-4">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-block text-primary-700 bg-white rounded-sm cursor-pointer px-6 py-3 font-semibold hover:bg-primary-500 hover:text-primary-50"
