@@ -1,8 +1,6 @@
 "use client";
 
-import { useSingleProperty } from "@/redux/hook";
 // import { useGetPropertyQuery } from "@/state/api";
-import { PropertyDetailsProps } from "@/types";
 import { Compass, MapPin } from "lucide-react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import maplibregl from "maplibre-gl";
@@ -10,9 +8,9 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 
 // PropertyDetailsProps
-const PropertyLocation = ({ propertyId }: PropertyDetailsProps) => {
+const PropertyLocation = ({ property }: any) => {
   // const { data: property } = getSingleProperty(propertyId);
-  const { data: property, isLoading } = useSingleProperty(propertyId);
+
   const mapContainerRef = useRef(null);
 
   const coordinatesInfoOne = property?.location?.coordinates?.coordinates?.[0];
@@ -20,7 +18,6 @@ const PropertyLocation = ({ propertyId }: PropertyDetailsProps) => {
 
   useEffect(() => {
     if (
-      isLoading ||
       coordinatesInfoOne === undefined ||
       coordinatesInfoTwo === undefined ||
       !property
@@ -58,9 +55,7 @@ const PropertyLocation = ({ propertyId }: PropertyDetailsProps) => {
     if (path) path.setAttribute("fill", "#000000");
 
     return () => map.remove();
-  }, [property, isLoading]);
-
-  if (isLoading) return <>Loading...</>;
+  }, [property]);
 
   return (
     <div className="py-16">
@@ -77,7 +72,7 @@ const PropertyLocation = ({ propertyId }: PropertyDetailsProps) => {
         </div>
         <a
           href={`https://maps.google.com/?q=${encodeURIComponent(
-            property?.location?.address || ""
+            property?.location?.address || "",
           )}`}
           target="_blank"
           rel="noopener noreferrer"

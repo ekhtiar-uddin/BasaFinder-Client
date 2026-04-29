@@ -4,18 +4,24 @@ import Footer from "@/components/shared/Footer";
 import { MessageSquareCode, PhoneIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 
+interface ContactFormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const Contact = () => {
   const {
     register,
     trigger,
     formState: { errors },
-  } = useForm();
+  } = useForm<ContactFormData>();
   // const axiosCommon = UseAxiosCommon();
   // const serviceID = import.meta.env.VITE_EMAILJS_SERVICEID;
   // const templateID = import.meta.env.VITE_EMAILJS_TEMPLATEID;
   // const userID = import.meta.env.VITE_EMAILJS_USERID;
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     console.log("~ e", e);
     const isValid = await trigger();
     if (!isValid) {

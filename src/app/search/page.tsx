@@ -23,7 +23,7 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
   const { data: properties } = await getAllProperties(
     undefined,
     undefined,
-    query
+    query,
   );
 
   return (
@@ -40,7 +40,7 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
             <FiltersFullPage />
             <Map properties={properties} />
           </div>
-          <div className="xl:basis-4/12 mt-7  overflow-y-auto ">
+          <div className="xl:basis-4/12  overflow-y-auto ">
             <Listings />
           </div>
         </div>

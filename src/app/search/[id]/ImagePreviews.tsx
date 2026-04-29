@@ -1,22 +1,21 @@
 "use client";
 
-import { ImagePreviewsProps } from "@/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-const ImagePreviews = ({ images }: ImagePreviewsProps) => {
+const ImagePreviews = ({ images }: any) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handlePrev = () => {
     setCurrentImageIndex((prev) =>
-      prev === 0 ? images?.length - 1 : prev - 1
+      prev === 0 ? images?.length - 1 : prev - 1,
     );
   };
 
   const handleNext = () => {
     setCurrentImageIndex((prev) =>
-      prev === images?.length - 1 ? 0 : prev + 1
+      prev === images?.length - 1 ? 0 : prev + 1,
     );
   };
 

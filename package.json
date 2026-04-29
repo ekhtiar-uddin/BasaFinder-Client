@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \" fixed some title issue   \" && git push",
+    "commit": "git add . && git commit -m \" updated for better responsiveness \" && git push",
     "clear-storage": "echo 'Run localStorage.clear() in your browser console to reset Redux state'"
   },
   "dependencies": {
@@ -54,7 +54,7 @@
     "lucide-react": "^0.479.0",
     "mapbox-gl": "^3.10.0",
     "maplibre-gl": "^5.3.0",
-    "next": "15.2.1",
+    "next": "^16.2.3",
     "react": "^19.0.0",
     "react-circular-progressbar": "^2.2.0",
     "react-dom": "^19.0.0",

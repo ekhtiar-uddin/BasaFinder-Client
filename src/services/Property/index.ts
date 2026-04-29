@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 export const getAllProperties = async (
   page?: string,
   limit?: string,
-  query?: { [key: string]: string | string[] | undefined }
+  query?: { [key: string]: string | string[] | undefined },
 ) => {
   const params = new URLSearchParams();
 
@@ -52,7 +52,7 @@ export const getAllProperties = async (
         next: {
           tags: ["PROPERTY"],
         },
-      }
+      },
     );
     console.log("After fetching data");
     const data = await res.json();
@@ -71,7 +71,7 @@ export const getSingleProperty = async (propertyId: string) => {
         next: {
           tags: ["PROPERTY"],
         },
-      }
+      },
     );
     const data = await res.json();
     return data;
@@ -90,7 +90,7 @@ export const addProperty = async (propertyData: FormData): Promise<any> => {
         Authorization: (await cookies()).get("accessToken")!.value,
       },
     });
-    revalidateTag("PROPERTY");
+    revalidateTag("PROPERTY", "");
     return res.json();
   } catch (error: any) {
     return Error(error);
@@ -100,7 +100,7 @@ export const addProperty = async (propertyData: FormData): Promise<any> => {
 // update property
 export const updateProperty = async (
   propertyData: FormData,
-  propertyId: string
+  propertyId: string,
 ): Promise<any> => {
   try {
     const res = await fetch(
@@ -111,9 +111,9 @@ export const updateProperty = async (
         headers: {
           Authorization: (await cookies()).get("accessToken")!.value,
         },
-      }
+      },
     );
-    revalidateTag("PROPERTY");
+    revalidateTag("PROPERTY", "");
     return res.json();
   } catch (error: any) {
     return Error(error);
@@ -131,9 +131,9 @@ export const deleteproperty = async (propertyId: string): Promise<any> => {
         headers: {
           Authorization: token,
         },
-      }
+      },
     );
-    revalidateTag("PROPERTY");
+    revalidateTag("PROPERTY", "");
     return res.json();
   } catch (error: any) {
     return Error(error);

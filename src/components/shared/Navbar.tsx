@@ -76,8 +76,8 @@ const Navbar = () => {
 
       const response = await fetch(
         `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
-          trimmedQuery
-        )}&format=json`
+          trimmedQuery,
+        )}&format=json`,
       );
       const data = await response.json();
       if (!data || data.length === 0) return;
@@ -94,7 +94,7 @@ const Navbar = () => {
           location: trimmedQuery,
           coordinates: [parseFloat(lng), parseFloat(lat)],
           // coordinates: [90.3731, 23.7465],
-        })
+        }),
       );
 
       const params = new URLSearchParams({
@@ -108,7 +108,7 @@ const Navbar = () => {
     }
   };
   const isFiltersFullOpen = useAppSelector(
-    (state) => state.global.isFiltersFullOpen
+    (state) => state.global.isFiltersFullOpen,
   );
 
   const handleGoHome = () => {
@@ -184,15 +184,15 @@ const Navbar = () => {
 
   return (
     <div className="w-full border-b text-sm">
-      <div className={`shadow-xl bg-secondary-500 text-white $`}>
+      <div className={`shadow-xl bg-secondary-500 text-white $ `}>
         {/* {
           isPropertiesPage && "hidden"
         } */}
         <div
-          className=" customWidth flex justify-center items-center w-full"
+          className="customWidth  w-full flex justify-center items-center"
           style={{ height: `${NAVBAR_HEIGHT}px ` }}
         >
-          <div className="flex justify-between customWidth">
+          <div className="flex justify-between customWidth  w-full">
             {!isDashboardPage && (
               <>
                 <div className="flex gap-5  items-center    ">
@@ -227,7 +227,7 @@ const Navbar = () => {
             : ""
         }  bg-white   h-[74px] flex justify-between  `}
       >
-        <div className="customWidth flex justify-between items-center  ">
+        <div className="customWidth  w-full flex justify-between items-center  ">
           <div className="flex items-center gap-4 md:gap-6">
             {isDashboardPage && (
               <div className="md:hidden">
@@ -290,9 +290,9 @@ const Navbar = () => {
                           userInfo?.role?.toLowerCase() === "admin"
                             ? "/admin/profile"
                             : userInfo?.role?.toLowerCase() === "landlord"
-                            ? "/landlord/profile"
-                            : "/tenant/profile",
-                          { scroll: false }
+                              ? "/landlord/profile"
+                              : "/tenant/profile",
+                          { scroll: false },
                         )
                       }
                     >
@@ -306,7 +306,7 @@ const Navbar = () => {
                           `/${userInfo.role?.toLowerCase()}/settings`,
                           {
                             scroll: false,
-                          }
+                          },
                         )
                       }
                     >

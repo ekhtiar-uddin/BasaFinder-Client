@@ -24,7 +24,7 @@ const SingleListing = () => {
   const { data: properties } = useAllProperties(
     undefined,
     undefined,
-    undefined
+    undefined,
   );
 
   return (
@@ -41,9 +41,9 @@ const SingleListing = () => {
       /> */}
           <div className="customWidth flex flex-col md:flex-row justify-center gap-10  mt-16 mb-8 ">
             <div className="order-2 md:order-1 lg:w-4/6 w-full ">
-              <PropertyOverview propertyId={propertyId} />
-              <PropertyDetails propertyId={propertyId} />
-              <PropertyLocation propertyId={propertyId} />
+              <PropertyOverview property={property} />
+              <PropertyDetails property={property} />
+              <PropertyLocation property={property} />
             </div>
 
             <div className="order-1 lg:block hidden md:order-2 w-2/6">
@@ -52,7 +52,7 @@ const SingleListing = () => {
               <h1 className=" font-bold text-2xl mt-24 mb-5">
                 Some Suggested Properties
               </h1>
-              <div className=" w-full  ">
+              <div className=" w-full  h-370 overflow-auto">
                 {" "}
                 <div className="p-4 w-full 2xl:grid hidden  grid-cols-1">
                   {properties?.slice(2, 8)?.map((property) => (
@@ -99,7 +99,7 @@ const SingleListing = () => {
                   />
                 ))}
               </div>
-              <div className="p-1 2xl:hidden 2xs:w-full 2xs:grid grid-cols-1">
+              <div className="p-1 2xl:hidden 2xs:w-full 2xs:grid 2xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-1 2md:grid-cols-2 gap-3">
                 {properties?.slice(2, 8)?.map((property) => (
                   <CardTwo
                     key={property._id}

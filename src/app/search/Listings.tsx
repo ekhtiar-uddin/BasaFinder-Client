@@ -23,12 +23,12 @@ const Listings = () => {
   const { data: properties, isLoading } = useAllProperties(
     undefined,
     undefined,
-    query
+    query,
   );
 
   const viewMode = useAppSelector((state) => state.global.viewMode);
   const currentLocation = useAppSelector(
-    (state) => state.global.filters.location
+    (state) => state.global.filters.location,
   );
   // const handleFavoriteToggle = async (propertyId: number) => {
   //   if (!authUser) return;
@@ -61,15 +61,15 @@ const Listings = () => {
 
   // console.log("ksdjfsdjffds", properties);
   return (
-    <div className="w-full">
-      <h3 className="text-sm px-4 font-bold">
+    <div className="w-full  ">
+      <h3 className="text-sm font-bold">
         {properties?.length}{" "}
-        <span className="text-gray-700 font-normal">
+        <span className="text-gray-700  font-normal">
           Properties {currentLocation && `in ${currentLocation}`}
         </span>
       </h3>
-      <div className="flex">
-        <div className="p-4  2xl:block w-full hidden">
+      <div className="flex mt-3">
+        <div className="  2xl:block w-full hidden">
           {properties?.map((property) =>
             viewMode === "list" ? (
               <CardCompact
@@ -87,7 +87,7 @@ const Listings = () => {
                 showFavoriteButton={!!authUser}
                 propertyLink={`/search/${property._id}`}
               />
-            )
+            ),
           )}
         </div>
         <div className="p-4  2xl:hidden lg:w-full grid xl:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 2xs:w-full xl:gap-0 sm:gap-5 lg:mx-0 sm:mx-auto">

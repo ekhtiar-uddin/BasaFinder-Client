@@ -14,9 +14,9 @@ export const createApplication = async (propertyData: any): Promise<any> => {
           "Content-Type": "application/json",
           Authorization: (await cookies()).get("accessToken")!.value,
         },
-      }
+      },
     );
-    revalidateTag("APPLICATION");
+    revalidateTag("APPLICATION", "");
     return res.json();
   } catch (error: any) {
     return Error(error);
@@ -83,7 +83,7 @@ export const getAllApplications = async (token) => {
 // update product
 export const updateApplication = async (
   payload: { status?: string; landlordContactNumber?: string },
-  applicationId: string
+  applicationId: string,
 ): Promise<any> => {
   try {
     console.log("from services", applicationId);
@@ -96,9 +96,9 @@ export const updateApplication = async (
           "Content-Type": "application/json",
           Authorization: (await cookies()).get("accessToken")!.value,
         },
-      }
+      },
     );
-    revalidateTag("APPLICATION");
+    revalidateTag("APPLICATION", "");
     return res.json();
   } catch (error: any) {
     return Error(error);

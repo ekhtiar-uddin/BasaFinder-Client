@@ -45,7 +45,7 @@ export const getSingleUser = async () => {
 
 // update profile
 export const updateUserProfile = async (
-  profileData: FormData
+  profileData: FormData,
 ): Promise<any> => {
   try {
     const res = await fetch(
@@ -56,10 +56,10 @@ export const updateUserProfile = async (
         headers: {
           Authorization: (await cookies()).get("accessToken")!.value,
         },
-      }
+      },
     );
 
-    revalidateTag("USER");
+    revalidateTag("USER", "");
     const result = await res.json();
     // console.log("new result", result);
 
@@ -68,7 +68,7 @@ export const updateUserProfile = async (
       const cookieStore = await cookies();
       cookieStore.set("accessToken", result?.data?.accessToken);
       cookieStore.set("refreshToken", result?.data?.refreshToken);
-      revalidateTag("USER");
+      revalidateTag("USER", "");
     }
 
     return result;
@@ -80,7 +80,7 @@ export const updateUserProfile = async (
 // update status of user
 export const updateUserStatus = async (
   userData: { updatedRole?: string; isDeleted?: string },
-  userId: string
+  userId: string,
 ): Promise<any> => {
   try {
     // console.log("userData", userData);
@@ -93,10 +93,10 @@ export const updateUserStatus = async (
           "Content-Type": "application/json",
           Authorization: (await cookies()).get("accessToken")!.value,
         },
-      }
+      },
     );
 
-    revalidateTag("USER");
+    revalidateTag("USER", "");
     const result = await res.json();
 
     return result;

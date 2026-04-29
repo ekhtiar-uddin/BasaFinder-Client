@@ -13,6 +13,7 @@ const HomePage = () => {
       <HeroSection />
 
       <FeaturedProperties />
+
       <FeaturesSection />
       <DiscoverSection />
 

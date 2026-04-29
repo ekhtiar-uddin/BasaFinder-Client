@@ -17,7 +17,7 @@ export const registerUser = async (userData: FieldValues) => {
     });
 
     const result = await res.json();
-    revalidateTag("USER");
+    revalidateTag("USER", "");
     if (result.success) {
       (await cookies()).set("accessToken", result.data.accessToken);
       (await cookies()).set("refreshToken", result.data.refreshToken);
@@ -62,7 +62,7 @@ export const changePassword = async (userData: FieldValues) => {
           Authorization: (await cookies()).get("accessToken")!.value,
         },
         body: JSON.stringify(userData),
-      }
+      },
     );
 
     const result = await res.json();
@@ -143,7 +143,7 @@ export const getNewToken = async () => {
           "Content-Type": "application/json",
           Authorization: (await cookies()).get("refreshToken")!.value,
         },
-      }
+      },
     );
 
     return res.json();

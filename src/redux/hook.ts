@@ -70,16 +70,6 @@ export const useAllProperties = (page, limit, query) => {
     fetchData();
   }, [JSON.stringify(query)]);
 
-  // const reFetch = async () => {
-  //   setIsLoading(true);
-  //   try {
-  //     const res = await getAllProperties("ksdjf", undefined, memoQuery);
-  //     setData(res.data);
-  //   } catch (err) {
-  //     setIsError(err);
-  //   }
-  //   setIsLoading(false);
-  // };
 
   return { data, isError, isLoading };
 };

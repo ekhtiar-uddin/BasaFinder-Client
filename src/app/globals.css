@@ -25,6 +25,7 @@ xl =  → 1280px
   --breakpoint-md: 768px;
   --breakpoint-2md: 832px;
   --breakpoint-lg: 1024px;
+  --breakpoint-cw: 1480px;
   --breakpoint-2lg: 1120px;
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
@@ -134,9 +135,15 @@ xl =  → 1280px
     @apply bg-primary-700 text-white px-8 rounded-full py-2 font-bold cursor-pointer hover:border-primary-700 hover:bg-white hover:text-primary-700  text-sm border transition-all duration-100  border-transparent;
   }
 
+  /* .customWidth {
+    @apply max-w-370 mx-auto cw:px-2 md:px-5 px-3;
+  } */
   .customWidth {
-    @apply 2xl:w-[1475px] xl:w-[1190px] 2lg:w-[1080px] lg:w-[980px] md:w-[704px] 2sm:w-[660px] sm:w-[600px]  w-[350px] xs:w-[410px] 2xs:w-[350] 3xs:w-[300px]  mx-auto;
+    @apply max-w-370 mx-auto cw:px-2 md:px-5 px-3;
   }
+  /* .customWidth {
+    @apply 2xl:w-[1475px] xl:w-[1190px] 2lg:w-[1080px] lg:w-[980px] md:w-[704px] 2sm:w-[660px] sm:w-[600px]  w-[350px] xs:w-[410px] 2xs:w-[350] 3xs:w-[300px]  mx-auto;
+  } */
   .addFlexItems {
     @apply flex items-center;
   }

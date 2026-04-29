@@ -14,7 +14,7 @@ export const addFlashSale = async (productData: any): Promise<any> => {
       body: JSON.stringify(productData),
     });
 
-    revalidateTag("PRODUCT");
+    revalidateTag("PRODUCT", "");
     return res.json();
   } catch (error: any) {
     return Error(error);
