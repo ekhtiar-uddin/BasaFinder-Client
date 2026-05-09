@@ -1,4 +1,7 @@
-import { ArrowRight } from "lucide-react";
+"use client";
+import ReusableCarousel from "@/components/reusable/ReusableCarousel";
+import { MapPin } from "lucide-react";
+
 const cities = [
   {
     name: "Boston",
@@ -37,49 +40,52 @@ const cities = [
       "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?w=600&q=80",
   },
 ];
+
 export function CityExplorer() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Explore Neighborhoods
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Find your perfect home in the most sought-after cities.
-            </p>
-          </div>
-          <button className="flex items-center text-[#f6920a] font-semibold hover:text-[#e08309] transition-colors whitespace-nowrap">
-            See all cities <ArrowRight className="w-5 h-5 ml-2" />
-          </button>
+    <section className="customWidth md:py-8 py-5">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-5 gap-4">
+        <div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+            Explore Neighborhoods
+          </h2>
+          <p className="text-gray-600 text-lg">
+            Find your perfect home in the most sought-after cities.
+          </p>
         </div>
+        {/* <button className="flex items-center text-[#f6920a] font-semibold hover:text-[#e08309] transition-colors whitespace-nowrap">
+          See all cities <ArrowRight className="w-5 h-5 ml-2" />
+        </button> */}
+      </div>
 
-        <div className="flex overflow-x-auto pb-8 -mx-4 px-4 md:mx-0 md:px-0 gap-6 hide-scrollbar snap-x">
-          {cities.map((city, index) => (
-            <div
-              key={index}
-              className="relative min-w-[280px] md:min-w-[320px] h-96 rounded-2xl overflow-hidden group cursor-pointer snap-start flex-shrink-0"
-            >
-              <img
-                src={city.image}
-                alt={city.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+      <ReusableCarousel
+        playSeconds={4000}
+        sectionName="CityExplorer"
+        data={cities}
+        flexBasisClassName="md:pl-4 pl-2 2xs:basis-1/2 sm:basis-1/2 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+        renderItem={(city) => (
+          <div className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer">
+            <img
+              src={city.image}
+              alt={city.name}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {city.name}
-                </h3>
-                <div className="inline-block bg-white/20 backdrop-blur-md text-white text-sm font-medium px-3 py-1 rounded-full">
-                  {city.count} listings
-                </div>
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="flex items-center gap-1 mb-1">
+                <MapPin className="w-4 h-4 text-white/70" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {city.name}
+              </h3>
+              <div className="inline-block bg-white/20 backdrop-blur-md text-white text-sm font-medium px-3 py-1 rounded-full">
+                {city.count} listings
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        )}
+      />
     </section>
   );
 }
