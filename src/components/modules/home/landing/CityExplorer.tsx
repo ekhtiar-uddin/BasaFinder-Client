@@ -1,39 +1,51 @@
 "use client";
 import ReusableCarousel from "@/components/reusable/ReusableCarousel";
 import { MapPin } from "lucide-react";
-
+import Image from "next/image";
+// type City = {
+//   name: string;
+//   count: string;
+//   image: string;
+// };
 const cities = [
   {
-    name: "Boston",
-    count: "1,240",
+    id: 1,
+    name: "Austin",
+    count: "1,850",
     image:
-      "https://images.unsplash.com/photo-1506501139174-099022df5260?w=600&q=80",
+      "https://plus.unsplash.com/premium_photo-1697730030250-e89c608af43c?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+
   {
+    id: 2,
     name: "New York",
     count: "3,850",
     image:
-      "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80",
+      "https://plus.unsplash.com/premium_photo-1682048358672-1c5c6c9ed2ae?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
+    id: 3,
     name: "Chicago",
     count: "2,100",
     image:
       "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=600&q=80",
   },
   {
-    name: "Austin",
-    count: "1,850",
+    id: 4,
+    name: "Boston",
+    count: "1,240",
     image:
-      "https://images.unsplash.com/photo-1531218150217-5afc46b556a4?w=600&q=80",
+      "https://images.unsplash.com/photo-1506501139174-099022df5260?w=600&q=80",
   },
   {
+    id: 5,
     name: "Miami",
     count: "2,400",
     image:
       "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?w=600&q=80",
   },
   {
+    id: 6,
     name: "Seattle",
     count: "1,650",
     image:
@@ -62,13 +74,15 @@ export function CityExplorer() {
         playSeconds={4000}
         sectionName="CityExplorer"
         data={cities}
-        flexBasisClassName="md:pl-4 pl-2 2xs:basis-1/2 sm:basis-1/2 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+        flexBasisClassName="md:pl-4 pl-2 2xs:basis-1/2 sm:basis-1/2 md:basis-1/2 lg:basis-1/2 xl:basis-1/2"
         renderItem={(city) => (
-          <div className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer">
-            <img
+          <div className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer w-full">
+            <Image
               src={city.image}
               alt={city.name}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              sizes="(max-width: 640px) 85vw, (max-width: 1024px) 55vw, 48vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
 
