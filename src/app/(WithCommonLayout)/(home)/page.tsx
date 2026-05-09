@@ -1,5 +1,6 @@
 import FeaturedProperties from "@/components/modules/home/FeaturedProperties/FeaturedProperties";
 import CallToActionSection from "@/components/modules/home/landing/CallToActionSection";
+import { CityExplorer } from "@/components/modules/home/landing/CityExplorer";
 import DiscoverSection from "@/components/modules/home/landing/DiscoverSection";
 import FeaturesSection from "@/components/modules/home/landing/FeaturesSection";
 import FrequentQuestion from "@/components/modules/home/landing/FrequentQuestion";
@@ -14,7 +15,7 @@ const HomePage = () => {
       <HeroSection />
       <TrustStatsBar />
       <FeaturedProperties />
-
+      <CityExplorer />
       <FeaturesSection />
       <DiscoverSection />
 

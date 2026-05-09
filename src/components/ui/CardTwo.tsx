@@ -13,7 +13,7 @@ const CardTwo = ({ property, propertyLink }: Record<string, any>) => {
   return (
     <motion.div
       whileHover={{ y: -4 }}
-      className="group relative bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full w-full mb-5"
+      className="group relative bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full w-full "
     >
       {/* Image Container */}
       <div className="relative overflow-hidden h-64">

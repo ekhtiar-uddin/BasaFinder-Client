@@ -3,7 +3,6 @@ import CardTwo from "@/components/ui/CardTwo";
 import { useAllProperties } from "@/redux/hook";
 import { IProperty } from "@/types";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import FeaturedPropertiesSkeleton from "./FeaturedPropertiesSkeleton";
 
 const containerVariants = {
@@ -27,7 +26,7 @@ const FeaturedProperties = () => {
   const { data: properties, isLoading } = useAllProperties(
     undefined,
     undefined,
-    undefined
+    undefined,
   );
 
   return (
@@ -84,7 +83,15 @@ const FeaturedProperties = () => {
             </div>
           )}
 
-          <div
+          <div className="mt-12 text-center">
+            <button
+              className="bg-white border-2 border-gray-200 text-gray-900 hover:border-[#f6920a] hover:text-[#f6920a] px-8 py-3 rounded-xl font-bold transition-colors cursor-pointer"
+              onClick={() => (window.location.href = "/search")}
+            >
+              Load More Properties
+            </button>
+          </div>
+          {/* <div
             className={`${
               isLoading
                 ? "hidden"
@@ -94,7 +101,7 @@ const FeaturedProperties = () => {
             <Link href="/search" className="hover:text-white">
               More Properties
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.div>
