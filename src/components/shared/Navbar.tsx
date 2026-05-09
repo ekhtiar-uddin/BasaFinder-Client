@@ -108,10 +108,10 @@ const Navbar = () => {
       )}
 
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navClassName}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300  ${navClassName}`}
         style={{ minHeight: `${NAVBAR_HEIGHT}px` }}
       >
-        <div className="customWidth mx-auto px-4 md:px-6">
+        <div className="customWidth  mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between py-4">
             {/* ── Logo ── */}
             <div className="flex items-center gap-3">
@@ -150,7 +150,7 @@ const Navbar = () => {
                           ? handleGoHome
                           : undefined
                       }
-                      className={`text-sm font-medium px-4 py-2 rounded-lg transition-colors cursor-pointer hover:text-[#f6920a] hover:bg-orange-50 ${
+                      className={`text-sm font-medium px-4 py-2 rounded-lg transition-colors cursor-pointer hover:text-[#f6920a]  ${
                         link.active
                           ? "text-secondary-500"
                           : hasSolidBg
