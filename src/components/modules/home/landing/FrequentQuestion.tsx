@@ -30,13 +30,13 @@ const FrequentQuestion = () => {
           <div
             onClick={() => handleVisibility(item?.id)}
             key={item?.id}
-            className="border-b"
+            className="border-b last:border-b-0"
           >
             <div
               className="pt-2 cursor-pointer flex 
             justify-between   "
             >
-              <h1 className="pb-8  font-bold text-xl text-primary-800 w-[97%]">
+              <h1 className="pb-6  font-bold text-lg text-primary-800 w-[97%]">
                 {item?.question}
               </h1>{" "}
               {item?.id === currentId ? (
