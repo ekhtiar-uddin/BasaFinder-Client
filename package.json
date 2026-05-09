@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \" updated for better responsiveness \" && git push",
+    "commit": "git add . && git commit -m \" edited in middleware \" && git push",
     "clear-storage": "echo 'Run localStorage.clear() in your browser console to reset Redux state'"
   },
   "dependencies": {

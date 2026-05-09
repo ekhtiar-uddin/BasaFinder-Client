@@ -22,10 +22,10 @@ export default async function middleware(request: NextRequest) {
     } else {
       return NextResponse.redirect(
         new URL(
-          // `https://basa-finder-client-two.vercel.app/login?redirectPath=${pathname}`,
-          `http://localhost:3000/login?redirectPath=${pathname}`,
-          request.url
-        )
+          `https://basa-finder-client-two.vercel.app/login?redirectPath=${pathname}`,
+          // `http://localhost:3000/login?redirectPath=${pathname}`,
+          request.url,
+        ),
       );
     }
   }
