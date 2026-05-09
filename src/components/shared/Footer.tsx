@@ -1,166 +1,172 @@
 import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
-
-const Footer = () => {
+  ArrowRight,
+  Facebook,
+  Home,
+  Instagram,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+export function Footer() {
   return (
-    <footer className="border-t border-gray-200 py-12 xl:py-20">
-      <div className="customWidth">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:justify-between xl:items-start">
-          {/* Brand & Social */}
-          <div className="text-center xl:text-left uppercase">
-            <Link
-              href="/"
-              className="text-xl  md:text-2xl font-extrabold inline-block"
-              scroll={false}
-            >
-              RentMode
-            </Link>
-
-            <div className="flex justify-center xl:justify-start space-x-4 mt-4 md:mt-6">
-              <Link
-                href="https://www.facebook.com"
-                aria-label="Facebook"
-                className="text-secondary-600 hover:text-secondary-600/60 transition-colors"
-              >
-                <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
-              </Link>
-
-              <Link
-                href="https://www.instagram.com"
-                aria-label="Instagram"
-                className="text-secondary-600 hover:text-secondary-600/60 transition-colors"
-              >
-                <FontAwesomeIcon icon={faInstagram} className="h-6 w-6" />
-              </Link>
-
-              <Link
-                href="https://www.twitter.com"
-                aria-label="Twitter"
-                className="text-secondary-600 hover:text-secondary-600/60 transition-colors"
-              >
-                <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" />
-              </Link>
-
-              <Link
-                href="https://www.linkedin.com"
-                aria-label="LinkedIn"
-                className="text-secondary-600 hover:text-secondary-600/60 transition-colors"
-              >
-                <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6" />
-              </Link>
-
-              <Link
-                href="https://www.youtube.com"
-                aria-label="YouTube"
-                className="text-secondary-600 hover:text-secondary-600/60 transition-colors"
-              >
-                <FontAwesomeIcon icon={faYoutube} className="h-6 w-6" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Navigation Links */}
-          <div className="text-center order-3 xl:order-2 px-4">
-            <nav>
-              <ul className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-y-3 sm:gap-x-6 sm:gap-y-2 font-medium text-sm">
-                <li className="w-full sm:w-auto">
-                  <Link
-                    href="/about"
-                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li className="w-full sm:w-auto">
-                  <Link
-                    href="/contact"
-                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li className="w-full sm:w-auto">
-                  <Link
-                    href="/faq"
-                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-                <li className="w-full sm:w-auto">
-                  <Link
-                    href="/terms"
-                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
-                  >
-                    Terms
-                  </Link>
-                </li>
-                <li className="w-full sm:w-auto">
-                  <Link
-                    href="/privacy"
-                    className="block py-1 hover:text-secondary-600 transition-colors font0-medium"
-                  >
-                    Privacy
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-
-            <div className="mt-8 text-xs text-gray-500 space-y-3 sm:space-y-2">
-              <div className="block">©rentMode. All rights reserved.</div>
-              <div className="flex flex-col sm:flex-row justify-center gap-y-2 sm:gap-y-0 sm:space-x-4">
-                <Link
-                  href="/privacy"
-                  className="hover:text-gray-700 transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="hover:text-gray-700 transition-colors"
-                >
-                  Terms of Service
-                </Link>
-                <Link
-                  href="/cookies"
-                  className="hover:text-gray-700 transition-colors"
-                >
-                  Cookie Policy
-                </Link>
+    <footer className="bg-gray-900 pt-20 pb-10 border-t border-gray-800">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+          {/* Brand Column */}
+          <div className="lg:col-span-2">
+            <a href="#" className="flex items-center gap-2 mb-6">
+              <div className="bg-[#f6920a] p-2 rounded-lg">
+                <Home className="w-5 h-5 text-white" />
               </div>
+              <span className="text-2xl font-bold text-white tracking-tight">
+                RentMode
+              </span>
+            </a>
+            <p className="text-gray-400 mb-8 max-w-sm leading-relaxed">
+              The modern way to find and rent your next home. We connect
+              verified renters with trusted landlords for a seamless experience.
+            </p>
+            <div className="flex items-center gap-4">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#f6920a] hover:text-white transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#f6920a] hover:text-white transition-colors"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#f6920a] hover:text-white transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#f6920a] hover:text-white transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
-          {/* Newsletter Signup */}
-          <div className="text-center xl:text-right order-2 xl:order-3 px-4">
-            <h2 className="font-bold text-base md:text-lg mb-4">
-              GET INVOLVED
-            </h2>
-            <div className="max-w-xs mx-auto xl:mx-0 xl:max-w-sm xl:ml-auto">
-              <input
-                className="block border w-full rounded border-gray-300 px-3 py-2.5 md:px-4 md:py-3 text-sm placeholder-gray-400 shadow-sm  transition-colors"
-                placeholder="Enter email address"
-                type="email"
-                name="email"
-                id="newsletter-email"
-              />
+          {/* Links Columns */}
+          <div>
+            <h4 className="text-white font-bold mb-6">Platform</h4>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#f6920a] transition-colors"
+                >
+                  Search Properties
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#f6920a] transition-colors"
+                >
+                  How it Works
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#f6920a] transition-colors"
+                >
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#f6920a] transition-colors"
+                >
+                  For Landlords
+                </a>
+              </li>
+            </ul>
+          </div>
 
-              <button className="w-full py-2.5 md:py-3 mt-3 bg-secondary-500 hover:bg-secondary-600 text-white font-semibold rounded transition-colors duration-200 text-xs md:text-sm">
-                SUBSCRIBE
+          <div>
+            <h4 className="text-white font-bold mb-6">Company</h4>
+            <ul className="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#f6920a] transition-colors"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#f6920a] transition-colors"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#f6920a] transition-colors"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-[#f6920a] transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter Column */}
+          <div>
+            <h4 className="text-white font-bold mb-6">Stay Updated</h4>
+            <p className="text-gray-400 mb-4 text-sm">
+              Subscribe to our newsletter for the latest properties and rental
+              tips.
+            </p>
+            <div className="flex flex-col gap-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#f6920a] transition-colors"
+              />
+              <button className="bg-[#f6920a] hover:bg-[#e08309] text-white px-4 py-3 rounded-lg font-bold transition-colors flex items-center justify-center">
+                Subscribe <ArrowRight className="w-4 h-4 ml-2" />
               </button>
             </div>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-gray-500 text-sm">
+            © 2026 RentMode. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6 text-sm text-gray-500">
+            <a href="#" className="hover:text-white transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Terms of Service
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Cookie Policy
+            </a>
           </div>
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

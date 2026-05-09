@@ -1,7 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 export function LandlordCTA() {
   return (
-    <section className="py-20 mb-[100px] bg-gray-50">
+    <section className="py-20 mb-[50px] bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -33,10 +33,10 @@ export function LandlordCTA() {
               </ul>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-[#f6920a] hover:bg-[#e08309] text-white px-8 py-4 rounded-xl font-bold transition-colors text-center">
+                <button className="cursor-pointer bg-[#f6920a] hover:bg-[#e08309] text-white px-8 py-4 rounded-xl font-bold transition-colors text-center">
                   List Your Property
                 </button>
-                <button className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition-colors text-center">
+                <button className="cursor-pointer bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition-colors text-center">
                   Learn More
                 </button>
               </div>
