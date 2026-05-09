@@ -7,6 +7,7 @@ import FrequentQuestion from "@/components/modules/home/landing/FrequentQuestion
 import HeroSection from "@/components/modules/home/landing/HeroSection";
 import { HowItWorks } from "@/components/modules/home/landing/HowItWorks";
 import Testimonials from "@/components/modules/home/landing/Testimonials";
+import { TrendingNearYou } from "@/components/modules/home/landing/TrendingNearYou";
 import { TrustStatsBar } from "@/components/modules/home/landing/TrustStatsBar";
 import Footer from "@/components/shared/Footer";
 
@@ -19,7 +20,7 @@ const HomePage = () => {
       <CityExplorer />
       <FeaturesSection />
       <HowItWorks />
-
+      <TrendingNearYou />
       <DiscoverSection />
 
       <Testimonials />
