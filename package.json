@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \" fix: issue fixed in search page  \" && git push origin develop",
+    "commit": "git add . && git commit -m \" feat: add How RentMode Works section  \" && git push origin develop",
     "clear-storage": "echo 'Run localStorage.clear() in your browser console to reset Redux state'"
   },
   "dependencies": {

@@ -5,6 +5,7 @@ import DiscoverSection from "@/components/modules/home/landing/DiscoverSection";
 import FeaturesSection from "@/components/modules/home/landing/FeaturesSection";
 import FrequentQuestion from "@/components/modules/home/landing/FrequentQuestion";
 import HeroSection from "@/components/modules/home/landing/HeroSection";
+import { HowItWorks } from "@/components/modules/home/landing/HowItWorks";
 import Testimonials from "@/components/modules/home/landing/Testimonials";
 import { TrustStatsBar } from "@/components/modules/home/landing/TrustStatsBar";
 import Footer from "@/components/shared/Footer";
@@ -17,6 +18,8 @@ const HomePage = () => {
       <FeaturedProperties />
       <CityExplorer />
       <FeaturesSection />
+      <HowItWorks />
+
       <DiscoverSection />
 
       <Testimonials />

@@ -69,7 +69,7 @@ const Listings = () => {
         </span>
       </h3>
       <div className="flex mt-3">
-        <div className="  2xl:block w-full hidden">
+        <div className=" grid-cols-1 gap-2  2xl:grid w-full hidden">
           {properties?.map((property) =>
             viewMode === "list" ? (
               <CardCompact
