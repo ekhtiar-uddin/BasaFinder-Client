@@ -16,7 +16,7 @@ const FrequentQuestion = () => {
 
   return (
     <div className="mb-[100px] md:mt-5 mt-20 customWidth">
-      <h1 className="text-3xl  lg:text-[40px] mb-4 text-center font-extrabold text-primary-800">
+      <h1 className="text-3xl mb-3 md:text-[40px] font-extrabold text-center ">
         Frequently Asked <br className="md:hidden block" /> Questions
       </h1>
       <p className="md:text-base text-sm text-gray-500 text-center">

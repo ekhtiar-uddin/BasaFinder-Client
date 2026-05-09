@@ -25,14 +25,14 @@ const DiscoverSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.8 }}
       variants={containerVariants}
-      className="mt-[100px]  3xs:py-0  "
+      className="py-[50px]  "
     >
       <div className="customWidth">
         <motion.div variants={itemVariants} className=" text-center">
-          <p className="text-sm font-bold text-secondary-600 ">
+          {/* <p className="text-sm font-bold text-secondary-600 ">
             Your Ideal Rental Home Awaits!
-          </p>
-          <h2 className="text-3xl mb-4   lg:text-[40px]    font-extrabold leading-tight ">
+          </p> */}
+          <h2 className="text-3xl mb-3   lg:text-[40px]    font-extrabold leading-tight ">
             Move to Dream Living{" "}
           </h2>
           <p className=" md:text-base text-sm text-gray-500 max-w-3xl mx-auto">

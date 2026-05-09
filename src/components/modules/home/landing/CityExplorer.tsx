@@ -48,6 +48,7 @@ const cities = [
     id: 6,
     name: "Seattle",
     count: "1,650",
+
     image:
       "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?w=600&q=80",
   },
@@ -55,13 +56,13 @@ const cities = [
 
 export function CityExplorer() {
   return (
-    <section className="customWidth md:py-8 py-5">
+    <section className="customWidth py-[50px] ">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-5 gap-4">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+          <h2 className="text-3xl mb-3 md:text-[40px] font-extrabold  ">
             Explore Neighborhoods
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="md:text-base text-sm text-gray-500 ">
             Find your perfect home in the most sought-after cities.
           </p>
         </div>

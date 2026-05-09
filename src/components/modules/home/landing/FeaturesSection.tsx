@@ -28,12 +28,12 @@ const FeaturesSection = () => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className=" customWidth bg-white"
+      className=" customWidth bg-white py-[50px]"
     >
       <div className="">
         <motion.h2
           variants={itemVariants}
-          className="text-3xl mb-4 md:text-[40px] font-extrabold text-center "
+          className="text-3xl mb-3 md:text-[40px] font-extrabold text-center "
         >
           Your Next Rental Home
         </motion.h2>

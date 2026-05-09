@@ -90,7 +90,7 @@ const HeroSection = () => {
           className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/60 to-gray-900/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/50 to-gray-900/70" />
       </div>
 
       {/* Content */}
@@ -147,7 +147,7 @@ const HeroSection = () => {
                     {Object.entries(PropertyTypeIcons).map(([type, Icon]) => (
                       <SelectItem key={type} value={type}>
                         <div className="flex items-center gap-2">
-                          <Icon className="w-4 h-4" />
+                          <Icon className="hover:text-white w-4 h-4 mr-2" />
                           <span>{type}</span>
                         </div>
                       </SelectItem>

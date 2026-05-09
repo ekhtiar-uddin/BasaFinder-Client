@@ -35,14 +35,14 @@ const FeaturedProperties = () => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className=" bg-opacity-50 my-[100px] customWidth "
+      className=" bg-opacity-50 pt-[100px] pb-[50px] customWidth "
     >
       <div className="">
         {/* flex items-center  justify-between mb-5 */}
         <div className="">
           <motion.h2
             variants={itemVariants}
-            className="text-3xl  lg:text-[40px]  mb-4 font-extrabold text-center "
+            className="text-3xl  lg:text-[40px]  mb-2 font-extrabold text-center "
           >
             Featured Properties
           </motion.h2>
