@@ -30,19 +30,19 @@ const Page = async ({ searchParams }: { searchParams: SearchParams }) => {
     <section className="bg-white">
       <Navbar />
       <div
-        className="w-full pt-20 mx-auto px-5 flex flex-col 2xl:[--vh:97vh] sm:[--vh:210vh]"
+        className="w-full pt-20 mx-auto px-5 flex flex-col  lg:[--vh:107vh] "
         style={{
           height: `calc(var(--vh) - ${NAVBAR_HEIGHT}px)`,
         }}
       >
         <FiltersBarPage />
         {/* flex-1 */}
-        <div className="flex xl:flex-row 2xs:flex-col justify-between flex-1 overflow-hidden gap-4 mb-5">
-          <div className=" flex xl:basis-8/12  2xl:h-full 2xs:h-1/2  ">
+        <div className="flex flex-row justify-between flex-1 overflow-hidden gap-4 mb-5">
+          <div className="hidden lg:flex lg:basis-8/12 xl:basis-8/12 2xl:h-full lg:h-full">
             <FiltersFullPage />
             <Map properties={properties} />
           </div>
-          <div className="xl:basis-4/12  overflow-y-auto ">
+          <div className="xl:basis-4/12 lg:basis-4/12 w-full lg:w-auto overflow-y-auto">
             <Listings />
           </div>
         </div>

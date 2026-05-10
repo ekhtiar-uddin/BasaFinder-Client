@@ -179,7 +179,7 @@ const HeroSection = () => {
             {/* Search Button */}
             <button
               onClick={handleLocationSearch}
-              className="w-full md:w-auto bg-[#f6920a] hover:bg-[#e08309] active:bg-[#c97608] text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center transition-colors shadow-lg shadow-orange-500/30 flex-shrink-0 gap-2"
+              className="w-full md:w-auto cursor-pointer bg-[#f6920a] hover:bg-[#e08309] active:bg-[#c97608] text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center transition-colors shadow-lg shadow-orange-500/30 flex-shrink-0 gap-2"
             >
               <Search className="w-5 h-5" />
               <span>Search</span>

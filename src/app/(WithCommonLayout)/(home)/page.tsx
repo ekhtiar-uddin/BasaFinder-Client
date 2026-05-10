@@ -10,7 +10,7 @@ import { LandlordCTA } from "@/components/modules/home/landing/LandlordCTA";
 import Testimonials from "@/components/modules/home/landing/Testimonials";
 import { TrendingNearYou } from "@/components/modules/home/landing/TrendingNearYou";
 import { TrustStatsBar } from "@/components/modules/home/landing/TrustStatsBar";
-import { Footer } from "@/components/shared/Footer";
+import Footer from "@/components/shared/Footer";
 
 const HomePage = () => {
   return (

@@ -6,7 +6,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
-export function Footer() {
+function Footer() {
   return (
     <footer className="bg-gray-900 pt-20 pb-10 border-t border-gray-800">
       <div className="container mx-auto px-4 md:px-6">
@@ -143,7 +143,7 @@ export function Footer() {
                 placeholder="Enter your email"
                 className="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-[#f6920a] transition-colors"
               />
-              <button className="bg-[#f6920a] hover:bg-[#e08309] text-white px-4 py-3 rounded-lg font-bold transition-colors flex items-center justify-center">
+              <button className="cursor-pointer bg-[#f6920a] hover:bg-[#e08309] text-white px-4 py-3 rounded-lg font-bold transition-colors flex items-center justify-center">
                 Subscribe <ArrowRight className="w-4 h-4 ml-2" />
               </button>
             </div>
@@ -170,3 +170,5 @@ export function Footer() {
     </footer>
   );
 }
+
+export default Footer;
