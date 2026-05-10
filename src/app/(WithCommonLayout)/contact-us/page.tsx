@@ -1,7 +1,9 @@
 "use client";
 
+import { ReusableShowToast } from "@/components/reusable/ReusableToasts";
 import Footer from "@/components/shared/Footer";
 import { MessageSquareCode, PhoneIcon } from "lucide-react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 interface ContactFormData {
@@ -11,23 +13,48 @@ interface ContactFormData {
 }
 
 const Contact = () => {
+  const [result, setResult] = useState("");
+
   const {
     register,
-    trigger,
+    handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ContactFormData>();
-  // const axiosCommon = UseAxiosCommon();
-  // const serviceID = import.meta.env.VITE_EMAILJS_SERVICEID;
-  // const templateID = import.meta.env.VITE_EMAILJS_TEMPLATEID;
-  // const userID = import.meta.env.VITE_EMAILJS_USERID;
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("~ e", e);
-    const isValid = await trigger();
-    if (!isValid) {
-      e.preventDefault();
-    } else {
-      // handleHotToast();
+  const onSubmit = async (values: ContactFormData) => {
+    const toastId = ReusableShowToast("loading", "Sending message...");
+    try {
+      setResult("Sending....");
+
+      const formData = new FormData();
+      formData.append("access_key", "934c5a60-826d-4cd4-8700-0b907fa12124");
+      formData.append("name", values.name);
+      formData.append("email", values.email);
+      formData.append("message", values.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data?.success) {
+        setResult("Form Submitted Successfully");
+        ReusableShowToast("success", "Message sent successfully", toastId);
+        reset();
+      } else {
+        setResult(data?.message || "Failed to send message");
+        ReusableShowToast(
+          "error",
+          data?.message || "Failed to send message",
+          toastId,
+        );
+      }
+    } catch (err) {
+      setResult("Something went wrong");
+      ReusableShowToast("error", `Something went wrong: ${err}`, toastId);
     }
   };
   return (
@@ -99,9 +126,7 @@ const Contact = () => {
               <div className="mx-auto max-w-lg lg:max-w-none">
                 <form
                   target="_blank"
-                  onSubmit={onSubmit}
-                  action="https://formsubmit.co/ba7de4a03eb62f2f1abef467fe34c333"
-                  method="POST"
+                  onSubmit={handleSubmit(onSubmit)}
                   className="grid grid-cols-1 gap-y-6 "
                 >
                   <div>

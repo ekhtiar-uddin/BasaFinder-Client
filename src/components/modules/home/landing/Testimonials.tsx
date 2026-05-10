@@ -8,9 +8,9 @@ import { reviews } from "./utils";
 
 const Testimonials = () => {
   return (
-    <section className="testimonial-container customWidth ">
+    <section className="testimonial-container customWidth   ">
       <div className="title">
-        <h2 className="mb-4 !text-3xl md:!text-[40px] ">Happy Renters</h2>
+        <h2 className="mb-2 !text-3xl md:!text-[40px] ">Happy Renters</h2>
         <p className="   mb-10 md:text-base text-sm text-gray-500 text-center">
           Discover real testimonials from happy residents who found their
           perfect home . Read stories of comfort, community, and joy!

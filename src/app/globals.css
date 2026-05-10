@@ -134,7 +134,9 @@ xl =  → 1280px
   .credentialBtn {
     @apply bg-primary-700 text-white px-8 rounded-full py-2 font-bold cursor-pointer hover:border-primary-700 hover:bg-white hover:text-primary-700  text-sm border transition-all duration-100  border-transparent;
   }
-
+  .carouselButton {
+    @apply border-none cursor-pointer hover:bg-secondary-500! bg-gray-200! font-bold hover:text-white!;
+  }
   /* .customWidth {
     @apply max-w-370 mx-auto cw:px-2 md:px-5 px-3;
   } */

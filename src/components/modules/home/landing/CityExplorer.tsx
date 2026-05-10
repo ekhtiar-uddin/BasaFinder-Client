@@ -1,0 +1,106 @@
+"use client";
+import ReusableCarousel from "@/components/reusable/ReusableCarousel";
+import { MapPin } from "lucide-react";
+import Image from "next/image";
+// type City = {
+//   name: string;
+//   count: string;
+//   image: string;
+// };
+const cities = [
+  {
+    id: 1,
+    name: "Austin",
+    count: "1,850",
+    image:
+      "https://plus.unsplash.com/premium_photo-1697730030250-e89c608af43c?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+
+  {
+    id: 2,
+    name: "New York",
+    count: "3,850",
+    image:
+      "https://plus.unsplash.com/premium_photo-1682048358672-1c5c6c9ed2ae?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    id: 3,
+    name: "Chicago",
+    count: "2,100",
+    image:
+      "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=600&q=80",
+  },
+  {
+    id: 4,
+    name: "Boston",
+    count: "1,240",
+    image:
+      "https://images.unsplash.com/photo-1506501139174-099022df5260?w=600&q=80",
+  },
+  {
+    id: 5,
+    name: "Miami",
+    count: "2,400",
+    image:
+      "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?w=600&q=80",
+  },
+  {
+    id: 6,
+    name: "Seattle",
+    count: "1,650",
+
+    image:
+      "https://images.unsplash.com/photo-1502175353174-a7a70e73b362?w=600&q=80",
+  },
+];
+
+export function CityExplorer() {
+  return (
+    <section className="customWidth py-[50px] ">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-5 gap-4">
+        <div>
+          <h2 className="text-3xl mb-3 md:text-[40px] font-extrabold  ">
+            Explore Neighborhoods
+          </h2>
+          <p className="md:text-base text-sm text-gray-500 ">
+            Find your perfect home in the most sought-after cities.
+          </p>
+        </div>
+        {/* <button className="flex items-center text-[#f6920a] font-semibold hover:text-[#e08309] transition-colors whitespace-nowrap">
+          See all cities <ArrowRight className="w-5 h-5 ml-2" />
+        </button> */}
+      </div>
+
+      <ReusableCarousel
+        playSeconds={4000}
+        sectionName="CityExplorer"
+        data={cities}
+        flexBasisClassName="md:pl-4 pl-2 2xs:basis-1/2 sm:basis-1/2 md:basis-1/2 lg:basis-1/2 xl:basis-1/2"
+        renderItem={(city) => (
+          <div className="relative h-96 rounded-2xl overflow-hidden group cursor-pointer w-full">
+            <Image
+              src={city.image}
+              alt={city.name}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              sizes="(max-width: 640px) 85vw, (max-width: 1024px) 55vw, 48vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="flex items-center gap-1 mb-1">
+                <MapPin className="w-4 h-4 text-white/70" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {city.name}
+              </h3>
+              <div className="inline-block bg-white/20 backdrop-blur-md text-white text-sm font-medium px-3 py-1 rounded-full">
+                {city.count} listings
+              </div>
+            </div>
+          </div>
+        )}
+      />
+    </section>
+  );
+}

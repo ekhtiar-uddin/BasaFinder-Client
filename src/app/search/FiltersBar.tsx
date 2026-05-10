@@ -31,7 +31,7 @@ const FiltersBarPage = () => {
   const pathname = usePathname();
   const filters = useAppSelector((state) => state.global.filters);
   const isFiltersFullOpen = useAppSelector(
-    (state) => state.global.isFiltersFullOpen
+    (state) => state.global.isFiltersFullOpen,
   );
   const viewMode = useAppSelector((state) => state.global.viewMode);
   const [searchInput, setSearchInput] = useState("");
@@ -47,7 +47,7 @@ const FiltersBarPage = () => {
     Object.entries(cleanFilters).forEach(([key, value]) => {
       updatedSearchParams.set(
         key,
-        Array.isArray(value) ? value.join(",") : value.toString()
+        Array.isArray(value) ? value.join(",") : value.toString(),
       );
     });
 
@@ -57,7 +57,7 @@ const FiltersBarPage = () => {
   const handleFilterChange = async (
     key: string,
     value: any,
-    isMin: boolean | null
+    isMin: boolean | null,
   ) => {
     let newValue = value;
 
@@ -88,7 +88,7 @@ const FiltersBarPage = () => {
               ...newFilters,
               location: searchInput,
               coordinates: [lng, lat],
-            })
+            }),
           );
 
           updateURL({
@@ -117,7 +117,7 @@ const FiltersBarPage = () => {
           setFilters({
             location: searchInput,
             coordinates: [lng, lat], // [lng, lat]
-          })
+          }),
         );
         updateURL({
           ...filters,
@@ -149,9 +149,9 @@ const FiltersBarPage = () => {
         <Button
           variant="outline"
           className={cn(
-            "gap-2 sm:flex hidden rounded-sm  hover:bg-primary-500 hover:text-primary-100",
+            "gap-2 sm:flex hidden rounded-sm  hover:bg-black/90 hover:text-primary-100",
 
-            isFiltersFullOpen && "bg-primary-700 text-primary-100"
+            isFiltersFullOpen && "bg-primary-700 text-primary-100",
           )}
           onClick={() => dispatch(toggleFiltersFullOpen())}
         >
@@ -275,7 +275,7 @@ const FiltersBarPage = () => {
             {Object.entries(PropertyTypeIcons).map(([type, Icon]) => (
               <SelectItem key={type} value={type}>
                 <div className="flex items-center">
-                  <Icon className="w-4 h-4 mr-2" />
+                  <Icon className="hover:text-white w-4 h-4 mr-2" />
                   <span>{type}</span>
                 </div>
               </SelectItem>
@@ -302,7 +302,7 @@ const FiltersBarPage = () => {
             variant="ghost"
             className={cn(
               "px-3 py-1 rounded-none rounded-l-xl hover:bg-primary-600 hover:text-primary-50",
-              viewMode === "list" ? "bg-primary-700 text-primary-50" : ""
+              viewMode === "list" ? "bg-primary-700 text-primary-50" : "",
             )}
             onClick={() => dispatch(setViewMode("list"))}
           >
@@ -312,7 +312,7 @@ const FiltersBarPage = () => {
             variant="ghost"
             className={cn(
               "px-3 py-1 rounded-none rounded-r-xl hover:bg-primary-600 hover:text-primary-50",
-              viewMode === "grid" ? "bg-primary-700 text-primary-50" : ""
+              viewMode === "grid" ? "bg-primary-700 text-primary-50" : "",
             )}
             onClick={() => dispatch(setViewMode("grid"))}
           >

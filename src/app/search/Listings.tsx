@@ -69,7 +69,7 @@ const Listings = () => {
         </span>
       </h3>
       <div className="flex mt-3">
-        <div className="  2xl:block w-full hidden">
+        <div className=" grid-cols-1 gap-2  2xl:grid w-full hidden">
           {properties?.map((property) =>
             viewMode === "list" ? (
               <CardCompact
@@ -90,7 +90,7 @@ const Listings = () => {
             ),
           )}
         </div>
-        <div className="p-4  2xl:hidden lg:w-full grid xl:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 2xs:w-full xl:gap-0 sm:gap-5 lg:mx-0 sm:mx-auto">
+        <div className=" 2xl:hidden lg:w-full grid xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-2 2xs:w-full xl:gap-0 sm:gap-5 lg:mx-0 sm:mx-auto">
           {properties?.map((property) => (
             <CardTwo
               key={property._id}

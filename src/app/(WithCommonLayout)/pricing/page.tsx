@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 
 const page = () => {
   return (
-    <div className="bg-white  pb-20 ">
+    <div className="bg-white  pb-20 mt-10 ">
       <div className="bg-secondary-400 h-[35vh] flex items-center justify-center">
         <div className="space-y-5">
           <h1 className="text-6xl font-bold text-center">Plans & Pricing</h1>

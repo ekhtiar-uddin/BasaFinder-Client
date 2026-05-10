@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \" edited in middleware \" && git push",
+    "commit": "git add . && git commit -m \" updated in contact page   \" && git push origin develop",
     "clear-storage": "echo 'Run localStorage.clear() in your browser console to reset Redux state'"
   },
   "dependencies": {
@@ -45,6 +45,8 @@
     "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "filepond": "^4.32.7",
     "filepond-plugin-image-exif-orientation": "^1.0.11",
     "filepond-plugin-image-preview": "^4.6.12",

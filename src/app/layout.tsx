@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en" data-arp="">
       <body className={` ${roboto.className} antialiased`}>
         <Providers>
-          <Toaster richColors position="top-center" />
+          <Toaster richColors position="bottom-right" />
 
           {children}
         </Providers>
