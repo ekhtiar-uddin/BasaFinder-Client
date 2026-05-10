@@ -59,7 +59,7 @@ export function CityExplorer() {
     <section className="customWidth py-[50px] ">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-5 gap-4">
         <div>
-          <h2 className="text-3xl mb-3 md:text-[40px] font-extrabold  ">
+          <h2 className="text-3xl mb-3 md:text-[40px] font-semibold  ">
             Explore Neighborhoods
           </h2>
           <p className="md:text-base text-sm text-gray-500 ">

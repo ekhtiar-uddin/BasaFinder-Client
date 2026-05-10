@@ -80,10 +80,10 @@ const AboutPage = () => {
       {/* Mission */}
       <section className="customWidth mx-auto px-4 mt-24 mb-20">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#f6920a] mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#f6920a] mb-2">
             Who We Are
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight mb-3">
             Our Mission
           </h2>
           <div className="w-12 h-1 bg-[#f6920a] mx-auto rounded-full" />
@@ -140,10 +140,10 @@ const AboutPage = () => {
         </div>
 
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#f6920a] mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#f6920a] mb-2">
             Why Choose Us
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight mb-3">
             What Sets Us Apart
           </h2>
           <div className="w-12 h-1 bg-[#f6920a] mx-auto rounded-full" />
@@ -170,10 +170,10 @@ const AboutPage = () => {
       {/* Contact */}
       <section className="customWidth mx-auto px-4 my-20">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#f6920a] mb-4">
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#f6920a] mb-2">
             Get In Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 leading-tight ">
             Contact Us
           </h2>
           <p className="text-gray-500 text-lg">

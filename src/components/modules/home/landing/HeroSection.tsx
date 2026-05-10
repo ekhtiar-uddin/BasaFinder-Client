@@ -102,11 +102,11 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto mb-10"
         >
-          <h1 className="text-[32px] 2xs:text-[38px] md:text-5xl lg:text-[56px] font-extrabold text-white leading-tight tracking-tight mb-5">
+          <h1 className="text-[32px] 2xs:text-[38px] md:text-5xl lg:text-[62px] font-semibold text-white  mb-2">
             Take the first step toward your <br className="hidden md:block" />
-            <span className="text-[#f6920a]">dream apartment.</span>
+            <span className="text-[#f6920a]">dream apartment</span>
           </h1>
-          <p className="text-base 2xs:text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-200 font-light max-w-2xl mx-auto">
             Browse our full list of rental homes designed to match your
             lifestyle and personal preferences.
           </p>

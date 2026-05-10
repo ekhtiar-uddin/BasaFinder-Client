@@ -102,7 +102,7 @@ export function TrendingNearYou() {
             <Flame className="w-6 h-6 text-[#f6920a]" />
           </div>
           <div>
-            <h2 className="text-3xl  md:text-[40px] font-extrabold  ">
+            <h2 className="text-3xl  md:text-[40px] font-semibold  ">
               Trending Near You
             </h2>
           </div>

@@ -1,6 +1,6 @@
 import Providers from "@/providers/Providers";
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 
@@ -13,7 +13,7 @@ import "./globals.css";
 //   variable: "--font-geist-mono",
 //   subsets: ["latin"],
 // });
-const roboto = Raleway({
+const outfit = Outfit({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-arp="">
-      <body className={` ${roboto.className} antialiased`}>
+      <body className={` ${outfit.className} antialiased`}>
         <Providers>
           <Toaster richColors position="bottom-right" />
 

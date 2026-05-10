@@ -8,7 +8,9 @@ const page = () => {
     <div className="bg-white  pb-20 mt-10 ">
       <div className="bg-secondary-400 h-[35vh] flex items-center justify-center">
         <div className="space-y-5">
-          <h1 className="text-6xl font-bold text-center">Plans & Pricing</h1>
+          <h1 className="text-6xl font-semibold text-center">
+            Plans & Pricing
+          </h1>
           <p className="text-xl text-center font-semibold">
             Why pay more than $200 a month for Property Management software?
           </p>

@@ -17,7 +17,7 @@ function Footer() {
               <div className="bg-[#f6920a] p-2 rounded-lg">
                 <Home className="w-5 h-5 text-white" />
               </div>
-              <span className="text-2xl font-bold text-white tracking-tight">
+              <span className="text-2xl font-semibold text-white tracking-tight">
                 RentMode
               </span>
             </a>

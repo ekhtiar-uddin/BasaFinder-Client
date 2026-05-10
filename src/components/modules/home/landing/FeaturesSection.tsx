@@ -33,7 +33,7 @@ const FeaturesSection = () => {
       <div className="">
         <motion.h2
           variants={itemVariants}
-          className="text-3xl mb-3 md:text-[40px] font-extrabold text-center "
+          className="text-3xl mb-3 md:text-[40px] font-semibold text-center "
         >
           Your Next Rental Home
         </motion.h2>

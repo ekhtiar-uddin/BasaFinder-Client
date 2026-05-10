@@ -22,7 +22,7 @@ const CallToActionSection = () => {
       >
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0 md:mr-10">
-            <h2 className="text-3xl  font-extrabold text-white">
+            <h2 className="text-3xl  font-semibold text-white">
               Discover Your Perfect Rental Space
             </h2>
           </div>

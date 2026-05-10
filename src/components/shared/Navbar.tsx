@@ -126,7 +126,7 @@ const Navbar = () => {
                   <Home className="w-[18px] h-[18px] text-white" />
                 </div>
                 <span
-                  className={`text-xl font-extrabold tracking-tight transition-colors ${
+                  className={`text-xl font-semibold tracking-tight transition-colors ${
                     hasSolidBg ? "text-gray-900" : "text-white"
                   }`}
                 >
@@ -286,7 +286,7 @@ const Navbar = () => {
               <div className="bg-[#f6920a] p-1.5 rounded-lg">
                 <Home className="w-4 h-4 text-white" />
               </div>
-              <span className="text-xl font-extrabold tracking-tight text-gray-900">
+              <span className="text-xl font-semibold tracking-tight text-gray-900">
                 RENT<span className="font-light">MODE</span>
               </span>
             </div>

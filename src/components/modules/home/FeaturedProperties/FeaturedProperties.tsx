@@ -42,7 +42,7 @@ const FeaturedProperties = () => {
         <div className="">
           <motion.h2
             variants={itemVariants}
-            className="text-3xl  lg:text-[40px]  mb-2 font-extrabold text-center "
+            className="text-3xl  lg:text-[40px]  mb-2 font-semibold text-center "
           >
             Featured Properties
           </motion.h2>

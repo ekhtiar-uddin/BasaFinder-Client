@@ -64,7 +64,9 @@ const Contact = () => {
         className="mb-20 mx-auto container rounded-lg px-5 md:px-10 pt-10 md:pt-20"
       >
         <div className="text-center pb-10">
-          <h1 className="text-2xl md:text-4xl font-bold mb-5">Contact Us</h1>
+          <h1 className="text-2xl md:text-4xl font-semibold mb-5">
+            Contact Us
+          </h1>
           <p className="text-gray-600 text-sm md:text-base max-w-3xl mx-auto">
             Below are answers to some common questions. If you need more help,
             feel free to{" "}

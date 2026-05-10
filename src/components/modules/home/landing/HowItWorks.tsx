@@ -26,7 +26,7 @@ export function HowItWorks() {
     <section className="my-[50px] py-24 bg-gray-50 border-y border-gray-100">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl mb-3 md:text-[40px] font-extrabold text-center ">
+          <h2 className="text-3xl mb-3 md:text-[40px] font-semibold text-center ">
             How RentMode Works
           </h2>
           <p className="md:text-base text-sm text-gray-500 text-center">

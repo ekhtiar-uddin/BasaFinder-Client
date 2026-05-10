@@ -26,10 +26,10 @@ export function TrustStatsBar() {
               key={index}
               className="flex flex-col items-center text-center px-4"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2 tracking-tight">
+              <div className="text-4xl md:text-5xl font-semibold text-white mb-2 tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-[#f6920a] font-medium text-sm md:text-base uppercase tracking-wider">
+              <div className="text-[#f6920a]  text-sm md:text-base uppercase tracking-wider">
                 {stat.label}
               </div>
             </div>
