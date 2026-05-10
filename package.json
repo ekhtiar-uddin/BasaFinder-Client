@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "commit": "git add . && git commit -m \" feat: redesign About Us page and fix maps on search page  \" && git push origin develop",
+    "commit": "git add . && git commit -m \" updated in contact page   \" && git push origin develop",
     "clear-storage": "echo 'Run localStorage.clear() in your browser console to reset Redux state'"
   },
   "dependencies": {
