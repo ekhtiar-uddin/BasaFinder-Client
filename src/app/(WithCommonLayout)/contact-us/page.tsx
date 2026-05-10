@@ -28,7 +28,7 @@ const Contact = () => {
       setResult("Sending....");
 
       const formData = new FormData();
-      formData.append("access_key", "934c5a60-826d-4cd4-8700-0b907fa12124");
+      formData.append("access_key", process.env.NEXT_PUBLIC_WEB_3_ACCESS_KEY);
       formData.append("name", values.name);
       formData.append("email", values.email);
       formData.append("message", values.message);
